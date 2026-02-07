@@ -34,7 +34,7 @@ const Serve = () => {
               Reliable solutions for infrastructure, facilities operations,
               equipment support, and technology services.
             </p>
-            <a href="#" className="read-more">READ MORE →</a>
+            <a href="/facility" className="read-more">READ MORE →</a>
           </div>
 
 
