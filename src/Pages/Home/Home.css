@@ -1,0 +1,162 @@
+/* ================================
+   HERO SECTION
+================================ */
+
+.hero-section {
+  position: relative;
+  min-height: 100vh;
+  padding: 120px 3% 60px;
+  color: #fff;
+
+  /* Hero background image */
+  background: url("../../Assets/front4.jpg") center / cover no-repeat;
+
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* Gradient overlay */
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(15, 23, 42, 0.80),
+    rgba(15, 23, 42, 0.75),
+    rgba(15, 23, 42, 0.6)
+  );
+  z-index: 1;
+}
+
+/* ================================
+   CONTENT CONTAINER
+================================ */
+
+.hero-container {
+  position: relative;
+  z-index: 2;
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.hero-content {
+  max-width: 650px;
+}
+
+/* ================================
+   TEXT STYLES
+================================ */
+
+.hero-title {
+  font-size: 54px;
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 24px;
+  letter-spacing: -0.02em;
+}
+
+.hero-subtitle {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.6;
+  color: #cbd5e1;
+  margin-bottom: 36px;
+  max-width: 550px;
+}
+
+/* ================================
+   BUTTONS
+================================ */
+
+.hero-buttons {
+  display: flex;
+  gap: 20px;
+}
+
+.book-call-btn {
+  background: #10b981;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 16px 32px;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+}
+
+.book-call-btn:hover {
+  background: #059669;
+  transform: translateY(-2px);
+}
+
+.learn-more-btn {
+  background: rgba(255, 255, 255, 0.12);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 8px;
+  padding: 16px 32px;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.learn-more-btn:hover {
+  background: rgba(255, 255, 255, 0.18);
+  transform: translateY(-2px);
+}
+
+/* ================================
+   RESPONSIVE
+================================ */
+
+@media (max-width: 992px) {
+  .hero-container {
+    text-align: center;
+  }
+
+  .hero-content {
+    margin: 0 auto;
+  }
+
+  .hero-buttons {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 42px;
+  }
+
+  .hero-subtitle {
+    font-size: 18px;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .book-call-btn,
+  .learn-more-btn {
+    width: 100%;
+    padding: 14px;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero-title {
+    font-size: 34px;
+  }
+
+  .hero-subtitle {
+    font-size: 17px;
+    font-weight: 500;
+    /* color:  #10b981; */
+  }
+}

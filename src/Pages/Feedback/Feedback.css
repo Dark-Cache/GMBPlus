@@ -1,0 +1,151 @@
+.client-feedback-section {
+  padding: 1rem 4rem;
+  background: #060918;
+  /* background: radial-gradient(circle at top left, #0d0f2b, #050615); */
+  color: #ffffff;
+}
+
+.client-feedback-title {
+  font-size: 2.4rem;
+  font-weight: 700;
+  margin-bottom: 3rem;
+}
+
+.client-feedback-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.client-feedback-card {
+  /* background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.06),
+    rgba(255, 255, 255, 0.02)
+  ); */
+  background: #060919;
+  border-radius: 16px;
+  padding: 2rem;
+  /* backdrop-filter: blur(10px); */
+  box-shadow: 0 15px 15px rgba(0, 0, 0, 0.35);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.client-feedback-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 45px rgba(54, 53, 53, 0.5);
+}
+
+.client-feedback-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.client-feedback-header img {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.client-feedback-header h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.client-feedback-header span {
+  font-size: 0.85rem;
+  color: #aab0ff;
+}
+
+.client-feedback-text {
+  font-size: 0.95rem;
+  text-align: justify;
+  line-height: 1.7;
+  color: #d0d3ff;
+  margin-bottom: 1.5rem;
+}
+
+.client-feedback-date {
+  font-size: 0.8rem;
+  color: #8a90ff;
+}
+
+/* ===============================
+   CLIENT FEEDBACK – MOBILE STYLES
+   =============================== */
+
+@media (max-width: 768px) {
+  .client-feedback-section {
+    padding: 3rem 1.5rem;
+  }
+
+  .client-feedback-title {
+    font-size: 1.8rem;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  .client-feedback-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .client-feedback-card {
+    padding: 1.6rem;
+  }
+
+  .client-feedback-header {
+    gap: 0.8rem;
+    margin-bottom: 1.2rem;
+  }
+
+  .client-feedback-header img {
+    width: 42px;
+    height: 42px;
+  }
+
+  .client-feedback-header h4 {
+    font-size: 0.95rem;
+  }
+
+  .client-feedback-header span {
+    font-size: 0.8rem;
+  }
+
+  .client-feedback-text {
+    font-size: 0.9rem;
+    line-height: 1.65;
+  }
+
+  .client-feedback-date {
+    font-size: 0.75rem;
+  }
+}
+
+/* EXTRA SMALL DEVICES */
+@media (max-width: 420px) {
+  .client-feedback-title {
+    font-size: 1.6rem;
+  }
+
+  .client-feedback-section {
+  padding: 0rem 0rem;
+  background: #060918;
+  /* background: radial-gradient(circle at top left, #0d0f2b, #050615); */
+  color: #ffffff;
+}
+
+  .client-feedback-card {
+    padding: 1.2rem;
+  }
+
+  .client-feedback-text {
+    font-size: 0.88rem;
+    text-align: justify;
+  }
+}
+
