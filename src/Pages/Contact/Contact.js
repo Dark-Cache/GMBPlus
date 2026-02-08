@@ -59,8 +59,8 @@ const Contact = () => {
 
           <form className="contact-form">
             <label>
-              First name
-              <input type="text" placeholder="First name" />
+              Name
+              <input type="text" placeholder="Name" />
             </label>
 
             <label>

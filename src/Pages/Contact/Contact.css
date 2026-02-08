@@ -4,7 +4,7 @@
 
 .contact-page {
   min-height: 100vh;
-  background: #f3f0ff;
+  background: #0f172a;
   padding: 4rem 1.5rem;
   display: flex;
   justify-content: center;
@@ -16,7 +16,7 @@
 ================================ */
 
 .contact-card {
-  background: #ffffff;
+  background: #0f172a;
   border-radius: 20px;
   max-width: 1100px;
   width: 100%;
@@ -43,21 +43,6 @@
   border-radius: 14px;
 }
 
-/* LOGO OVERLAY */
-.contact-logo {
-  position: absolute;
-  bottom: 16px;
-  left: 16px;
-  background: #ffffff;
-  padding: 10px 14px;
-  border-radius: 10px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-}
-
-.contact-logo img {
-  height: 32px;
-  width: auto;
-}
 
 /* CONTACT INFO */
 
@@ -89,11 +74,12 @@
 .info-item h4 {
   font-size: 15px;
   margin-bottom: 2px;
+  color: rgb(155, 205, 155);
 }
 
 .info-item p {
   font-size: 14px;
-  color: #64748b;
+  color: white;
 }
 
 /* ===============================
@@ -103,11 +89,13 @@
 .contact-right h2 {
   font-size: 28px;
   margin-bottom: 8px;
+  color: white;
 }
 
 .contact-subtitle {
   font-size: 15px;
-  color: #64748b;
+  /* color: #64748b; */
+  color: white;
   margin-bottom: 1.5rem;
 }
 
@@ -119,7 +107,8 @@
 
 .contact-form label {
   font-size: 14px;
-  color: #334155;
+  /* color: #334155, */
+  color: white;
   display: flex;
   flex-direction: column;
   gap: 6px;
@@ -147,7 +136,7 @@
 }
 
 .form-checkbox span {
-  color: #7c3aed;
+  color: #0f172a;
   cursor: pointer;
 }
 
