@@ -3,7 +3,7 @@ import "./Serve.css";
 
 import chemical from "../../Assets/Chemical.jpg";
 import facility from "../../Assets/Facility.jpg";
-import estate from "../../Assets/Estate.jpg";
+import estate from "../../Assets/Estatenew.png";
 import repair from "../../Assets/Why.jpg";
 
 
@@ -34,7 +34,7 @@ const Serve = () => {
               Reliable solutions for infrastructure, facilities operations,
               equipment support, and technology services.
             </p>
-            <a href="/facility" className="read-more">READ MORE →</a>
+            <a href="/services" className="read-more">READ MORE →</a>
           </div>
 
 

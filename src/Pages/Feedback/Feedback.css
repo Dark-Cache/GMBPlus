@@ -1,11 +1,12 @@
 .client-feedback-section {
-  padding: 1rem 4rem;
-  background: #060918;
+  padding: 6rem 4rem 0rem 4rem;
+  /* background: #060918; */
   /* background: radial-gradient(circle at top left, #0d0f2b, #050615); */
   color: #ffffff;
 }
 
 .client-feedback-title {
+  color: black;
   font-size: 2.4rem;
   font-weight: 700;
   margin-bottom: 3rem;
@@ -80,7 +81,7 @@
 
 @media (max-width: 768px) {
   .client-feedback-section {
-    padding: 3rem 1.5rem;
+    padding: 1rem 1.5rem;
   }
 
   .client-feedback-title {

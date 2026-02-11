@@ -1,20 +1,20 @@
-.process-section {
+.jor-section {
   padding: 10px 20px 100px 0px;
   background: #ffffff;
 }
 
-.process-container {
+.jor-container {
   max-width: 1200px;
   margin: 0 auto;
 }
 
 /* Header */
-.process-header {
+.jor-header {
   text-align: center;
   margin-bottom: 70px;
 }
 
-.process-badge {
+.jor-badge {
   display: inline-block;
   background: #ecfdf5;
   color: #10b981;
@@ -25,7 +25,7 @@
   margin-bottom: 14px;
 }
 
-.process-header h2 {
+.jor-header h2 {
   font-size: 36px;
   font-weight: 700;
   color: #0f172a;
@@ -33,22 +33,22 @@
   padding-left: 20px;
 }
 
-.process-header p {
+.jor-header p {
   font-size: 16px;
   color: #64748b;
   padding-left: 20px;
 }
 
 /* Timeline */
-.process-timeline {
+.jor-timeline {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 40px;
   position: relative;
 }
 
 /* Horizontal line */
-.process-timeline::before {
+/* .jor-timeline::before {
   content: "";
   position: absolute;
   top: 42px;
@@ -57,16 +57,16 @@
   height: 2px;
   background: #e5e7eb;
   z-index: 0;
-}
+} */
 
 /* Step */
-.process-step {
+.jor-step {
   text-align: center;
   position: relative;
   z-index: 1;
 }
 
-.step-number {
+.jor-number {
   display: inline-block;
   font-size: 14px;
   color: #9ca3af;
@@ -74,7 +74,7 @@
 }
 
 /* Icon box */
-.step-icon {
+.jor-icon {
   width: 64px;
   height: 64px;
   margin: 0 auto 18px;
@@ -82,27 +82,27 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 26px;
+  font-size: 36px;
   color: #ffffff;
 }
 
-.step-icon.green {
+.jor-icon.green {
   background: #059669;
 }
 
-.step-icon.lime {
+.jor-icon.lime {
   background: #84cc16;
 }
 
 /* Text */
-.process-step h4 {
+.jor-step h4 {
   font-size: 18px;
   font-weight: 600;
   color: #0f172a;
   margin-bottom: 10px;
 }
 
-.process-step p {
+.jor-step p {
   font-size: 14px;
   color: #64748b;
   line-height: 1.6;
@@ -111,22 +111,22 @@
 
 /* Responsive */
 @media (max-width: 992px) {
-  .process-timeline {
+  .jor-timeline {
     grid-template-columns: repeat(2, 1fr);
     gap: 50px;
   }
 
-  .process-timeline::before {
+  .jor-timeline::before {
     display: none;
   }
 }
 
 @media (max-width: 600px) {
-  .process-timeline {
+  .jor-timeline {
     grid-template-columns: 1fr;
   }
 
-  .process-header h2 {
+  .jor-header h2 {
     font-size: 28px;
   }
 }

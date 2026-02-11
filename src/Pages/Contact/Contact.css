@@ -5,7 +5,7 @@
 .contact-page {
   min-height: 100vh;
   background: #0f172a;
-  padding: 4rem 1.5rem;
+  padding: 2rem 0rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -62,19 +62,20 @@
 .info-icon {
   background: transparent;
   color: #4cda7e;
+  color: white;
   width: 40px;
   height: 40px;
   border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 18px;
+  font-size: 24px;
 }
 
 .info-item h4 {
   font-size: 15px;
   margin-bottom: 2px;
-  color: rgb(155, 205, 155);
+  color: white;
 }
 
 .info-item p {
@@ -87,9 +88,10 @@
 ================================ */
 
 .contact-right h2 {
-  font-size: 28px;
+  font-size: 38px;
   margin-bottom: 8px;
-  color: white;
+  /* color: white; */
+  color: #4cda7e;
 }
 
 .contact-subtitle {

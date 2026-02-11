@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./Services.css";
 
 import img1 from "../../Assets/Supply.jpg";
@@ -28,24 +29,28 @@ const Services = () => {
           <h2>Industrial Chemicals</h2>
           <p>
             Our industrial chemicals service focuses on the safe production and reliable distribution 
-            of high-quality chemical products for various industries. We follow strict quality and 
-            regulatory standards to ensure consistency and safety. Clients are guided through 
-            product selection to ensure the right solutions for their operations. Our supply 
-            chain supports timely delivery and dependable availability. We provide 
-            transparent quotation processes and open communication for inquiries. 
-            Office visits and meetings can be arranged to discuss applications and compliance. 
-            Our goal is to deliver efficient, safe, and long-term chemical supply solutions.
+            of high-quality chemical products for diverse industries. We operate under strict quality 
+            and regulatory standards, guiding clients in selecting the right solutions for their 
+            operations. Supported by a dependable supply chain, we ensure timely delivery and 
+            consistent availability. Transparent quotations, open communication, and the option 
+            of office visits or meetings allow us to deliver efficient, safe, and long-term chemical 
+            supply solutions.
           </p>
+
+          <div className="learn-more">
+          <Link to="/chemical"> Learn More </Link>
+        </div>
+
         </div>
         <div className="service-image">
-          <img src={img1} alt="Industrial Chemicals" />
+          <img src={img1} alt="Industrial Chemicals" style={{width: '100%', maxWidth: '700px', height: '370px', objectFit: 'cover'}} />
         </div>
       </div>
 
       {/* SECTION 2 */}
       <div className="service-row reverse">
         <div className="service-image">
-          <img src={img2} alt="Facilities Management" />
+          <img src={img2} alt="Facilities Management" style={{width: '100%', maxWidth: '700px', height: '370px', objectFit: 'cover'}} />
         </div>
         <div className="service-content">
           <h2>Facilities Management</h2>
@@ -57,6 +62,11 @@ const Services = () => {
             quotations and detailed service information. Continuous monitoring ensures consistent service 
             quality. We help organizations maintain safe, clean, and well-managed facilities.
           </p>
+
+          <div className="learn-more">
+          <Link to="/facility"> Learn More </Link>
+        </div>
+
         </div>
       </div>
 
@@ -65,34 +75,42 @@ const Services = () => {
         <div className="service-content">
           <h2>IT Solutions</h2>
           <p>
-            Our IT solutions focus on supplying reliable software and hardware systems that support modern 
-            business operations. We assess client requirements to recommend suitable technologies. 
-            Our solutions improve performance, security, and scalability. We ensure compatibility 
-            with existing systems to minimize disruption. Clients receive professional guidance 
-            throughout the process. Our approach reduces operational risks and downtime. 
-            We deliver dependable IT infrastructure that supports business growth.
+            Our facilities management services ensure the smooth operation of commercial and industrial 
+            environments through professional staffing, cleaning, maintenance, and equipment supply or 
+            rental. All services are coordinated to improve efficiency and minimize downtime, supported
+            by clear quotations and detailed service information. Continuous monitoring ensures consistent 
+            quality, helping organizations maintain safe, clean, and well-managed facilities.
           </p>
+
+          <div className="learn-more">
+          <Link to="/it"> Learn More </Link>
+        </div>
+
         </div>
         <div className="service-image">
-          <img src={img3} alt="IT Solutions" />
+          <img src={img3} alt="IT Solutions" style={{width: '100%', maxWidth: '700px', height: '370px', objectFit: 'cover'}} />
         </div>
       </div>
 
       {/* SECTION 4 */}
       <div className="service-row reverse">
         <div className="service-image">
-          <img src={img4} alt="Property & Estate Management" />
+          <img src={img4} alt="Property & Estate Management" style={{width: '100%', maxWidth: '700px', height: '370px', objectFit: 'cover'}} />
         </div>
         <div className="service-content">
           <h2>Property & Estate Management</h2>
           <p>
-            Our property and estate management services are designed to protect and enhance property value. 
-            We manage residential and commercial properties through structured oversight and maintenance. 
-            Routine inspections and preventive maintenance reduce long-term costs. We ensure compliance 
-            with safety and regulatory standards. Clients receive transparent updates and reports. 
-            Our team handles day-to-day property operations professionally. We deliver efficient 
-            management that ensures long-term sustainability.
+            Our property and estate management services focus on protecting and enhancing property value through 
+            structured oversight and maintenance of residential and commercial properties. Routine inspections, 
+            preventive maintenance, and strict compliance with safety and regulatory standards help reduce 
+            long-term costs. With transparent updates and professional handling of daily operations, we 
+            deliver efficient management that supports long-term sustainability.
           </p>
+
+          <div className="learn-more">
+          <Link to="/property"> Learn More </Link>
+          </div>
+
         </div>
       </div>
 

@@ -12,7 +12,7 @@ const Footer = () => {
         <h2>Connect With GBMPlus. <br ></br> 
         Your Business Solutions.</h2>
 
-         <Link to="/contact" className="footer-cta-btn">
+         <Link to="/quote" className="footer-cta-btn">
            Get a Quote <span>↗</span>
           </Link>
 
