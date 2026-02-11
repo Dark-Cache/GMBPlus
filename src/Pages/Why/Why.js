@@ -1,19 +1,46 @@
-import React from 'react'
+import React, { useEffect, useRef } from 'react'
 import "./Why.css";
 import work from "../../Assets/Why4.jpg";
 
 const Why = () => {
+  const imageRef = useRef(null);
+  const statsRef = useRef(null);
+  const contentRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    [imageRef, statsRef, contentRef].forEach((ref) => {
+      if (ref.current) observer.observe(ref.current);
+    });
+
+    return () => {
+      [imageRef, statsRef, contentRef].forEach((ref) => {
+        if (ref.current) observer.unobserve(ref.current);
+      });
+    };
+  }, []);
+
   return (
     <section className="why-section">
       <div className="why-container">
 
         {/* Left Image */}
-        <div className="why-image">
+        <div className="why-image" ref={imageRef}>
           <img src={work} alt="Professional Team" />
         </div>
 
         {/* Stats (Overlapping Card) */}
-        <div className="why-stats">
+        <div className="why-stats" ref={statsRef}>
           <h3>Why Choosing Us?</h3>
 
           <div className="progress-item">
@@ -58,7 +85,7 @@ const Why = () => {
         </div>
 
         {/* Right Content */}
-        <div className="why-content">
+        <div className="why-content" ref={contentRef}>
           <div className="why-icon">🏭</div>
           <h3>We maintain a highly trained and experienced team.</h3>
           <p>

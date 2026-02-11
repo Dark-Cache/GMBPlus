@@ -1,13 +1,37 @@
-import React from 'react'
+import React, { useEffect, useRef } from 'react'
 import "./Talk.css"
 
 const Talk = () => {
+  const tagRef = useRef(null);
+  const buttonsRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    if (tagRef.current) observer.observe(tagRef.current);
+    if (buttonsRef.current) observer.observe(buttonsRef.current);
+
+    return () => {
+      if (tagRef.current) observer.unobserve(tagRef.current);
+      if (buttonsRef.current) observer.unobserve(buttonsRef.current);
+    };
+  }, []);
+
   return (
 
     <section className="cta-section">
       <div className="cta-container">
 
-        <span className="cta-tag">LET’S HAVE A TALK</span>
+        <span className="cta-tag" ref={tagRef}>LET'S HAVE A TALK</span>
 
         <h1 className="cta-title">
           Everything Begins <br />
@@ -24,8 +48,8 @@ const Talk = () => {
           Swift execution is our modus operandi.
         </p>
 
-        <div className="cta-buttons">
-          <a href="/book-call" className="cta-btn primary">
+        <div className="cta-buttons" ref={buttonsRef}>
+          <a href="/contact" className="cta-btn primary">
             Book a Call
           </a>
           <a href="/get-started" className="cta-btn secondary">

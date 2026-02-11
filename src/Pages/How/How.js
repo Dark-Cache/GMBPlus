@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import "./How.css";
 
 const steps = [
@@ -33,12 +33,36 @@ const steps = [
 ];
 
 const Process = () => {
+  const headerRef = useRef(null);
+  const timelineRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    if (headerRef.current) observer.observe(headerRef.current);
+    if (timelineRef.current) observer.observe(timelineRef.current);
+
+    return () => {
+      if (headerRef.current) observer.unobserve(headerRef.current);
+      if (timelineRef.current) observer.unobserve(timelineRef.current);
+    };
+  }, []);
+
   return (
     <section className="process-section">
       <div className="process-container">
 
         {/* Header */}
-        <div className="process-header">
+        <div className="process-header" ref={headerRef}>
           <span className="process-badge">Our Process</span>
           <h2>How We Work With You</h2>
           <p>
@@ -47,7 +71,7 @@ const Process = () => {
         </div>
 
         {/* Timeline */}
-        <div className="process-timeline">
+        <div className="process-timeline" ref={timelineRef}>
           {steps.map((step, index) => (
             <div className="process-step" key={index}>
               <span className="step-number">{step.number}</span>

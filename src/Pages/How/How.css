@@ -12,6 +12,14 @@
 .process-header {
   text-align: center;
   margin-bottom: 70px;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.process-header.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .process-badge {
@@ -45,6 +53,14 @@
   grid-template-columns: repeat(4, 1fr);
   gap: 40px;
   position: relative;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.process-timeline.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* Horizontal line */

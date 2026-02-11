@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useRef } from 'react'
 import "./Serve.css";
 
 import chemical from "../../Assets/Chemical.jpg";
@@ -8,12 +8,40 @@ import repair from "../../Assets/Why.jpg";
 
 
 const Serve = () => {
+  const headerRef = useRef(null);
+  const cardsRefs = useRef([]);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    if (headerRef.current) observer.observe(headerRef.current);
+    cardsRefs.current.forEach((ref) => {
+      if (ref) observer.observe(ref);
+    });
+
+    return () => {
+      if (headerRef.current) observer.unobserve(headerRef.current);
+      cardsRefs.current.forEach((ref) => {
+        if (ref) observer.unobserve(ref);
+      });
+    };
+  }, []);
+
   return (
         <section className="market-section">
       <div className="market-container">
 
         {/* Header */}
-        <div className="market-header">
+        <div className="market-header" ref={headerRef}>
           <h2>We offer several Services for you</h2>
           <span className="market-divider"></span>
           <p>
@@ -27,7 +55,7 @@ const Serve = () => {
 
 
             {/* Card 1 */}
-          <div className="market-card">
+          <div className="market-card" ref={(el) => (cardsRefs.current[0] = el)}>
             <img src={facility} alt="Facility" />
             <h3> Facilities management </h3>
             <p>
@@ -40,7 +68,7 @@ const Serve = () => {
 
 
           {/* Card 2 */}
-          <div className="market-card">
+          <div className="market-card" ref={(el) => (cardsRefs.current[1] = el)}>
             <img src={chemical} alt="Industrial Sector" />
             <h3> Industrial Chemicals </h3>
             <p>
@@ -51,7 +79,7 @@ const Serve = () => {
 
 
           {/* Card 3 */}
-          <div className="market-card">
+          <div className="market-card" ref={(el) => (cardsRefs.current[2] = el)}>
             <img src={estate} alt="Property" />
             <h3> Properties & Estates Management </h3>
             <p>
@@ -61,7 +89,7 @@ const Serve = () => {
           </div>
 
           {/* Card 4 */}
-          <div className="market-card">
+          <div className="market-card" ref={(el) => (cardsRefs.current[3] = el)}>
             <img src={repair} alt="IT" />
             <h3> IT Solutions </h3>
             <p>

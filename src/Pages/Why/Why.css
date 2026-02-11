@@ -16,6 +16,14 @@
 /* LEFT IMAGE */
 .why-image {
   position: relative;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.why-image.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .why-image img {
@@ -35,6 +43,14 @@
   width: 360px;
   z-index: 2;
   box-shadow: 0 25px 45px rgba(0, 0, 0, 0.15);
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.why-stats.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .why-stats h3 {
@@ -78,6 +94,14 @@
 /* RIGHT CONTENT (GIVEN MORE SPACE) */
 .why-content {
   padding-left: 60px;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.why-content.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .why-content h3 {

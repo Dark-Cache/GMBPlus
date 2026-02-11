@@ -18,10 +18,22 @@
 .cta-tag {
   display: inline-block;
   margin-bottom: 18px;
-  font-size: 12px;
+  font-size: 18px;
   letter-spacing: 2px;
   color:  #10b981;
   font-weight: 600;
+  opacity: 0;
+}
+
+.cta-tag.visible {
+  animation: glow 5s ease-in-out;
+  opacity: 1;
+}
+
+@keyframes glow {
+  0%, 100% { text-shadow: 0 0 5px #10b981; }
+  33% { text-shadow: 0 0 20px #10b981, 0 0 30px #10b981; }
+  66% { text-shadow: 0 0 5px #10b981; }
 }
 
 /* Main heading */
@@ -56,6 +68,14 @@
   display: flex;
   justify-content: center;
   gap: 20px;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.cta-buttons.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .cta-btn {
@@ -71,6 +91,15 @@
 .cta-btn.primary {
   background:  #10b981;
   color: white;
+}
+
+.cta-buttons.visible .cta-btn.primary {
+  animation: buttonGlow 3s ease-in-out;
+}
+
+@keyframes buttonGlow {
+  0%, 100% { box-shadow: 0 0 5px #10b981; }
+  50% { box-shadow: 0 0 20px #10b981, 0 0 30px #10b981; }
 }
 
 .cta-btn.primary:hover {
