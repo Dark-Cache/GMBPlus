@@ -20,6 +20,10 @@
    LOGO
 ===================================================== */
 
+.nav-logo {
+  animation: slideInLeft 0.9s ease-out;
+}
+
 .nav-logo img {
   width: 140px;
   transition: opacity 0.3s ease, transform 0.3s ease;
@@ -30,14 +34,40 @@
   transform: scale(1.05);
 }
 
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
 /* =====================================================
    DESKTOP MENU
 ===================================================== */
+
+.nav-menu {
+  animation: slideInTop 0.6s ease-out;
+}
 
 .nav-menu ul {
   display: flex;
   list-style: none;
   gap: 2rem;
+}
+
+@keyframes slideInTop {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
 
@@ -105,6 +135,18 @@
   display: flex;
   align-items: center;
   gap: 1rem;
+  animation: slideInRight 0.6s ease-out;
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
 }
 
 /* THEME TOGGLE */
@@ -168,6 +210,7 @@
     transform: translateX(-100%);
     transition: transform 0.3s ease;
     padding-top: 2rem;
+    animation: none;
   }
 
   .nav-menu.open {

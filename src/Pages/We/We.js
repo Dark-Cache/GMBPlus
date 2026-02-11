@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import "./We.css";
 
 // import oracle from "../../Assets/oracle.png";
@@ -11,12 +11,39 @@ import "./We.css";
 import AboutImg from "../../Assets/About1.jpg";
 
 const We = () => {
+  const headerRef = useRef(null);
+  const textRef = useRef(null);
+  const imageRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    [headerRef, textRef, imageRef].forEach((ref) => {
+      if (ref.current) observer.observe(ref.current);
+    });
+
+    return () => {
+      [headerRef, textRef, imageRef].forEach((ref) => {
+        if (ref.current) observer.unobserve(ref.current);
+      });
+    };
+  }, []);
+
   return (
     <section className="logistics-section">
       <div className="logistics-container">
 
         {/* Top Clients */}
-        <div className="clients-header">
+        <div className="clients-header" ref={headerRef}>
           <p>
             Over <span>35,000 Clients</span> All Over The World
           </p>
@@ -35,7 +62,7 @@ const We = () => {
         <div className="logistics-content">
 
           {/* Left */}
-          <div className="logistics-text">
+          <div className="logistics-text" ref={textRef}>
             <span className="about-badge">ABOUT US</span>
 
             <h2>Comprehensive Industrial <br /> & Technical Services</h2>
@@ -53,7 +80,7 @@ const We = () => {
           </div>
 
           {/* Right */}
-          <div className="logistics-image">
+          <div className="logistics-image" ref={imageRef}>
             <img src={AboutImg} alt="Logistics Operations" />
           </div>
 

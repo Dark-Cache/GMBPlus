@@ -64,10 +64,17 @@
 }
 
 /* BRAND */
+.footer-brand {
+  padding-left: 0;
+}
+
 .footer-brand img {
   width: 140px;
-  margin-left: 0;
-  margin-bottom: 1rem;
+  height: auto;
+  margin: 0 0 1rem 0;
+  display: block;
+  object-fit: contain;
+  object-position: left center;
 }
 
 .footer-brand p {
@@ -75,6 +82,8 @@
   color: #9ca3af;
   line-height: 1.6;
   max-width: 420px;
+  margin: 0;
+  padding: 0;
 }
 
 /* LINKS */
@@ -139,4 +148,5 @@
     grid-template-columns: 1fr;
     gap: 2rem;
   }
+  
 }
