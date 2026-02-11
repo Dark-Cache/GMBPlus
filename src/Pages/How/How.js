@@ -37,6 +37,10 @@ const Process = () => {
   const timelineRef = useRef(null);
 
   useEffect(() => {
+    // ✅ Store ref values in variables (Fix for ESLint)
+    const headerEl = headerRef.current;
+    const timelineEl = timelineRef.current;
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -48,12 +52,13 @@ const Process = () => {
       { threshold: 0.1 }
     );
 
-    if (headerRef.current) observer.observe(headerRef.current);
-    if (timelineRef.current) observer.observe(timelineRef.current);
+    if (headerEl) observer.observe(headerEl);
+    if (timelineEl) observer.observe(timelineEl);
 
     return () => {
-      if (headerRef.current) observer.unobserve(headerRef.current);
-      if (timelineRef.current) observer.unobserve(timelineRef.current);
+      if (headerEl) observer.unobserve(headerEl);
+      if (timelineEl) observer.unobserve(timelineEl);
+      observer.disconnect(); // extra safe cleanup
     };
   }, []);
 

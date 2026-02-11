@@ -1,6 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { FaPlus } from "react-icons/fa";
 import "./Footer.css";
+
 
 import logo from "../../Assets/whitelogo.png";
 
@@ -13,7 +15,7 @@ const Footer = () => {
         Your Business Solutions.</h2>
 
          <Link to="/quote" className="footer-cta-btn">
-           Get a Quote <span>↗</span>
+           Get a Quote <span><FaPlus /></span>
           </Link>
 
 
@@ -39,8 +41,8 @@ const Footer = () => {
             <h4>Company</h4>
             <ul>
               <li><Link to="/">Home</Link></li>
-              <li><Link to="/about">About Us</Link></li>
               <li><Link to="/services">Services</Link></li>
+              <li><Link to="/about">About Us</Link></li>
               <li><Link to="/contact">Contact</Link></li>
             </ul>
           </div>
