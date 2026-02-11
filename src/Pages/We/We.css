@@ -157,7 +157,7 @@
 
 /* Image */
 .logistics-image {
-  border-radius: 18px;
+  border-radius: 4px;
   width: 100%;
   overflow: hidden;
   box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
