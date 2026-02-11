@@ -16,24 +16,26 @@ const We = () => {
   const imageRef = useRef(null);
 
   useEffect(() => {
+    const elements = [headerRef.current, textRef.current, imageRef.current];
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            entry.target.classList.add("visible");
+            entry.target.classList.add("show");
           }
         });
       },
-      { threshold: 0.1 }
+      { threshold: 0.15 }
     );
 
-    [headerRef, textRef, imageRef].forEach((ref) => {
-      if (ref.current) observer.observe(ref.current);
+    elements.forEach((el) => {
+      if (el) observer.observe(el);
     });
 
     return () => {
-      [headerRef, textRef, imageRef].forEach((ref) => {
-        if (ref.current) observer.unobserve(ref.current);
+      elements.forEach((el) => {
+        if (el) observer.unobserve(el);
       });
     };
   }, []);
@@ -43,7 +45,7 @@ const We = () => {
       <div className="logistics-container">
 
         {/* Top Clients */}
-        <div className="clients-header" ref={headerRef}>
+        <div className="clients-header slide-up" ref={headerRef}>
           <p>
             Over <span>35,000 Clients</span> All Over The World
           </p>
@@ -62,26 +64,28 @@ const We = () => {
         <div className="logistics-content">
 
           {/* Left */}
-          <div className="logistics-text" ref={textRef}>
+          <div className="logistics-text slide-up" ref={textRef}>
             <span className="about-badge">ABOUT US</span>
 
-            <h2>Comprehensive Industrial <br /> & Technical Services</h2>
+            <h2>
+              Comprehensive Industrial <br /> & Technical Services
+            </h2>
 
             <p>
-              Our company provides integrated solutions across industrial chemicals, 
-              facilities management, IT services, and property management by planning, 
+              Our company provides integrated solutions across industrial chemicals,
+              facilities management, IT services, and property management by planning,
               executing, and managing resources, operations, and service delivery from
-               initial engagement to successful completion.
+              initial engagement to successful completion.
             </p>
 
             <a href="/about" className="about-badge-a">
-              <span> Read More</span>
+              Read More
             </a>
           </div>
 
           {/* Right */}
-          <div className="logistics-image" ref={imageRef}>
-            <img src={AboutImg} alt="Logistics Operations" />
+          <div className="logistics-image slide-up" ref={imageRef}>
+            <img src={AboutImg} alt="Industrial Operations" />
           </div>
 
         </div>

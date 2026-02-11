@@ -1,4 +1,19 @@
 /* ================================
+   SLIDE UP ANIMATION
+================================ */
+
+.slide-up {
+  opacity: 0;
+  transform: translateY(60px);
+  transition: all 0.8s ease-out;
+}
+
+.slide-up.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ================================
    SECTION BASE
 ================================ */
 
@@ -19,7 +34,7 @@
 
 .clients-header {
   text-align: center;
-  margin-bottom: 1rem;
+  margin-bottom: 3rem;
 }
 
 .clients-header p {
@@ -43,12 +58,13 @@
 
 .clients-logos img {
   height: 28px;
-  opacity: 0.8;
-  transition: opacity 0.3s ease;
+  opacity: 0.7;
+  transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
 .clients-logos img:hover {
   opacity: 1;
+  transform: scale(1.1);
 }
 
 /* ================================
@@ -80,24 +96,24 @@
 
 .about-badge {
   display: inline-block;
-  font-size: 1rem;
+  font-size: 0.9rem;
   padding: 0.4rem 0.9rem;
   border-radius: 20px;
   background: #fff7ed;
   color: #29ab80;
-  font-weight: 800;
+  font-weight: 700;
   margin-bottom: 1rem;
 }
 
 .about-badge-a {
   display: inline-block;
-  font-size: 1.1rem;
-  padding: 0.4rem 0.9rem;
-  border-radius: 20px;
+  font-size: 1rem;
+  padding: 0.6rem 1.4rem;
+  border-radius: 25px;
   background: #29ab80;
   color: white;
-  font-weight: 800;
-  margin-bottom: 1rem;
+  font-weight: 600;
+  text-decoration: none;
   transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
 
@@ -105,37 +121,6 @@
   box-shadow: 0 0 12px rgba(41, 171, 128, 0.7),
               0 0 25px rgba(41, 171, 128, 0.4);
   transform: scale(1.05);
-}
-
-
-/* CTA */
-.read-more {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.7rem;
-  font-weight: 600;
-  color: #0f172a;
-  text-decoration: none;
-}
-
-.read-more span {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  width: 32px;
-  height: 32px;
-  border-radius: 50% ;
-  background: #29ab80;
-  color:  white;
-  font-size: 20px;
-}
-
-.read-more a{
-  border: 2px solid #29ab80;
-  padding: 0.5rem 1.2rem;
-  border-radius: 6px; /* optional */
-  text-decoration: none;
-  display: inline-block; /* important for padding & border */
 }
 
 /* Image */
@@ -166,14 +151,18 @@
     margin-left: auto;
     margin-right: auto;
   }
-
-  .read-more {
-    justify-content: center;
-  }
 }
 
 @media (max-width: 576px) {
-  .logistics-text h2{
-    font-size: 25px;
+  .logistics-text h2 {
+    font-size: 24px;
+  }
+
+  .clients-logos {
+    gap: 1.5rem;
+  }
+
+  .clients-logos img {
+    height: 22px;
   }
 }
