@@ -1,11 +1,15 @@
-import React, { useEffect, useRef } from 'react'
-import "./Talk.css"
+import React, { useEffect, useRef } from "react";
+import "./Talk.css";
 
 const Talk = () => {
   const tagRef = useRef(null);
   const buttonsRef = useRef(null);
 
   useEffect(() => {
+    // ✅ Store ref values (ESLint Fix)
+    const tagEl = tagRef.current;
+    const buttonsEl = buttonsRef.current;
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -17,21 +21,24 @@ const Talk = () => {
       { threshold: 0.1 }
     );
 
-    if (tagRef.current) observer.observe(tagRef.current);
-    if (buttonsRef.current) observer.observe(buttonsRef.current);
+    if (tagEl) observer.observe(tagEl);
+    if (buttonsEl) observer.observe(buttonsEl);
 
     return () => {
-      if (tagRef.current) observer.unobserve(tagRef.current);
-      if (buttonsRef.current) observer.unobserve(buttonsRef.current);
+      if (tagEl) observer.unobserve(tagEl);
+      if (buttonsEl) observer.unobserve(buttonsEl);
+
+      observer.disconnect(); // extra safe cleanup
     };
   }, []);
 
   return (
-
     <section className="cta-section">
       <div className="cta-container">
 
-        <span className="cta-tag" ref={tagRef}>LET'S HAVE A TALK</span>
+        <span className="cta-tag" ref={tagRef}>
+          LET'S HAVE A TALK
+        </span>
 
         <h1 className="cta-title">
           Everything Begins <br />
@@ -59,9 +66,7 @@ const Talk = () => {
 
       </div>
     </section>
-        
+  );
+};
 
-  )
-}
-
-export default Talk
+export default Talk;
