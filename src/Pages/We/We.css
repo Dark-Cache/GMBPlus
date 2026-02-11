@@ -13,21 +13,6 @@
   margin: 0 auto;
 }
 
-.clients-header,
-.logistics-text,
-.logistics-image {
-  opacity: 0;
-  transform: translateY(50px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
-}
-
-.clients-header.visible,
-.logistics-text.visible,
-.logistics-image.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
 /* ================================
    CLIENTS HEADER
 ================================ */
@@ -123,8 +108,6 @@
 }
 
 
-
-
 /* CTA */
 .read-more {
   display: inline-flex;
@@ -157,7 +140,7 @@
 
 /* Image */
 .logistics-image {
-  border-radius: 4px;
+  border-radius: 12px;
   width: 100%;
   overflow: hidden;
   box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
