@@ -14,9 +14,10 @@ import About from "./Pages/About/About";
 import Services from "./Pages/Services/Services";
 import Contact from "./Pages/Contact/Contact";
 import Chemical from "./Pages/Chemical/Chemical";
-import IT from "./Pages/IT/IT";
+import Digital from "./Pages/Digital/Digital";
 import Facility from "./Pages/Facility/Facility";
 import Property from "./Pages/Property/Property"
+import Work from "./Pages/Work/Work"
 
 
 
@@ -34,8 +35,11 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/services" element={<Services /> } />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/work" element={<Work />} />
+
+
         <Route path="/chemical" element={<Chemical />} />
-        <Route path="/it" element={<IT />} />
+        <Route path="/digital" element={<Digital />} />
         <Route path="/facility" element={<Facility />} />
         <Route path="/property" element={<Property />} />
       </Routes>

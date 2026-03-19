@@ -5,7 +5,7 @@ const steps = [
   {
     number: "01",
     title: "Initial Consultation",
-    text: "We understand your business needs, goals, and current financial situation through a detailed consultation.",
+    text: "We understand your business needs, goals and financial situation through a detailed consultation.",
     icon: "🔍",
     color: "lime",
   },

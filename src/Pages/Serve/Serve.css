@@ -47,7 +47,7 @@
 .market-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 15px;
+  gap: 10px;
 }
 
 /* Card */
@@ -88,6 +88,8 @@
   color: #6b7280;
   margin: 0 20px 20px;
   line-height: 1.6;
+  justify-content: center;
+  /* text-align: justify; */
 }
 
 .read-more {

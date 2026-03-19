@@ -13,7 +13,7 @@ import AboutImg from "../../Assets/About1.jpg";
 const We = () => {
   const headerRef = useRef(null);
   const textRef = useRef(null);
-  const imageRef = useRef(null);
+  const imageRef = useRef(null); 
 
   useEffect(() => {
     const elements = [headerRef.current, textRef.current, imageRef.current];
@@ -65,7 +65,7 @@ const We = () => {
 
           {/* Left */}
           <div className="logistics-text slide-up" ref={textRef}>
-            <span className="about-badge">ABOUT US</span>
+            <span className="abo-badge">ABOUT US</span>
 
             <h2>
               Comprehensive Industrial <br /> & Technical Services
@@ -78,7 +78,7 @@ const We = () => {
               initial engagement to successful completion.
             </p>
 
-            <a href="/about" className="about-badge-a">
+            <a href="/about" className="abo-badge-a">
               Read More
             </a>
           </div>

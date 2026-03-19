@@ -1,9 +1,9 @@
 import React from "react";
 import "./Team.css";
 
-// import team1 from "../../Assets/team1.jpg";
-// import team2 from "../../Assets/team2.jpg";
-// import team3 from "../../Assets/team3.jpg";
+import team1 from "../../Assets/CEO1.png";
+import team2 from "../../Assets/Ade.jpeg";
+import team3 from "../../Assets/Red.jpeg";
 // import team4 from "../../Assets/team4.jpg";
 
 const OurTeam = () => {
@@ -16,7 +16,7 @@ const OurTeam = () => {
         <div className="our-team-header">
           <div>
             {/* <span className="our-team-number">04</span> */}
-            <h2>Our team</h2>
+            <h2> Company Executives </h2>
             <p>
               We craft solutions that amplify key characteristics, achieving a
               harmonious balance of function and intent. Through careful
@@ -32,28 +32,28 @@ const OurTeam = () => {
         <div className="our-team-grid">
 
           <div className="team-card">
-            {/* <img src={team1} alt="Michael Scott" /> */}
-            <h4>Michael Scott</h4>
-            <span>Co-Founder, Chief Architect</span>
+            <img src={team1} alt="Mr. Olayinka Yusuf" className="team-img-first" />
+            <h4> Mr. Olayinka Yusuf</h4>
+            <span> Managing Director </span>
           </div>
 
           <div className="team-card">
-            {/* <img src={team2} alt="Chandler Rigs" /> */}
-            <h4>Chandler Rigs</h4>
-            <span>Co-Founder, Architect</span>
+            <img src={team2} alt="Mr. Adeola Yusuf" />
+            <h4> Mr. Adeola Yusuf | MSC GMNSE</h4>
+            <span> Digital Architecture</span>
+          </div>  
+
+          <div className="team-card">
+            <img src={team3} alt="Isabella Rodriguez" />
+            <h4> Mrs. Adebukola Eichie </h4>
+            <span> Account Manager </span>
           </div>
 
           <div className="team-card">
-            {/* <img src={team3} alt="Isabella Rodriguez" /> */}
-            <h4>Isabella Rodriguez</h4>
-            <span>Architect</span>
+            {/* <img src={team4} alt="Ava Wilson" /> */}
+            <h4> Mrs Damilola </h4>
+            <span> Director of Facility Management </span>
           </div>
-
-          {/* <div className="team-card">
-            <img src={team4} alt="Ava Wilson" />
-            <h4>Ava Wilson</h4>
-            <span>3D Artist</span>
-          </div> */}
 
         </div>
 

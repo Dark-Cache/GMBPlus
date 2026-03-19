@@ -6,7 +6,6 @@ import We from "../We/We";
 import Serve from "../Serve/Serve";
 import Why from "../Why/Why";
 import Say from "../Say/Say";
-import Talk from "../Talk/Talk";
 import How from "../How/How";
 
 
@@ -31,7 +30,7 @@ const Home = () => {
             <div className="hero-buttons">
                 
                 <Link to="/quote">
-                  <button className="book-call-btn">Get a Quote</button>
+                  <button className="book-call-btn">Get Brochure</button>
                 </Link>
 
                 <Link to="/visit">
@@ -48,7 +47,6 @@ const Home = () => {
       <Serve />
       <Why />
       <Say />
-      <Talk />
     </div>
   );
 };

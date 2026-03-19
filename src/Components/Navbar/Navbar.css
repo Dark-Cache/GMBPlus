@@ -77,7 +77,8 @@
   font-size: 18px;
   font-weight: 500;
   padding: 0.5rem 1rem;
-  text-decoration: none;
+  /* text-decoration: none; */
+  font-family: "Segoe UI", sans-serif;
 }
 
 .nav-menu a::after {
@@ -110,6 +111,108 @@
 } */
 
 /* =====================================================
+   DROPDOWN
+===================================================== */
+
+.has-dropdown {
+  position: relative;
+}
+
+/* The trigger button styled to match nav links */
+.dropdown-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  color: var(--text-primary);
+  font-size: 18px;
+  font-weight: 500;
+  font-family: "Segoe UI", sans-serif;
+  display: flex;
+  align-items: center;
+  gap: 0.1rem;
+  padding-bottom: 5px;
+}
+
+.dropdown-toggle::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background-color: #10b981;
+  transition: width 0.3s ease;
+}
+
+.dropdown-toggle:hover::after,
+.has-dropdown:hover .dropdown-toggle::after {
+  width: 100%;
+}
+
+.dropdown-arrow {
+  font-size: 18px;
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.dropdown-arrow.up {
+  transform: rotate(180deg);
+}
+.arrow{
+  padding-top: 5px;
+}
+
+/* Dropdown list */
+.dropdown {
+  display: none;
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  background: var(--bg-primary);
+  /* border-top: 2px solid #10b981; */
+  min-width: 220px;
+  list-style: none;
+  padding: 0.4rem 0;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+  border-radius: 0 0 8px 8px;
+  z-index: 999;
+  animation: fadeDown 0.2s ease;
+}
+
+@keyframes fadeDown {
+  from { opacity: 0; transform: translateY(-6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.dropdown.open {
+  display: flex;
+  flex-direction: column;
+}
+
+.dropdown li a {
+  display: block;
+  padding: 0.65rem 1.4rem;
+  font-size: 15px;
+  color: var(--text-primary);
+  white-space: nowrap;
+  transition: color 0.2s ease, background 0.2s ease;
+}
+
+.dropdown li a::after {
+  display: none;
+}
+
+.dropdown li a:hover {
+  color: #10b981;
+  background: rgba(16, 185, 129, 0.08);
+}
+
+.dropdown li:not(:last-child) {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* =====================================================
    CONTACT BUTTON (DESKTOP)
 ===================================================== */
 
@@ -120,6 +223,7 @@
   border-radius: 15px;
   font-weight: 500;
   transition: background 0.3s ease, color 0.3s ease;
+  font-family: "Segoe UI", sans-serif;
 }
 
 .nav-contact a:hover {
@@ -199,7 +303,7 @@
   display: none;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 922px) {
   .nav-menu {
     position: fixed;
     top: 70px;
@@ -211,6 +315,7 @@
     transition: transform 0.3s ease;
     padding-top: 2rem;
     animation: none;
+    overflow-y: auto;
   }
 
   .nav-menu.open {
@@ -221,6 +326,47 @@
     flex-direction: column;
     align-items: center;
     gap: 1.5rem;
+  }
+
+  /* Mobile dropdown: accordion style */
+  .has-dropdown {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .dropdown-toggle {
+    font-size: 18px;
+    justify-content: left;
+  }
+
+  .dropdown {
+    /* position: static; */
+    box-shadow: none;
+    border-top: none;
+    border-radius: 0;
+    min-width: unset;
+    /* border-top: 2px solid #10b981;
+    width: 60%; */
+    padding: 0rem 0;
+    margin-top: 0rem;
+    animation: none;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .dropdown li {
+    width: 100%;
+  }
+
+  .dropdown li a {
+    font-size: 14px;
+    padding: 0.5rem 1rem;
+    text-align: left;
+    display: block;
+    width: 100%;
   }
 
   .nav-contact {

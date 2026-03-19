@@ -2,13 +2,36 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "./Navbar.css";
 
+// Icon
+import { FaLongArrowAltDown } from "react-icons/fa";
+
 // Logos
 import darkLogo from "../../Assets/whitelogo.png"; // Dark mode logo
 import lightLogo from "../../Assets/greenlogo.png"; // Light mode logo
 
+const serviceLinks = [
+  { label: "Industrial Chemical", path: "/chemical" },
+  { label: "Facilities Management", path: "/facility" },
+  { label: "Digital Solutions", path: "/it" },
+  { label: "Property & Estate Management", path: "/property" },
+];
+
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [theme, setTheme] = useState("dark");
+  const [servicesOpen, setServicesOpen] = useState(false);
+  const dropdownRef = React.useRef(null);
+
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (e) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(e.target)) {
+        setServicesOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
 
   // Load saved theme or default to dark
   useEffect(() => {
@@ -49,10 +72,31 @@ const Navbar = () => {
       <nav className={`nav-menu ${menuOpen ? "open" : ""}`}>
         <ul>
           <li><Link to="/" onClick={() => setMenuOpen(false)}>Home</Link></li>
-          <li><Link to="/services" onClick={() => setMenuOpen(false)}>Services</Link></li>
+          <li className="has-dropdown" ref={dropdownRef}>
+            <button
+              className="dropdown-toggle"
+              onClick={() => setServicesOpen(!servicesOpen)}
+            >
+              Services <span className={`dropdown-arrow ${servicesOpen ? "up" : ""}`}>< FaLongArrowAltDown className="arrow" /></span>
+            </button>
+            {servicesOpen && (
+              <ul className="dropdown open">
+                {serviceLinks.map((s) => (
+                  <li key={s.path}>
+                    <Link
+                      to={s.path}
+                      onClick={() => { setServicesOpen(false); setMenuOpen(false); }}
+                    >
+                      {s.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            )}
+          </li>
           <li><Link to="/about" onClick={() => setMenuOpen(false)}>About Us</Link></li>
           <li><Link to="/work" onClick={() => setMenuOpen(false)}>Work Done</Link></li>
-          <li><Link to="/quote" onClick={() => setMenuOpen(false)}>Get A Quote</Link></li>
+          <li><Link to="/quote" onClick={() => setMenuOpen(false)}> Brochure</Link></li>
           <li className="mobile-contact">
             <Link to="/contact" onClick={() => setMenuOpen(false)}>Contact Us</Link>
           </li>

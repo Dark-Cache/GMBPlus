@@ -67,22 +67,6 @@ const Serve = () => {
           {/* Card 1 */}
           <div
             className="market-card"
-            ref={(el) => (cardsRefs.current[0] = el)}
-          >
-            <img src={facility} alt="Facility" />
-            <h3>Facilities Management</h3>
-            <p>
-              Reliable solutions for infrastructure, facilities operations,
-              equipment support, and technology services.
-            </p>
-            <a href="/services" className="read-more">
-              READ MORE →
-            </a>
-          </div>
-
-          {/* Card 2 */}
-          <div
-            className="market-card"
             ref={(el) => (cardsRefs.current[1] = el)}
           >
             <img src={chemical} alt="Industrial Sector" />
@@ -90,23 +74,30 @@ const Serve = () => {
             <p>
               Supporting industrial operations through chemical supply,
               facilities management, and operational services.
+              Delivering reliable solutions with safety.
             </p>
+            <a href="/services" className="read-more">
+              READ MORE →
+            </a>
+          </div>
+
+          {/* Card 2 */}
+           <div
+            className="market-card"
+            ref={(el) => (cardsRefs.current[0] = el)}
+          >
+            <img src={facility} alt="Facility" />
+            <h3>Facilities Management</h3>
+            <p>
+              Reliable solutions for infrastructure, facilities operations, 
+              equipment support, and technology services, driving efficient performance.
+            </p>
+            <a href="/facility" className="read-more">
+              READ MORE →
+            </a>
           </div>
 
           {/* Card 3 */}
-          <div
-            className="market-card"
-            ref={(el) => (cardsRefs.current[2] = el)}
-          >
-            <img src={estate} alt="Property" />
-            <h3>Properties & Estates Management</h3>
-            <p>
-              Property, estate, and facilities management solutions tailored
-              to agricultural and commercial environments.
-            </p>
-          </div>
-
-          {/* Card 4 */}
           <div
             className="market-card"
             ref={(el) => (cardsRefs.current[3] = el)}
@@ -118,6 +109,26 @@ const Serve = () => {
               software and hardware, system deployment, and technical
               support services.
             </p>
+            <a href="/services" className="read-more">
+              READ MORE →
+            </a>
+          </div>
+          
+
+          {/* Card 4 */}
+          <div
+            className="market-card"
+            ref={(el) => (cardsRefs.current[2] = el)}
+          >
+            <img src={estate} alt="Property" />
+            <h3>Properties & Estates Management</h3>
+            <p>
+              Property, estate, and facilities management solutions tailored
+              to agricultural and commercial environments.
+            </p>
+            <a href="/services" className="read-more">
+              READ MORE →
+            </a>
           </div>
 
         </div>

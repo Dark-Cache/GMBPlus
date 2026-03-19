@@ -5,12 +5,13 @@ import "./Footer.css";
 
 
 import logo from "../../Assets/whitelogo.png";
+import Talk from "../../Pages/Talk/Talk";
 
 const Footer = () => {
   return (
     <footer className="site-footer">
       {/* TOP CTA */}
-      <div className="footer-cta-bar">
+      {/* <div className="footer-cta-bar">
         <h2>Connect With GBMPlus. <br ></br> 
         Your Business Solutions.</h2>
 
@@ -19,7 +20,9 @@ const Footer = () => {
           </Link>
 
 
-      </div>
+      </div> */}
+
+      <Talk />
 
       <div className="footer-divider" />
 

@@ -76,6 +76,7 @@
   grid-template-columns: 1fr 1fr;
   gap: 4rem;
   align-items: center;
+  padding: 0 1.65rem;
 }
 
 /* Text */
@@ -94,7 +95,7 @@
   margin-bottom: 2rem;
 }
 
-.about-badge {
+.abo-badge {
   display: inline-block;
   font-size: 0.9rem;
   padding: 0.4rem 0.9rem;
@@ -105,7 +106,7 @@
   margin-bottom: 1rem;
 }
 
-.about-badge-a {
+.abo-badge-a {
   display: inline-block;
   font-size: 1rem;
   padding: 0.6rem 1.4rem;
@@ -117,7 +118,7 @@
   transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
 
-.about-badge-a:hover {
+.abo-badge-a:hover {
   box-shadow: 0 0 12px rgba(41, 171, 128, 0.7),
               0 0 25px rgba(41, 171, 128, 0.4);
   transform: scale(1.05);

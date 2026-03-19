@@ -1,24 +1,27 @@
 import React from "react";
 import "./Say.css";
 
+import avatar1 from "../../Assets/Cl1.png";
+import avatar2 from "../../Assets/Cl2.png";
+
 const testimonials = [
   {
     text: "Their efficient chemical production and distribution ensured quality supply and seamless coordination.",
     name: "Jacob Williams",
     role: "Factory Worker",
-    avatar: "./Assert/Fact.jpg",
+    avatar: avatar1,
   },
   {
     text: "Their facilities management services simplified staffing, cleaning, and equipment operations.",
     name: "Sydney Reynolds",
     role: "Estate Supervisor",
-    avatar: "",
+    avatar: avatar2,
   },
   {
     text: "Their reliable software and hardware supply improved system performance and efficiency.",
     name: "Nathan Carter",
     role: "Tech CEO",
-    avatar: "/images/avatar3.jpg",
+    avatar: avatar2,
   },
 ];
 
