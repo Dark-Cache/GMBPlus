@@ -65,10 +65,12 @@
 
 .info-item h4{
   color: #4cda7e;
+  font-family: "Segoe UI", sans-serif;
 }
 
 .info-item p {
   color: white;
+  font-family: "Segoe UI", sans-serif;
 }
 
 /* RIGHT SIDE */
@@ -76,11 +78,13 @@
 .contact-right h2 {
   font-size: 38px;
   color: #4cda7e;
+  font-family: "Segoe UI", sans-serif;
 }
 
 .contact-subtitle {
   color: white;
   margin-bottom: 1.5rem;
+  font-family: "Segoe UI", sans-serif;
 }
 
 /* FORM */
@@ -97,6 +101,7 @@
   display: flex;
   flex-direction: column;
   gap: 6px;
+  font-family: "Segoe UI", sans-serif;
 }
 
 .contact-form input,
@@ -108,11 +113,13 @@
   border: 1px solid #d1d5db;
   font-size: 14px;
   outline: none;
+  font-family: "Segoe UI", sans-serif;
 }
 
 .contact-form textarea {
   min-height: 180px;
   resize: none;
+  font-family: "Segoe UI", sans-serif;
 }
 
 /* BUTTON */
@@ -127,6 +134,7 @@
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
+  font-family: "Segoe UI", sans-serif;
 }
 
 .send-btn:disabled {
@@ -154,6 +162,7 @@
   gap: 1.5rem;
   align-items: center;
   font-size: 18px;
+  font-family: "Segoe UI", sans-serif;
 }
 
 .new-message-btn {
@@ -166,6 +175,7 @@
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
+  font-family: "Segoe UI", sans-serif;
 }
 
 .new-message-btn:hover {

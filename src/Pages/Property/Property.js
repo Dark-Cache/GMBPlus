@@ -17,6 +17,13 @@ import bringimg1 from "../../Assets/Bring1.jpg";
 import { IoEyeOutline } from "react-icons/io5";
 import { TbFlag } from "react-icons/tb";
 
+
+// House icons
+import { BsHousesFill } from "react-icons/bs";
+import { BsFillHouseFill } from "react-icons/bs";
+import { GiFamilyHouse } from "react-icons/gi";
+
+
 const Pro = () => {
   return (
     <>
@@ -206,11 +213,12 @@ const Pro = () => {
           At GMBPlus, we guide families and investors toward
           premium properties backed by insight, quality, and long-term
           potential. Each home is curated to offer comfort, value and
-          confidence—ensuring your investment is built on a strong foundation.
+          confidence, ensuring your investment is built on a strong foundation.
         </p>
       </div>
 
-      <button className="where-btn">LEARN MORE</button>
+      {/* <button className="where-btn">LEARN MORE</button> */}
+      <button className="where-btn"> <BsFillHouseFill /> <BsHousesFill /> <GiFamilyHouse /> </button>
 
     </div>
 

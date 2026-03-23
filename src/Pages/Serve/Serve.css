@@ -113,6 +113,11 @@
 }
 
 @media (max-width: 600px) {
+
+  /* .market-section {
+  padding: 0px 0px;
+} */
+
   .market-grid {
     grid-template-columns: 1fr;
   }
@@ -120,4 +125,5 @@
   .market-header h2 {
     font-size: 28px;
   }
+
 }

@@ -76,7 +76,7 @@ const Serve = () => {
               facilities management, and operational services.
               Delivering reliable solutions with safety.
             </p>
-            <a href="/services" className="read-more">
+            <a href="/chemical" className="read-more">
               READ MORE →
             </a>
           </div>
@@ -103,13 +103,13 @@ const Serve = () => {
             ref={(el) => (cardsRefs.current[3] = el)}
           >
             <img src={repair} alt="IT" />
-            <h3>IT Solutions</h3>
+            <h3>Digital Solutions</h3>
             <p>
               We provide reliable IT solutions through the supply of quality
               software and hardware, system deployment, and technical
               support services.
             </p>
-            <a href="/services" className="read-more">
+            <a href="/it" className="read-more">
               READ MORE →
             </a>
           </div>
@@ -126,7 +126,7 @@ const Serve = () => {
               Property, estate, and facilities management solutions tailored
               to agricultural and commercial environments.
             </p>
-            <a href="/services" className="read-more">
+            <a href="/property" className="read-more">
               READ MORE →
             </a>
           </div>

@@ -29,11 +29,11 @@ const Home = () => {
 
             <div className="hero-buttons">
                 
-                <Link to="/quote">
+                <Link to="/contact">
                   <button className="book-call-btn">Get Brochure</button>
                 </Link>
 
-                <Link to="/visit">
+                <Link to="/contact">
                   <button className="learn-more-btn">Request a Visit</button>
                 </Link>
 

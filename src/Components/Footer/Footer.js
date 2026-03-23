@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import "./Footer.css";
 
 
-import logo from "../../Assets/whitelogo.png";
+import logo from "../../Assets/nobackwhitelogo.png";
 import Talk from "../../Pages/Talk/Talk";
 
 const Footer = () => {
@@ -43,9 +43,9 @@ const Footer = () => {
             <h4>Company</h4>
             <ul>
               <li><Link to="/">Home</Link></li>
-              <li><Link to="/services">Services</Link></li>
               <li><Link to="/about">About Us</Link></li>
               <li><Link to="/contact">Contact</Link></li>
+              <li><Link to="/work">Work Done</Link></li>
             </ul>
           </div>
 
@@ -62,11 +62,19 @@ const Footer = () => {
           <div>
             <h4>Contact</h4>
             <ul>
-              <li>Head Office</li>
-              <li>Lagos, Nigeria</li>
-              <li>info@gbmplus.com</li>
+              <h5>Head Office:</h5>
+              <li>Block 10, Suite 8, Odua International Market,
+                Ikorodu Road, Ojota, Lagos, Nigeria.
+              </li>
+              <h5>Warehouse / Depot:</h5>
+              <li> 398, Ikorodu Road, Ojota, Lagos. Nigeria.
+              </li>
+              <h5>Email:</h5>
+              <li> info@gmbplus.com <br /> gmbplusng@outlook.com</li>
             </ul>
           </div>
+
+
         </div>
       </div>
 

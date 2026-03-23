@@ -5,7 +5,7 @@
   background: #fff;
   display: flex;
   align-items: center;
-  padding: 70px 80px;
+  padding: 90px 80px;
 }
 
 .about-container {
@@ -549,13 +549,19 @@
 }
 
 .Exe-header h2 {
-  font-size: 36px;
+  font-size: 38px;
   margin-bottom: 10px;
+  font-family: "Segoe UI", sans-serif;
+}
+
+.Exe-header span{
+  color: green;
 }
 
 .Exe-header p {
   color: #666;
   max-width: 500px;
+  font-family: "Segoe UI", sans-serif;
 }
 
 /* GRID */
@@ -566,6 +572,24 @@
 }
 
 /* CARD */
+
+.Exe-card-1 img{
+  width: 100%;
+  height: 410px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.Exe-card-1 h3 {
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.Exe-card-1 p {
+  color: #777;
+  font-size: 14px;
+}
+
 .Exe-card img {
   width: 100%;
   border-radius: 5px;
@@ -599,6 +623,14 @@
   .Exe-grid {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  .Exe-card-1 img{
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
 }
 
 @media (max-width: 576px) {

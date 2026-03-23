@@ -12,12 +12,12 @@ import Footer from "./Components/Footer/Footer";
 import Home from "./Pages/Home/Home";
 import About from "./Pages/About/About";
 import Services from "./Pages/Services/Services";
-import Contact from "./Pages/Contact/Contact";
 import Chemical from "./Pages/Chemical/Chemical";
-import Digital from "./Pages/Digital/Digital";
 import Facility from "./Pages/Facility/Facility";
+import Digital from "./Pages/Digital/Digital"
 import Property from "./Pages/Property/Property"
 import Work from "./Pages/Work/Work"
+import Contact from "./Pages/Contact/Contact";
 
 
 

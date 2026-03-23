@@ -16,6 +16,7 @@ import { TbBulb } from "react-icons/tb";
 import { FaCheckCircle } from "react-icons/fa";
 
 import Journey from "../Journey/Journey"
+import SayAbout from "../SayAbout/SayAbout";
 
 
 
@@ -158,7 +159,7 @@ const About = () => {
 
           <div className="Exe-header">
             <div>
-              <h2>Crafting Excellence as a Team</h2>
+              <h2>Crafting Excellence as a <span>Team</span> </h2>
               <p>
                 Our success is built on the dedication and expertise of our team,
                 working together to deliver innovative ideas and excellence.
@@ -169,7 +170,7 @@ const About = () => {
 
           <div className="Exe-grid">
 
-            <div className="Exe-card">
+            <div className="Exe-card-1">
               <img src={team1} alt="" />
               <h3> Mr Olayinka Yusuf </h3>
               <p> Managing Director </p>
@@ -177,8 +178,8 @@ const About = () => {
 
             <div className="Exe-card">
               <img src={team2} alt="" />
-              <h3> Mr Adeola Yusuf  </h3>
-              <p> MSC GMNSE </p>
+              <h3> Mr Adeola Yusuf </h3>
+              <p> Operational Data Manager </p>
             </div>
 
             <div className="Exe-card">
@@ -197,6 +198,8 @@ const About = () => {
 
         </div>
       </section>
+
+      <SayAbout />
 
     </>
   );

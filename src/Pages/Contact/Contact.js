@@ -75,7 +75,8 @@ const Contact = () => {
               <span className="info-icon"><HiOutlineMailOpen /></span>
               <div>
                 <h4>Email</h4>
-                <p>hi@untitledui.com</p>
+                <p>info@gmbplus.com</p>
+                <p>gmbplusng@outlook.com</p>
               </div>
             </div>
 
@@ -83,7 +84,8 @@ const Contact = () => {
               <span className="info-icon"><FaPhoneAlt /></span>
               <div>
                 <h4>Phone</h4>
-                <p>+1 (555) 000-0000</p>
+                <p> +234 802 345 4074 </p>
+                <p> +234 810 370 0485 </p>
               </div>
             </div>
 
@@ -91,7 +93,7 @@ const Contact = () => {
               <span className="info-icon"><ImOffice /></span>
               <div>
                 <h4>Office</h4>
-                <p>100 Smith Street Collingwood VIC 3066 AU</p>
+                <p> Block 10, Suite 8, Odua International Market, Ikorodu Road, Ojota, Lagos, Nigeria. </p>
               </div>
             </div>
           </div>

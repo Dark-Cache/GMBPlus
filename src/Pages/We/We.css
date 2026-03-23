@@ -91,7 +91,7 @@
   font-size: 1.1rem;
   color: #475569;
   line-height: 1.7;
-  max-width: 460px;
+  max-width: 560px;
   margin-bottom: 2rem;
 }
 
@@ -156,7 +156,12 @@
 
 @media (max-width: 576px) {
   .logistics-text h2 {
-    font-size: 24px;
+    font-size: 26px;
+  }
+
+  .logistics-text p {
+    font-size: 17px;
+    max-width: 400px;
   }
 
   .clients-logos {

@@ -18,7 +18,7 @@ import service4 from "../../Assets/ExpertConst.jpg";
 import work1 from "../../Assets/Tech6.jpg";
 import work2 from "../../Assets/Cleanhero.jpg";
 import work3 from "../../Assets/Facility.jpg";
-import work4 from "../../Assets/Its.jpg";
+import work4 from "../../Assets/FinalCheck.jpg";
 
 const Facility = () => {
   return (
