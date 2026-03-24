@@ -3,8 +3,8 @@ import "./Serve.css";
 
 import chemical from "../../Assets/Chemical.jpg";
 import facility from "../../Assets/Facility.jpg";
-import estate from "../../Assets/Estatenew.png";
 import repair from "../../Assets/Why.jpg";
+import estate from "../../Assets/Nigpro.jpg";
 
 const Serve = () => {
   const headerRef = useRef(null);

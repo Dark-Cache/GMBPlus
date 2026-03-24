@@ -1,19 +1,23 @@
 import React, { useEffect, useRef } from "react";
 import "./We.css";
 
-// import oracle from "../../Assets/oracle.png";
-// import spotify from "../../Assets/spotify.png";
-// import asics from "../../Assets/asics.png";
-// import philips from "../../Assets/philips.png";
-// import qatar from "../../Assets/qatar.png";
-// import fernet from "../../Assets/fernet.png";
+import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
+
+import school from "../../Assets/NLS.png";
+import embassy from "../../Assets/IEB.png";
+import poly from "../../Assets/LSP.png";
+import model from "../../Assets/LMC.png";
+import at from "../../Assets/AT.png";
+import clinic from "../../Assets/SKC.png";
+import viva from "../../Assets/VIVA.png";
 
 import AboutImg from "../../Assets/About1.jpg";
 
 const We = () => {
   const headerRef = useRef(null);
   const textRef = useRef(null);
-  const imageRef = useRef(null); 
+  const imageRef = useRef(null);
 
   useEffect(() => {
     const elements = [headerRef.current, textRef.current, imageRef.current];
@@ -40,6 +44,22 @@ const We = () => {
     };
   }, []);
 
+  // ✅ Carousel responsiveness
+  const responsive = {
+    desktop: {
+      breakpoint: { max: 3000, min: 1024 },
+      items: 5,
+    },
+    tablet: {
+      breakpoint: { max: 1024, min: 600 },
+      items: 4,
+    },
+    mobile: {
+      breakpoint: { max: 600, min: 0 },
+      items: 3,
+    },
+  };
+
   return (
     <section className="logistics-section">
       <div className="logistics-container">
@@ -47,16 +67,29 @@ const We = () => {
         {/* Top Clients */}
         <div className="clients-header slide-up" ref={headerRef}>
           <p>
-            Over <span>35,000 Clients</span> All Over The World
+            Over <span>35,000 Clients</span> All Over The Nation
           </p>
 
           <div className="clients-logos">
-            {/* <img src={oracle} alt="Oracle" />
-            <img src={spotify} alt="Spotify" />
-            <img src={asics} alt="Asics" />
-            <img src={philips} alt="Philips" />
-            <img src={qatar} alt="Qatar Airways" />
-            <img src={fernet} alt="Fernet Branca" /> */}
+            <Carousel
+              responsive={responsive}
+              infinite={true}
+              autoPlay={true}
+              autoPlaySpeed={2000}
+              arrows={false}
+              showDots={false}
+              swipeable={true}
+              draggable={true}
+              keyBoardControl={true}
+            >
+              <img src={school} alt="School" />
+              <img src={embassy} alt="Embassy" />
+              <img src={poly} alt="Poly" />
+              <img src={model} alt="Model" />
+              <img src={at} alt="AT" />
+              <img src={clinic} alt="Clinic" />
+              <img src={viva} alt="Viva" />
+            </Carousel>
           </div>
         </div>
 

@@ -167,9 +167,19 @@
     grid-template-columns: 1fr;
   }
 
-  .digital-img img {
-    height: 220px;
+  .digital-card p{
+    font-size: 20px;
   }
+
+  .digital-card h2 {
+  font-size: 22px;
+}
+
+  .digital-img img {
+  width: 108%;
+  height: 220px;
+}
+
 }
 
 
@@ -285,7 +295,6 @@
 
 /* ================= RESPONSIVE ================= */
 
-/* <= 922px */
 @media (max-width: 922px) {
   .hire-header {
     flex-direction: column;
@@ -296,14 +305,14 @@
   }
 }
 
-/* <= 768px */
+
 @media (max-width: 768px) {
   .hire-header h2 {
     font-size: 32px;
   }
 }
 
-/* <= 576px */
+
 @media (max-width: 576px) {
   .hire {
     margin-top: 70px;
@@ -314,6 +323,126 @@
   }
 
   .hire-header h2 {
-    font-size: 26px;
+  font-size: 28px;
+  font-weight: 700;
+  color: #111;
+  max-width: 500px;
+  line-height: 2.3rem;
+}
+
+.hire-desc {
+  font-size: 15px;
+}
+
+}
+
+/* ================= REVIEW ================= */
+
+.Review {
+  margin-top: 120px;
+}
+
+.review-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 40px;
+  margin-bottom: 50px;
+}
+
+.review-header span {
+  font-size: 14px;
+  color: #888;
+}
+
+.review-header h2 {
+  font-size: 42px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.review-header p {
+  max-width: 400px;
+  font-size: 14px;
+  color: #666;
+}
+
+/* GRID */
+.review-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+/* CARD */
+.review-card {
+  background: #f9f9f9;
+  padding: 25px;
+  border-radius: 15px;
+  transition: 0.3s ease;
+}
+
+.review-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+/* STARS */
+.stars {
+  color: #7bbf6a;
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+
+/* TEXT */
+.review-text {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+/* USER */
+.review-user {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.review-user img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.review-user h4 {
+  font-size: 14px;
+  margin: 0;
+}
+
+.review-user span {
+  font-size: 12px;
+  color: #777;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 922px) {
+  .review-header {
+    flex-direction: column;
+  }
+
+  .review-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 576px) {
+  .review-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .review-header h2 {
+    font-size: 28px;
   }
 }

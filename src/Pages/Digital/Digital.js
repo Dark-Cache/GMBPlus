@@ -61,16 +61,39 @@ const services = [
     title: "Software Development",
     desc: "Custom software tailored to your unique business needs.",
   },
-  {icon: <GrHostMaintenance />,
+  {
+    icon: <GrHostMaintenance />,
     title: "IT Support & Maintenance",
     desc: "Reliable technical support to keep your systems running smoothly.",
+  },
+];
+
+const reviews = [
+  {
+    text: "The team exceeded our expectations in every way. From cloud migration to custom software, they delivered fast and secure solutions.",
+    name: "Emily Carter",
+    role: "CTO, NovaTech Solutions",
+    img: avatar1,
+  },
+  {
+    text: "We partnered with them to build our SaaS analytics platform and it was the best decision. Truly professional and reliable.",
+    name: "Rajesh Mehra",
+    role: "Founder & CEO, Finlytics",
+    img: avatar2,
+  },
+  {
+    text: "They didn’t just build us a website—they transformed our entire digital experience and improved our operations.",
+    name: "Sophia Nguyen",
+    role: "Operations Manager, BrightEdge",
+    img: avatar1,
   },
 ];
 
 const Digital = () => {
   return (
     <section className="digital">
-      {/* TOP TEXT */}
+      
+      {/* TOP */}
       <div className="digital-top">
         <div className="digital-header">
           <h1>
@@ -89,10 +112,10 @@ const Digital = () => {
         </div>
       </div>
 
-      {/* IMAGE GRID */}
+      {/* GRID */}
       <div className="digital-grid">
         <div className="digital-img">
-          <img src={hero1} alt="team" />
+          <img src={hero1} alt="" />
         </div>
 
         <div className="digital-card">
@@ -100,29 +123,25 @@ const Digital = () => {
           <h2>200k+</h2>
 
           <div className="avatars">
-            <span><img src={avatar1} alt="avatar" /></span>
-            <span><img src={avatar2} alt="avatar" /></span>
-            <span><img src={avatar1} alt="avatar" /></span>
+            <span><img src={avatar1} alt="" /></span>
+            <span><img src={avatar2} alt="" /></span>
+            <span><img src={avatar1} alt="" /></span>
             <span className="plus">+</span>
           </div>
         </div>
 
         <div className="digital-img">
-          <img src={hero2} alt="meeting" />
+          <img src={hero2} alt="" />
         </div>
       </div>
 
-      {/* ================= SERVICES SECTION ================= */}
+      {/* SERVICES */}
       <div className="hire">
         <div className="hire-header">
-          <div>
-            <h2>Comprehensive Solutions, All in One Place</h2>
-          </div>
+          <h2>Comprehensive Solutions, All in One Place</h2>
 
           <p className="hire-desc">
-            From cloud infrastructure and cybersecurity to custom software and
-            IT consulting. We deliver end-to-end technology services tailored to
-            your business needs.
+            From cloud infrastructure to cybersecurity and software development.
           </p>
         </div>
 
@@ -130,7 +149,6 @@ const Digital = () => {
           {services.map((item, index) => (
             <div className="hire-card" key={index}>
               <div className="hire-icon">{item.icon}</div>
-
               <h3>{item.title}</h3>
               <p>{item.desc}</p>
 
@@ -142,6 +160,39 @@ const Digital = () => {
           ))}
         </div>
       </div>
+
+      {/* ================= REVIEW SECTION ================= */}
+      <div className="Review">
+        <div className="review-header">
+          <div>
+            <h2>Reviews That Speak Volumes</h2>
+          </div>
+
+          <p>
+            Hear how our technology solutions have transformed operations,
+            improved efficiency, and driven growth.
+          </p>
+        </div>
+
+        <div className="review-grid">
+          {reviews.map((item, index) => (
+            <div className="review-card" key={index}>
+              <div className="stars">★★★★★</div>
+
+              <p className="review-text">"{item.text}"</p>
+
+              <div className="review-user">
+                <img src={item.img} alt="" />
+                <div>
+                  <h4>{item.name}</h4>
+                  <span>{item.role}</span>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
     </section>
   );
 };
