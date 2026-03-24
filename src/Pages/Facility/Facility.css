@@ -596,3 +596,104 @@
 
 
 }
+
+
+/* ================= FACILITY REVIEW ================= */
+
+.facility-review {
+  background: #0f172a;
+  padding: 100px 5%;
+  text-align: center;
+  color: white;
+}
+
+.facility-review-tag {
+  color: #94a3b8;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.facility-review h2 {
+  font-size: 42px;
+  font-weight: 800;
+  margin-bottom: 60px;
+}
+
+/* GRID */
+.facility-review-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+/* CARD */
+.facility-review-card {
+  background: #1e293b;
+  padding: 30px;
+  border-radius: 15px;
+  text-align: left;
+  transition: 0.3s ease;
+}
+
+.facility-review-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+/* STARS */
+.facility-stars {
+  color: #facc15;
+  margin-bottom: 15px;
+  font-size: 18px;
+}
+
+/* TEXT */
+.facility-review-card p {
+  font-size: 14px;
+  color: #cbd5f5;
+  line-height: 1.6;
+  margin-bottom: 25px;
+}
+
+/* USER */
+.facility-user {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.facility-user img {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.facility-user h4 {
+  font-size: 14px;
+  margin: 0;
+}
+
+.facility-user span {
+  font-size: 12px;
+  color: #94a3b8;
+}
+
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 922px) {
+  .facility-review-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 576px) {
+  .facility-review-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .facility-review h2 {
+    font-size: 28px;
+  }
+}

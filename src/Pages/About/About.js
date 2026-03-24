@@ -4,10 +4,9 @@ import "./About.css";
 // Images
 import aboutImg from "../../Assets/Blogs.jpg";
 import missionImg1 from "../../Assets/Deliver.jpg";
-import missionImg2 from "../../Assets/Service.jpg";
 
 // Team Images (replace with yours)
-import team1 from "../../Assets/CEO2.png";
+import team1 from "../../Assets/NewCEO.jpeg";
 import team2 from "../../Assets/Ade.jpeg";
 import team3 from "../../Assets/Red.jpeg";
 import team4 from "../../Assets/Red.jpeg";
@@ -95,7 +94,6 @@ const About = () => {
           {/* LEFT IMAGES */}
           <div className="mission-images">
             <img src={missionImg1} alt="plan" className="mission-img1" />
-            <img src={missionImg2} alt="team" className="mission-img2" />
           </div>
 
           {/* RIGHT TEXT */}
@@ -146,7 +144,6 @@ const About = () => {
     {/* RIGHT IMAGES */}
     <div className="vision-images">
       <img src={missionImg1} alt="vision1" className="vision-img1" />
-      <img src={missionImg2} alt="vision2" className="vision-img2" />
     </div>
 
      </div>
@@ -170,7 +167,7 @@ const About = () => {
 
           <div className="Exe-grid">
 
-            <div className="Exe-card-1">
+            <div className="Exe-card">
               <img src={team1} alt="" />
               <h3> Mr Olayinka Yusuf </h3>
               <p> Managing Director </p>

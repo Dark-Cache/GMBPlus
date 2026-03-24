@@ -64,7 +64,7 @@
 /* ✅ Logo styling */
 .clients-logos img {
   height: 80px;
-  opacity: 0.7;
+  opacity: 0.8;
   transition: transform 0.3s ease, opacity 0.3s ease;
 }
 

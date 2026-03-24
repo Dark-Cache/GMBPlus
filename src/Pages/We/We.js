@@ -67,7 +67,7 @@ const We = () => {
         {/* Top Clients */}
         <div className="clients-header slide-up" ref={headerRef}>
           <p>
-            Over <span>35,000 Clients</span> All Over The Nation
+            We have <span>several clients</span> all over the nation
           </p>
 
           <div className="clients-logos">

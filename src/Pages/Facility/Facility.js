@@ -20,6 +20,11 @@ import work2 from "../../Assets/Cleanhero.jpg";
 import work3 from "../../Assets/Facility.jpg";
 import work4 from "../../Assets/FinalCheck.jpg";
 
+// REVIEWS
+import review1 from "../../Assets/HC1.jpg";
+import review2 from "../../Assets/HC2.jpg";
+import review3 from "../../Assets/HC3.jpg";
+
 const Facility = () => {
   return (
     <>
@@ -252,6 +257,69 @@ const Facility = () => {
         </div>
 
       </section>
+
+      {/* ================= FACILITY REVIEW ================= */}
+<section className="facility-review">
+
+  <p className="facility-review-tag">✨ Testimonials</p>
+  <h2>What Our Clients Say</h2>
+
+  <div className="facility-review-grid">
+
+    <div className="facility-review-card">
+      <div className="facility-stars">★★★★★</div>
+
+      <p>
+        "Hands down best cleaning service we've ever used! My home has never
+        looked this immaculate. Professional, friendly, and efficient."
+      </p>
+
+      <div className="facility-user">
+        <img src={review1} alt="" />
+        <div>
+          <h4> Jide Johnson </h4>
+          <span>Happy Customer</span>
+        </div>
+      </div>
+    </div>
+
+    <div className="facility-review-card">
+      <div className="facility-stars">★★★★★</div>
+
+      <p>
+        "Our office has never felt more welcoming! The team is thorough,
+        reliable, and detail-oriented. Highly recommended!"
+      </p>
+
+      <div className="facility-user">
+        <img src={review2} alt="" />
+        <div>
+          <h4> Ayomide Bolaji </h4>
+          <span>Happy Customer</span>
+        </div>
+      </div>
+    </div>
+
+    <div className="facility-review-card">
+      <div className="facility-stars">★★★★★</div>
+
+      <p>
+        "Moving out was stressful, but this cleaning crew made it effortless.
+        Every nook and cranny was spotless."
+      </p>
+
+      <div className="facility-user">
+        <img src={review3} alt="" />
+        <div>
+          <h4>Temitope Ojo</h4>
+          <span>Happy Customer</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</section>
 
     </>
   );
