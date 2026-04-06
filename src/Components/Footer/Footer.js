@@ -54,7 +54,7 @@ const Footer = () => {
             <ul>
               <li><Link to="/chemical">Industrial Chemicals</Link></li>
               <li><Link to="/facility">Facilities Management</Link></li>
-              <li><Link to="/it">IT Solutions</Link></li>
+              <li><Link to="/digital">Digital Solutions</Link></li>
               <li><Link to="/property">Property Management</Link></li>
             </ul>
           </div>

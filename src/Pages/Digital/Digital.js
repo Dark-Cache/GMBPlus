@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Digital.css";
 
 // Import your images
@@ -70,19 +70,19 @@ const services = [
 
 const reviews = [
   {
-    text: "The team exceeded our expectations in every way. From cloud migration to custom software, they delivered fast and secure solutions.",
+    text: "This company delivers top-notch digital solutions, helping businesses streamline operations and scale efficiently with modern technology.",
     name: "Emily Carter",
     role: "CTO, NovaTech Solutions",
     img: avatar1,
   },
   {
-    text: "We partnered with them to build our SaaS analytics platform and it was the best decision. Truly professional and reliable.",
+    text: "We relied on their digital expertise to modernize our systems, and the results were outstanding. Their solutions are innovative, scalable, and tailored to business needs.",
     name: "Rajesh Mehra",
     role: "Founder & CEO, Finlytics",
     img: avatar2,
   },
   {
-    text: "They didn’t just build us a website—they transformed our entire digital experience and improved our operations.",
+    text: "From web development to automation, their digital solutions significantly improved our business processes and online presence.",
     name: "Sophia Nguyen",
     role: "Operations Manager, BrightEdge",
     img: avatar1,
@@ -90,9 +90,12 @@ const reviews = [
 ];
 
 const Digital = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedService, setSelectedService] = useState("");
+
   return (
     <section className="digital">
-      
+
       {/* TOP */}
       <div className="digital-top">
         <div className="digital-header">
@@ -120,7 +123,7 @@ const Digital = () => {
 
         <div className="digital-card">
           <p>Satisfied Customers</p>
-          <h2>200k+</h2>
+          <h2>5k+</h2>
 
           <div className="avatars">
             <span><img src={avatar1} alt="" /></span>
@@ -152,7 +155,13 @@ const Digital = () => {
               <h3>{item.title}</h3>
               <p>{item.desc}</p>
 
-              <div className="hire-read-more">
+              <div
+                className="hire-read-more"
+                onClick={() => {
+                  setIsModalOpen(true);
+                  setSelectedService(item.title);
+                }}
+              >
                 <span>+</span>
                 <p>Hire</p>
               </div>
@@ -161,8 +170,8 @@ const Digital = () => {
         </div>
       </div>
 
-      {/* ================= REVIEW SECTION ================= */}
-      <div className="Review">
+      {/* REVIEW */}
+      <div className="review">
         <div className="review-header">
           <div>
             <h2>Reviews That Speak Volumes</h2>
@@ -192,6 +201,64 @@ const Digital = () => {
           ))}
         </div>
       </div>
+
+      {/* MODAL */}
+      {isModalOpen && (
+        <div className="modal-overlay" onClick={() => setIsModalOpen(false)}>
+          <div
+            className="modal-content form-modal"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              className="modal-close"
+              onClick={() => setIsModalOpen(false)}
+            >
+              ✕
+            </button>
+
+            <h2>{selectedService}</h2>
+
+            <form className="modal-form">
+              {/* Hidden service field (for Formspree) */}
+              <input type="hidden" name="service" value={selectedService} />
+
+              <div className="form-row">
+                <div className="form-group">
+                  <label>Company Name/Full Name</label>
+                  <input type="text" placeholder="Company Name/Full Name" required />
+                </div>
+
+                {/* <div className="form-group">
+                  <label>Last Name</label>
+                  <input type="text" placeholder="Last Name" required />
+                </div> */}
+              </div>
+
+              <div className="form-group">
+                <label>Email</label>
+                <input type="email" placeholder="Enter Email.." required />
+              </div>
+
+              <div className="form-group">
+                <label>Phone Number</label>
+                <input type="text" placeholder="Enter Number.." />
+              </div>
+
+              <div className="form-group">
+                <label>Message</label>
+                <textarea
+                  placeholder="Type your message..."
+                  rows="5"
+                ></textarea>
+              </div>
+
+              <button type="submit" className="modal-submit">
+                Send Message
+              </button>
+            </form>
+          </div>
+        </div>
+      )}
 
     </section>
   );

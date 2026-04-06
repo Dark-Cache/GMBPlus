@@ -109,7 +109,7 @@ const Serve = () => {
               software and hardware, system deployment, and technical
               support services.
             </p>
-            <a href="/it" className="read-more">
+            <a href="/digital" className="read-more">
               READ MORE →
             </a>
           </div>

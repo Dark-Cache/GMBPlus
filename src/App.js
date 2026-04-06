@@ -1,6 +1,7 @@
 import React from "react";
 import "./App.css";
 
+
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import ScrollToTop from './Components/Scroll/Scroll';
@@ -36,8 +37,6 @@ function App() {
         <Route path="/services" element={<Services /> } />
         <Route path="/contact" element={<Contact />} />
         <Route path="/work" element={<Work />} />
-
-
         <Route path="/chemical" element={<Chemical />} />
         <Route path="/digital" element={<Digital />} />
         <Route path="/facility" element={<Facility />} />

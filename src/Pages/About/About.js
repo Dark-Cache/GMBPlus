@@ -5,10 +5,10 @@ import "./About.css";
 import aboutImg from "../../Assets/Blogs.jpg";
 import missionImg1 from "../../Assets/Deliver.jpg";
 
-// Team Images (replace with yours)
+// Team Images
 import team1 from "../../Assets/NewCEO.jpeg";
 import team2 from "../../Assets/Ade.jpeg";
-import team3 from "../../Assets/Red.jpeg";
+import team3 from "../../Assets/BB.jpg";
 import team4 from "../../Assets/Red.jpeg";
 
 import { TbBulb } from "react-icons/tb";
