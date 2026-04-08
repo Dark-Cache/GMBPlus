@@ -77,7 +77,7 @@ const Navbar = () => {
               className="dropdown-toggle"
               onClick={() => setServicesOpen(!servicesOpen)}
             >
-              Services <span className={`dropdown-arrow ${servicesOpen ? "up" : ""}`}>< FaLongArrowAltDown className="arrow" /></span>
+              Services <span className={`dropdown-arrow ${servicesOpen ? "up" : ""}`}>< FaLongArrowAltDown className="arr" /></span>
             </button>
             {servicesOpen && (
               <ul className="dropdown open">

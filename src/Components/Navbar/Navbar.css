@@ -150,16 +150,16 @@
   width: 100%;
 }
 
-.dropdown-arrow {
-  font-size: 18px;
+.dropdown-arr {
+  font-size: 20px;
   display: inline-block;
   transition: transform 0.3s ease;
 }
 
-.dropdown-arrow.up {
+.dropdown-arr.up {
   transform: rotate(180deg);
 }
-.arrow{
+.arr{
   padding-top: 5px;
 }
 

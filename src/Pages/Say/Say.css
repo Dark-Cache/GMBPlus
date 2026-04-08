@@ -38,7 +38,7 @@
   background: #f8fafc;
   padding: 30px;
   border-radius: 18px;
-  box-shadow: 0 12px 25px rgba(0,0,0,0.05);
+  box-shadow: 0 12px 25px rgba(255, 0, 0, 0.05);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 

@@ -33,9 +33,8 @@ const Testimonials = () => {
         {/* Header */}
         <div className="about-testimonial-header">
           <h2>Why Say Our Customers</h2>
-          <p>Our clients trust us for our reliability, attention to details, and dedication to delivering projects on time
-             and within budget. Hear from those who have experienced the quantity and professionalism that sets us apart 
-             in the industry </p>
+          <p>Our clients trust us for our reliability, attention to details, 
+            and dedication to delivering projects on time </p> 
         </div>
 
         {/* Cards */}

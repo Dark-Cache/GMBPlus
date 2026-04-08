@@ -1,13 +1,45 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Chemical.css";
 import { FaCheckCircle } from "react-icons/fa";
 
 // images (replace with your own)
 import mainImg from "../../Assets/Chemical.jpg";
-import sideImg from "../../Assets/Chemical.jpg";
-import avatar from "../../Assets/Cl1.png";
+import sideImg from "../../Assets/Chemical2.jpg";
+import labIcon from "../../Assets/researcher.gif";
+
+import busIcon from "../../Assets/deal.gif";
+
+import subImg from "../../Assets/Chemical3.jpg";
+
+// icons
+import waterIcon from "../../Assets/save-water.gif";
+import specIcon from "../../Assets/molecular-science.gif";
+import chemIcon from "../../Assets/crane.gif";
+
+// Review
+import SayChemical from "../SayChemical/SayChemical";
 
 const Chemical = () => {
+
+  const [activeCategory, setActiveCategory] = useState(null);
+  const [selectedProduct, setSelectedProduct] = useState(null);
+
+const products = {
+  construction: [
+    { name: "Concrete Admixture", desc: "Improves strength and durability." },
+    { name: "Waterproofing Chemical", desc: "Prevents water penetration." }
+  ],
+  water: [
+    { name: "Chlorine", desc: "Disinfection for water treatment." },
+    { name: "Alum", desc: "Used for water purification." },
+    { name: "pH Adjuster", desc: "Balances water acidity levels." }
+  ],
+  specialty: [
+    { name: "Surfactants", desc: "Enhances chemical reactions." },
+    { name: "Industrial Solvent", desc: "Used in manufacturing processes." }
+  ]
+};
+
   return (
     <section className="chemical">
       <div className="chemical-container">
@@ -44,8 +76,8 @@ const Chemical = () => {
           </button>
 
           <div className="chemical-clients">
-            <img src={avatar} alt="" />
-            <span>50+ Businesses Served</span>
+            <img src={busIcon} alt="" />
+            <span>10+ Businesses Served</span>
           </div>
         </div>
 
@@ -68,7 +100,7 @@ const Chemical = () => {
 
           {/* Expert Card */}
           <div className="chemical-expert">
-            <img src={avatar} alt="" />
+            <img src={labIcon} alt="" />
             <div>
               <h5>Lab Specialist</h5>
               <span>Certified Expert</span>
@@ -83,7 +115,7 @@ const Chemical = () => {
 
   {/* LEFT IMAGE */}
   <div className="chemical-about-left">
-    <img src={mainImg} alt="Industrial Plant" />
+    <img src={subImg} alt="Industrial Plant" />
   </div>
 
   {/* RIGHT CONTENT */}
@@ -119,13 +151,15 @@ const Chemical = () => {
       </div>
 
       <div>
-        <h3>+40</h3>
+        <h3>+8</h3>
         <span>Product Diversity</span>
       </div>
 
     </div>
   </div>
 </div>
+
+
 
 {/* PRODUCTS SECTION */}
 <div className="chemical-products">
@@ -136,50 +170,130 @@ const Chemical = () => {
     <div className="chemical-products-left">
       <span>A Range Of Effective Chemicals For Growth And Productivity.</span>
       <h2>Enhance Your Productivity With Our Premium Chemicals.</h2>
-      <h3> Category 1 - CONSTRUCTION CHEMICALS </h3>
     </div>
+    
 
     <div className="chemical-products-right">
-      <p>
+      {/* <p>
         Explore our diverse range of high-quality fertilizers tailored to enrich
         soil, boost crop health, and increase productivity for sustainable farming.
+      </p> */}
+      <p>
+        Explore our wide range of high-quality chemical products developed to support 
+        efficient production processes, enhance performance, and ensure consistent 
+        results across various industrial applications.
       </p>
       <button>All Products →</button>
     </div>
 
+
   </div>
 
-  {/* PRODUCT CARDS */}
-  <div className="chemical-product-grid">
+  <div className="chemical-category-header">
+      <h2>
+          Explore by <span>category</span>
+        </h2>
+  </div>
 
-    <div className="product-card">
-      <img src={require("../../Assets/Chemical.jpg")} alt="" />
-      <p>Micronized Sulfur Fertilizer</p>
+  {/* CATEGORY CARDS */}
+<div className="chemical-category">
+
+  {/* CARD 1 */}
+  <div className="chemical-card">
+    <div className="chemical-icon">
+        <img src={chemIcon} alt="icon" />
     </div>
+    <h3>Construction Chemicals</h3>
+    <p>
+      High-quality cleaning agents designed for industrial and commercial use.
+    </p>
+    <span className="arrow">→</span>
+    <button className="pro-view-btn">View Products</button>
+    <button 
+            className="pro-view-btn"
+            onClick={() => setActiveCategory("construction")}>
+            View Products
+    </button>
+  </div>
 
-    <div className="product-card">
-      <img src={require("../../Assets/Chemical.jpg")} alt="" />
-      <p>Granular Humic Acid Fertilizer</p>
+  {/* CARD 2 */}
+  <div className="chemical-card">
+    <div className="chemical-icon ">
+      <img src={waterIcon} alt="icon" />
     </div>
+    <h3>Water Treatment Chemicals</h3>
+    <p>
+      Effective solutions for water purification and treatment processes.
+    </p>
+    <span className="arrow">→</span>
+    <button 
+            className="pro-view-btn"
+            onClick={() => setActiveCategory("water")}>
+            View Products
+    </button> 
+  </div>
 
-    <div className="product-card">
-      <img src={require("../../Assets/Chemical.jpg")} alt="" />
-      <p>Organic Sulfur Fertilizer</p>
+  {/* CARD 3 */}
+  <div className="chemical-card">
+    <div className="chemical-icon">
+      <img src={specIcon} alt="icon" />
     </div>
-
-    <div className="product-card">
-      <img src={require("../../Assets/Chemical.jpg")} alt="" />
-      <p>Organic Nitrogen Phosphate</p>
-    </div>
-
-    <div className="product-card">
-      <img src={require("../../Assets/Chemical.jpg")} alt="" />
-      <p>High Nitrogen Fertilizer</p>
-    </div>
-
+    <h3>Specialty & Surfactant Chemicals</h3>
+    <p>
+      Reliable solvents for manufacturing and production efficiency.
+    </p>
+    <span className="arrow">→</span>
+    <button 
+            className="pro-view-btn"
+            onClick={() => setActiveCategory("specialty")}>
+            View Products
+    </button>
   </div>
 
 </div>
+{activeCategory && (
+  <div className="chemical-products-list">
+
+    <h2>Available Products</h2>
+
+    <div className="product-list">
+  {products[activeCategory].map((item, index) => (
+    <div 
+      key={index} 
+      className="product-item"
+      onClick={() => setSelectedProduct(item)}
+    >
+      <h4>{item.name}</h4>
+    </div>
+  ))}
+</div>
+
+
+  </div>
+)}
+ 
+</div>
+
+{selectedProduct && (
+  <div className="modal-overlay" onClick={() => setSelectedProduct(null)}>
+    
+    <div 
+      className="modal-content"
+      onClick={(e) => e.stopPropagation()}
+    >
+      <h2>{selectedProduct.name}</h2>
+      <p>{selectedProduct.desc}</p>
+
+      <button onClick={() => setSelectedProduct(null)}>
+        Close
+      </button>
+    </div>
+
+  </div>
+)}
+
+
+  <SayChemical />
 
     </section>
     
