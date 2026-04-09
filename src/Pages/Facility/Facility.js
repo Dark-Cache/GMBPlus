@@ -1,14 +1,17 @@
 import React from "react";
 import "./Facility.css";
 import { Link } from "react-router-dom";
-import {
-  FaShieldAlt,
-  FaHandsHelping,
-  FaBuilding,
-} from "react-icons/fa";
 
-import cleanHero from "../../Assets/Cleaner.png";
+// Header Image
+import firstPic from "../../Assets/Cleanman.jpg";
+import thirdPic from "../../Assets/Cleanerbend.jpg";
 
+// Icon
+import trustIcon from "../../Assets/shield.gif";
+import fistIcon from "../../Assets/fist-bump.gif";
+import proIcon from "../../Assets/protection.gif";
+
+// 
 import service1 from "../../Assets/Officeclean.jpg";
 import service2 from "../../Assets/EffHome.jpg";
 import service3 from "../../Assets/Glassclean.jpg";
@@ -29,45 +32,51 @@ const Facility = () => {
   return (
     <>
       {/* ================= HERO SECTION ================= */}
-      <section className="facility">
-        <div className="facility-content">
-          <p className="facility-tagline">
-            ✨ Spotless Spaces, Stress-Free Living
-          </p>
+<section className="facility">
 
-          <h1>
-            Bringing Shine <br />
-            & Freshness to <br />
-            Every Space
-          </h1>
+  {/* TOP CONTENT */}
+  <div className="facility-top">
 
-          <p className="facility-description">
-            Whether it’s a one-time deep clean or regular upkeep, we're here to
-            make your home feel brand new, every single visit.
-          </p>
+    <div className="facility-left">
+      <h1>
+        Spotless Spaces <br />
+        Sparkling Results
+      </h1>
+    </div>
 
-          <Link to="/contact">
-            <button className="facility-btn">
-              Book Our Cleaning Today
-            </button>
-          </Link>
+    <div className="facility-right">
+      <p>
+        We deliver professional cleaning services designed to keep your home
+        and workspace fresh, hygienic, and welcoming every day.
+      </p>
 
-          <div className="facility-rating">
-            <div className="facility-rating-text">
-              ⭐⭐⭐⭐⭐ <span>5.0</span>
-              <p>Rated Best Over 15.7k Reviews</p>
-            </div>
-          </div>
-        </div>
+      <Link to="/contact">
+        <button className="facility-btn">
+          Book Cleaning Now
+        </button>
+      </Link>
+    </div>
 
-        <div className="facility-image">
-          <img src={cleanHero} alt="Cleaning Professional" />
-        </div>
+  </div>
 
-        <div className="bubble bubble1"></div>
-        <div className="bubble bubble2"></div>
-        <div className="bubble bubble3"></div>
-      </section>
+  {/* BOTTOM CARDS */}
+  <div className="facility-cards">
+
+    <div className="facility-card-a">
+      <img src={firstPic} alt="Cleaning team" />
+    </div>
+
+    <div className="facility-card-b">
+      <img src={service2} alt="Cleaning service" />
+    </div>
+
+    <div className="facility-card-c">
+      <img src={thirdPic} alt="Cleaning service" />
+    </div>
+
+  </div>
+
+</section>
 
       {/* ================= ABOUT SECTION ================= */}
       <section className="fac-about-section">
@@ -75,65 +84,28 @@ const Facility = () => {
 
           <div className="fac-about-header">
             <div>
-              <p className="fac-about-tag">✨ About Us</p>
+              {/* <p className="fac-about-tag">✨</p> */}
               <h2>
-                At GMBPlus we believe a clean space <br />
+                We believe a clean space <br />
                 creates a happier and healthier life.
               </h2>
             </div>
-
-            <Link to="/about">
-              <button className="fac-about-btn">
-                Learn More About Us
-              </button>
-            </Link>
-          </div>
-
-          <div className="fac-about-stats">
-
-            <div className="fac-stat-box">
-              <h3>10+</h3>
-              <h4>Years of Experience</h4>
-              <p>
-                Over the years, we've earned the trust of hundreds homeowners
-                businesses by delivering consistent, high-quality.
-              </p>
-            </div>
-
-            <div className="fac-stat-box">
-              <h3>99%</h3>
-              <h4>Customer Satisfaction</h4>
-              <p>
-                Our experienced team takes pride in every job, using safe and
-                eco-friendly products to create healthier, brighter.
-              </p>
-            </div>
-
-            <div className="fac-stat-box">
-              <h3>10K+</h3>
-              <h4>Happy Clients</h4>
-              <p>
-                From on-time service to exceptional attention to details, our commitment
-                to excellence is reflected in satisfaction.
-              </p>
-            </div>
-
           </div>
 
           <div className="fac-about-cards">
 
             <div className="fac-about-card">
-              <FaShieldAlt className="fac-card-icon" />
+              <img className="fac-card-icon" src={trustIcon} alt="service" />
               <h4>Built on Trust, Powered by Service</h4>
             </div>
 
             <div className="fac-about-card">
-              <FaHandsHelping className="fac-card-icon" />
+              <img className="fac-card-icon" src={fistIcon} alt="service" />
               <h4>Making Clean Spaces Our Promise</h4>
             </div>
 
             <div className="fac-about-card">
-              <FaBuilding className="fac-card-icon" />
+              <img className="fac-card-icon" src={proIcon} alt="service" />
               <h4>Your Trusted Cleaning Experts</h4>
             </div>
 
@@ -145,48 +117,67 @@ const Facility = () => {
       {/* ================= CLEAN SERVICES SECTION ================= */}
       <section className="clean-section">
 
-        <div className="clean-header">
-          <p>✨ Our Cleaning Services</p>
-          <h2>Professional Cleaning Solutions</h2>
+  <div className="clean-header">
+    <p>✨ Our Cleaning Services</p>
+    <h2>Professional Cleaning Solutions</h2>
+  </div>
+
+  {[
+    {
+      title: "Commercial & Office Cleaning",
+      img: service1,
+      description:
+        "Keep your workspace clean, organized, and productive with our tailored office cleaning solutions designed for businesses of all sizes.",
+      tags: ["#OfficeCleaning", "#WorkplaceHygiene", "#ProductiveSpace"]
+    },
+    {
+      title: "Move-In / Move-Out Cleaning",
+      img: service2,
+      description:
+        "Enjoy a fresh start or leave a lasting impression with our detailed move-in and move-out cleaning services for a spotless transition.",
+      tags: ["#MoveInCleaning", "#MoveOutCleaning", "#FreshStart"]
+    },
+    {
+      title: "Window & Glass Cleaning",
+      img: service3,
+      description:
+        "Achieve crystal-clear views with our streak-free window and glass cleaning that removes dirt, smudges, and buildup.",
+      tags: ["#GlassCleaning", "#StreakFree", "#ClearView"]
+    },
+    {
+      title: "Post-Construction Cleaning",
+      img: service4,
+      description:
+        "We transform construction sites into clean, safe, and ready-to-use spaces by removing dust, debris, and residues.",
+      tags: ["#PostConstruction", "#DeepCleaning", "#SiteCleanup"]
+    }
+  ].map((item, index) => (
+    <div className="clean-row" key={index}>
+
+      <div className="clean-left">
+        <h3>{item.title}</h3>
+
+        <p>{item.description}</p>
+
+        <div className="clean-tags">
+          {item.tags.map((tag, i) => (
+            <span key={i}>{tag}</span>
+          ))}
         </div>
 
-        {[ 
-          {title:"Commercial & Office Cleaning",img:service1},
-          {title:"Move-In / Move-Out Cleaning",img:service2},
-          {title:"Window & Glass Cleaning",img:service3},
-          {title:"Post-Construction Cleaning",img:service4}
-        ].map((item,index)=>(
-          <div className="clean-row" key={index}>
+        <Link to="/contact">
+          <button className="clean-btn">Request</button>
+        </Link>
+      </div>
 
-            <div className="clean-left">
-              <h3>{item.title}</h3>
+      <div className="clean-image">
+        <img src={item.img} alt={item.title} />
+      </div>
 
-              <p>
-                Professional cleaning service designed to keep your
-                environment spotless, hygienic, and welcoming.
-              </p>
+    </div>
+  ))}
 
-              <div className="clean-tags">
-                <span>#OfficeCleaning</span>
-                <span>#EcoFriendlyCleaning</span>
-                <span>#QualityCleaning</span>
-                <span>#CleanLifestyle</span>
-              </div>
-
-              <Link to="/contact">
-                <button className="clean-btn">Request</button>
-              </Link>
-
-            </div>
-
-            <div className="clean-image">
-              <img src={item.img} alt="service" />
-            </div>
-
-          </div>
-        ))}
-
-      </section>
+</section>
 
       {/* ================= WORK PROCESS SECTION ================= */}
       <section className="do-section">

@@ -1,147 +1,183 @@
+/* ================= HERO SECTION ================= */
+
 .facility {
-  position: relative;
-  display: flex;
-  height: 100vh;
-  align-items: center;
-  justify-content: space-between;
   padding: 80px 5%;
-  overflow: hidden;
-  background: linear-gradient(135deg, #0f172a, #3e567c);
-  color: white;
+  background: #f9fafb;
 }
 
-.facility-content {
-  max-width: 600px;
-  z-index: 2;
+/* TOP */
+.facility-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 40px;
+  margin-bottom: 25px;
 }
 
-.facility-tagline {
-  padding-top: 50px;
-  font-size: 14px;
-  opacity: 0.9;
-  margin-bottom: 20px;
-  font-family: "Poppins", sans-serif;
-}
-
-.facility-content h1 {
-  font-size: 64px;
-  font-weight: 800;
+.facility-left h1 {
+  font-size: 54px;
+  font-weight: 900;
+  color: #111827;
   line-height: 1.1;
-  margin-bottom: 20px;
-  font-family: "Poppins", sans-serif;
 }
 
-.facility-description {
+/* RIGHT */
+.facility-right {
+  max-width: 400px;
+}
+
+.facility-right p {
+  color: #6b7280;
   font-size: 16px;
-  opacity: 0.9;
-  margin-bottom: 30px;
-  max-width: 500px;
-  font-family: "Poppins", sans-serif;
+  margin-bottom: 10px;
 }
 
 .facility-btn {
-  background: white;
-  color: #0f172a;
-  padding: 14px 28px;
+  background: #111827;
+  color: white;
+  padding: 12px 26px;
+  border-radius: 5px;
   border: none;
-  border-radius: 10px;
-  font-weight: 600;
   cursor: pointer;
-  transition: 0.3s ease;
-  font-family: "Poppins", sans-serif;
+  font-weight: 600;
 }
 
 .facility-btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  opacity: 0.9;
+  color: black;
+  background: #4cda7e;
 }
 
-.facility-rating {
-  margin-top: 30px;
+/* CARDS */
+.facility-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
 }
 
-.facility-rating-text span {
-  font-weight: bold;
-  margin-left: 5px;
+.facility-card-a {
+  border-radius: 20px;
+  overflow: hidden;
+  background: white;
 }
 
-.facility-image {
-  flex: 1;
-  max-width: 600px;
-}
-
-.facility-image img {
-  padding-top: 150px;
+.facility-card-a img {
   width: 100%;
-  border-radius: 200px;
+  height: 100%;
+  object-fit: cover;
 }
 
+.facility-card-b {
+  border-radius: 20px;
+  overflow: hidden;
+  background: white;
+}
 
-/* Bubbles */
-.bubble {
-  position: absolute;
+.facility-card-b img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.facility-card-c {
+  border-radius: 20px;
+  overflow: hidden;
+  background: white;
+}
+
+.facility-card-c img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* CENTER CARD */
+.facility-highlight {
+  background: #10b981;
+  color: white;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.facility-highlight p {
+  font-size: 16px;
+}
+
+.facility-highlight h2 {
+  font-size: 48px;
+  font-weight: 800;
+}
+
+/* AVATARS */
+.facility-avatars {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.facility-avatars span {
+  width: 35px;
+  height: 35px;
+  background: white;
+  color: #111827;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.1);
-  animation: float 6s infinite ease-in-out alternate;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
 }
 
-.bubble1 {
-  width: 150px;
-  height: 150px;
-  top: 15%;
-  left: 40%;
+.facility-avatars .plus {
+  background: black;
+  color: white;
 }
 
-.bubble2 {
-  width: 250px;
-  height: 250px;
-  bottom: -50px;
-  left: 10%;
-}
-
-.bubble3 {
-  width: 120px;
-  height: 120px;
-  top: 40%;
-  right: 20%;
-}
-
-/* @keyframes float {
-  from {
-    transform: translateY(0px);
-  }
-  to {
-    transform: translateY(-20px);
-  }
-} */
-
+/* ================= RESPONSIVE ================= */
 
 @media (max-width: 922px) {
-  .facility-image img {
-  padding-top: 0px;
-  width: 100%;
-  /* border-radius: 200px; */
-}
+  .facility-top {
+    flex-direction: column;
+  }
 
-@media(max-width:576px){
-  .facility-image img {
-    padding-top: 10px;
-    width: 100%;
-    border-radius: 200px;
+  .facility-left h1 {
+    font-size: 42px;
+  }
+
+  .facility-cards {
+    grid-template-columns: 1fr;
   }
 }
 
+@media (max-width: 576px) {
+  .facility-left h1 {
+    text-align: left;
+    font-size: 32px;
+  }
+
+  .facility-right{
+    text-align: left;
+  }
+
+  .facility-highlight h2 {
+    font-size: 36px;
+  }
+
+  .facility-card-b {
+    display: none;
+  }
+  .facility-card-c {
+    display: none;
+  }
+
 }
-
-
-
 
 /* ================= ABOUT SECTION ================= */
 
 .fac-about-section {
   background: #f3f4f6;
-  padding: 60px 5%;
-  font-family: "Segoe UI", sans-serif;
+  padding: 15px 5%;
 }
 
 .fac-about-container {
@@ -157,63 +193,10 @@
   flex-wrap: wrap;
 }
 
-.fac-about-tag {
-  font-size: 16px;
-  font-weight: 700;
-  color: #10b981;
-  font-family: "Segoe UI", sans-serif;
-  margin-bottom: 10px;
-}
-
 .fac-about-header h2 {
   font-size: 34px;
   font-weight: 800;
   color: #111827;
-  font-family: "Segoe UI", sans-serif;
-}
-
-.fac-about-btn {
-  background-color: #10b981;
-  color: white;
-  padding: 12px 22px;
-  border: none;
-  border-radius: 8px;
-  font-weight: 700;
-  cursor: pointer;
-  transition: 0.3s ease;
-}
-
-.fac-about-btn:hover {
-  opacity: 0.9;
-}
-
-/* Stats */
-.fac-about-stats {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 40px;
-  margin-bottom: 70px;
-}
-
-.fac-stat-box h3 {
-  font-size: 32px;
-  font-weight: 800;
-  color: #111827;
-  font-family: "Segoe UI", sans-serif;
-}
-
-.fac-stat-box h4 {
-  margin: 10px 0;
-  font-weight: 700;
-  color: #10b981;
-  font-family: "Segoe UI", sans-serif;
-}
-
-.fac-stat-box p {
-  font-size: 14px;
-  color: #6b7280;
-  font-weight: 500;
-  font-family: "Segoe UI", sans-serif;
 }
 
 /* Cards */
@@ -237,9 +220,10 @@
 }
 
 .fac-card-icon {
-  font-size: 30px;
-  color: #10b981;
-  margin-bottom: 15px;
+  width: 80px;
+  height: 80px;
+  border-radius: 12px;
+  margin-bottom: 0px;
 }
 
 /* RESPONSIVE */
@@ -273,7 +257,7 @@
 /* ================= CLEAN SERVICES SECTION ================= */
 
 .clean-section{
-  padding:40px 5%;
+  padding:80px 5%;
   background:#f9fafb;
 }
 
