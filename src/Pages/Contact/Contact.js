@@ -1,28 +1,23 @@
 import React, { useState } from "react";
 import "./Contact.css";
 
-import heroImg from "../../Assets/About4nobg.png";
+import heroImg from "../../Assets/contactimage.jpg";
 import { HiOutlineMailOpen } from "react-icons/hi";
 import { FaPhoneAlt } from "react-icons/fa";
 import { ImOffice } from "react-icons/im";
+import { FaWarehouse } from "react-icons/fa";
 
 const Contact = () => {
-  /* =========================
-     FORM STATE
-  ========================= */
   const [formData, setFormData] = useState({
-    name: "",
+    fullName: "",
     email: "",
     phone: "",
-    service: "",
+    subject: "",
     message: "",
   });
 
   const [submitted, setSubmitted] = useState(false);
 
-  /* =========================
-     HANDLE CHANGE
-  ========================= */
   const handleChange = (e) => {
     setFormData({
       ...formData,
@@ -30,171 +25,164 @@ const Contact = () => {
     });
   };
 
-  /* =========================
-     VALIDATION
-  ========================= */
   const isFormValid =
-    formData.name &&
+    formData.firstName &&
+    formData.lastName &&
     formData.email &&
     formData.phone &&
-    formData.service &&
+    formData.subject &&
     formData.message;
 
-  /* =========================
-     SUBMIT
-  ========================= */
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!isFormValid) return;
+
     setSubmitted(true);
+
     setFormData({
-      name: "",
+      firstName: "",
+      lastName: "",
       email: "",
       phone: "",
-      service: "",
+      subject: "",
       message: "",
     });
   };
 
-  const handleNewMessage = () => {
-    setSubmitted(false);
-  };
-
   return (
     <section className="contact-page">
-      <div className="contact-card">
 
-        {/* LEFT SIDE */}
-        <div className="contact-left">
-          <div className="contact-image">
-            <img src={heroImg} alt="Contact" />
-          </div>
+      {/* HEADER */}
+      <div className="contact-header">
+        <h1>Get in Touch with Us</h1>
+        <p>
+          Have questions about our services or looking to plan your next project?
+          We’re here to help! Reach out for inquiries, support, or consultation.
+        </p>
+      </div>
 
-          <div className="contact-info">
-            <div className="info-item">
-              <span className="info-icon"><HiOutlineMailOpen /></span>
-              <div>
-                <h4>Email</h4>
-                <p>info@gmbplus.com</p>
-                <p>gmbplusng@outlook.com</p>
-              </div>
-            </div>
+      {/* MAIN */}
+      <div className="contact-wrapper">
 
-            <div className="info-item">
-              <span className="info-icon"><FaPhoneAlt /></span>
-              <div>
-                <h4>Phone</h4>
-                <p> +234 802 345 4074 </p>
-                <p> +234 810 370 0485 </p>
-              </div>
-            </div>
-
-            <div className="info-item">
-              <span className="info-icon"><ImOffice /></span>
-              <div>
-                <h4>Office</h4>
-                <p> Block 10, Suite 8, Odua International Market, Ikorodu Road, Ojota, Lagos, Nigeria. </p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* RIGHT SIDE */}
-        <div className="contact-right">
-          <h2>Get in touch</h2>
-          <p className="contact-subtitle">
-            Our friendly team would love to hear from you.
+        {/* LEFT FORM */}
+        <div className="contact-form-card">
+          <h2>Have Questions? We're Just a Message Away!</h2>
+          <p>
+            Fill out the form below, and one of our team members will get back to you shortly.
           </p>
 
           {submitted ? (
             <div className="success-message">
-                  Thank you! Your message has been sent successfully.
-              <button onClick={handleNewMessage} className="new-message-btn">
-                New Message
+              Message sent successfully!
+              <button onClick={() => setSubmitted(false)}>
+                Send another
               </button>
             </div>
           ) : (
-            <form className="contact-form" onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit}>
 
-            <label>
-              Name
-              <input
-                type="text"
-                name="name"
-                placeholder="Name"
-                value={formData.name}
-                onChange={handleChange}
-                required
-              />
-            </label>
+              <div className="row">
+                <input
+                  type="text"
+                  name="firstName"
+                  placeholder="Full Name/Company Name"
+                  value={formData.firstName}
+                  onChange={handleChange} />
+              </div>
 
-            <label>
-              Email
               <input
                 type="email"
                 name="email"
-                placeholder="you@company.com"
+                placeholder="you@gmail.com"
                 value={formData.email}
                 onChange={handleChange}
-                required
               />
-            </label>
 
-            <label>
-              Phone number
               <input
                 type="tel"
                 name="phone"
-                placeholder="+1 (555) 000-0000"
+                placeholder="+234..."
                 value={formData.phone}
                 onChange={handleChange}
-                required
               />
-            </label>
 
-            {/* NEW SELECT OPTION */}
-            <label>
-              Service Needed
               <select
-                name="service"
-                value={formData.service}
+                name="subject"
+                value={formData.subject}
                 onChange={handleChange}
-                required
               >
-                <option value="">Select a service</option>
-                <option> Request a Visit </option>
-                <option> Order for Chemicals </option>
-                <option> Office Cleaning </option>
-                <option> Home Cleaning </option>
-                <option> Deep Cleaning </option>
-                <option> Facility Management </option>
-                <option> Staffing </option>
-                <option> Property Supervision </option>
-                <option> Rental service </option>
-                <option> Hardware/ Software supply </option>
+                <option value="">Choose message subject</option>
+                <option>Request a Visit</option>
+                <option>Order for Chemicals</option>
+                <option>Cleaning Services</option>
+                <option>Request for Staffs</option>
+                <option>Rental Services</option>
+                <option>Facility Management</option>
+                <option>Property Management</option>
               </select>
-            </label>
 
-            <label>
-              Message
               <textarea
                 name="message"
                 placeholder="Leave us a message..."
                 value={formData.message}
                 onChange={handleChange}
-                required
               />
-            </label>
 
-            <button
-              type="submit"
-              className="send-btn"
-              disabled={!isFormValid}
-            >
-              Send message
-            </button>
-          </form>
+              <button className="send-btn" disabled={!isFormValid}>
+                Send Message →
+              </button>
+
+            </form>
           )}
+        </div>
+
+        {/* RIGHT SIDE */}
+        <div className="contact-right">
+
+          {/* TOP CARD */}
+          <div className="contact-hero">
+            <img src={heroImg} alt="support" />
+            <div className="overlay-text">
+              Our experts will always help you
+            </div>
+          </div>
+
+          {/* INFO CARDS */}
+          <div className="info-card">
+            <HiOutlineMailOpen />
+            <div>
+              <h4>Email</h4>
+              <p>info@gmbplus.com</p>
+              <p>gmbplusng@outlook.com</p>
+            </div>
+          </div>
+
+          <div className="info-card">
+            <FaPhoneAlt />
+            <div>
+              <h4>Call</h4>
+              <p>+234 802 345 4074</p>
+              <p> +234 810 370 0485 </p>
+            </div>
+          </div>
+
+          <div className="info-card">
+            <ImOffice />
+            <div>
+              <h4>Address</h4>
+              <p> Block 10, Suite 8, Odua International Market, 
+                <br /> Ikorodu Road, Ojota, Lagos, Nigeria. </p>
+            </div>
+          </div>
+
+          <div className="info-card">
+            <FaWarehouse />
+            <div>
+              <h4>Warehouse / Depot</h4>
+              <p>398, Ikorodu Road, Ojota, Lagos. Nigeria.</p>
+            </div>
+          </div>
+
         </div>
 
       </div>

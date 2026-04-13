@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./Digital.css";
 
 // Import your images
@@ -10,59 +10,60 @@ import avatar1 from "../../Assets/Cl1.png";
 import avatar2 from "../../Assets/Cl2.png";
 
 // icon
-import { MdCloudySnowing } from "react-icons/md";
-import { FaTableColumns } from "react-icons/fa6";
-import { FaCode } from "react-icons/fa";
-import { MdAppShortcut } from "react-icons/md";
-import { FiGift } from "react-icons/fi";
-import { MdCloudSync } from "react-icons/md";
-import { MdOutlineSettingsSuggest } from "react-icons/md";
-import { GrCloudSoftware } from "react-icons/gr";
-import { GrHostMaintenance } from "react-icons/gr";
+import itIcon from "../../Assets/laptop.gif"
+import dataIcon from "../../Assets/analysis.gif"
+import cloudIcon from "../../Assets/cloud.gif"
+import uiIcon from "../../Assets/responsive-design.gif"
+import supportIcon from "../../Assets/repair.gif"
+import mobileIcon from "../../Assets/mobile-phone.gif"
+import cyberIcon from "../../Assets/data-safety.gif"
+import webIcon from "../../Assets/responsive.gif"
+import softIcon from "../../Assets/software.gif"
+
 
 const services = [
   {
-    icon: <MdCloudySnowing />,
+    icon: <img src={itIcon} alt="icon" className="cus-icon" />,
     title: "IT Consulting Services",
     desc: "Proper guidance to align your technology stack with long-term business objectives.",
   },
   {
-    icon: <FaTableColumns />,
+    icon: <img src={dataIcon} alt="icon" className="cus-icon" />,
     title: "Data Analytics Solutions",
     desc: "Transform raw data into actionable insights that drive smarter decisions.",
   },
   {
-    icon: <FaCode />,
+    icon: <img src={webIcon} alt="icon" className="cus-icon" />,
     title: "Website Development Service",
     desc: "Responsive, user-centric websites built with modern technologies.",
   },
   {
-    icon: <MdAppShortcut />,
+    icon: <img src={mobileIcon} alt="icon" className="cus-icon" />,
     title: "Mobile App Development",
     desc: "High-performance mobile applications for Android and iOS platforms.",
   },
   {
-    icon: <FiGift />,
+    icon: <img src={uiIcon} alt="icon" className="cus-icon" />,
     title: "UI/UX Design",
     desc: "Designing intuitive interfaces and seamless user experiences.",
   },
   {
-    icon: <MdCloudSync />,
+    icon: <img src={cloudIcon} alt="icon" className="cus-icon" />,
     title: "Cloud Solutions",
     desc: "Scalable cloud infrastructure to optimize performance and cost.",
   },
   {
-    icon: <MdOutlineSettingsSuggest />,
+    icon: <img src={cyberIcon} alt="icon" className="cus-icon" />,
     title: "Cybersecurity Services",
     desc: "Protect your systems and data with advanced security solutions.",
   },
   {
-    icon: <GrCloudSoftware />,
+    icon: <img src={softIcon} alt="icon" className="cus-icon" />,
     title: "Software Development",
     desc: "Custom software tailored to your unique business needs.",
   },
   {
-    icon: <GrHostMaintenance />,
+    icon: <img src={supportIcon} alt="icon" className="cus-icon" />,
     title: "IT Support & Maintenance",
     desc: "Reliable technical support to keep your systems running smoothly.",
   },
@@ -71,19 +72,19 @@ const services = [
 const reviews = [
   {
     text: "This company delivers top-notch digital solutions, helping businesses streamline operations and scale efficiently with modern technology.",
-    name: "Emily Carter",
+    name: "Joy Olajide",
     role: "CTO, NovaTech Solutions",
     img: avatar1,
   },
   {
     text: "We relied on their digital expertise to modernize our systems, and the results were outstanding. Their solutions are innovative, scalable, and tailored to business needs.",
-    name: "Rajesh Mehra",
+    name: "Emmanuel Okoro",
     role: "Founder & CEO, Finlytics",
     img: avatar2,
   },
   {
     text: "From web development to automation, their digital solutions significantly improved our business processes and online presence.",
-    name: "Sophia Nguyen",
+    name: "Sofia Adeoye",
     role: "Operations Manager, BrightEdge",
     img: avatar1,
   },
@@ -92,6 +93,24 @@ const reviews = [
 const Digital = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedService, setSelectedService] = useState("");
+
+  useEffect(() => {
+  if (isModalOpen) {
+    const scrollBarWidth =
+      window.innerWidth - document.documentElement.clientWidth;
+
+    document.body.style.overflow = "hidden";
+    document.body.style.paddingRight = `${scrollBarWidth}px`;
+  } else {
+    document.body.style.overflow = "auto";
+    document.body.style.paddingRight = "0px";
+  }
+
+  return () => {
+    document.body.style.overflow = "auto";
+    document.body.style.paddingRight = "0px";
+  };
+}, [isModalOpen]);
 
   return (
     <section className="digital">
@@ -203,62 +222,64 @@ const Digital = () => {
       </div>
 
       {/* MODAL */}
-      {isModalOpen && (
-        <div className="modal-overlay" onClick={() => setIsModalOpen(false)}>
-          <div
-            className="modal-content form-modal"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <button
-              className="modal-close"
-              onClick={() => setIsModalOpen(false)}
-            >
-              ✕
-            </button>
+{isModalOpen && (
+  <div
+    className="digital-modal-overlay"
+    onClick={() => setIsModalOpen(false)}
+  >
+    <div
+      className="digital-modal-content digital-form-modal"
+      onClick={(e) => e.stopPropagation()}
+    >
+      <button
+        className="digital-modal-close"
+        onClick={() => setIsModalOpen(false)}
+      >
+        ✕
+      </button>
 
-            <h2>{selectedService}</h2>
+      <h2>{selectedService}</h2>
 
-            <form className="modal-form">
-              {/* Hidden service field (for Formspree) */}
-              <input type="hidden" name="service" value={selectedService} />
+      <form className="digital-modal-form">
+        {/* Hidden service field */}
+        <input type="hidden" name="service" value={selectedService} />
 
-              <div className="form-row">
-                <div className="form-group">
-                  <label>Company Name/Full Name</label>
-                  <input type="text" placeholder="Company Name/Full Name" required />
-                </div>
-
-                {/* <div className="form-group">
-                  <label>Last Name</label>
-                  <input type="text" placeholder="Last Name" required />
-                </div> */}
-              </div>
-
-              <div className="form-group">
-                <label>Email</label>
-                <input type="email" placeholder="Enter Email.." required />
-              </div>
-
-              <div className="form-group">
-                <label>Phone Number</label>
-                <input type="text" placeholder="Enter Number.." />
-              </div>
-
-              <div className="form-group">
-                <label>Message</label>
-                <textarea
-                  placeholder="Type your message..."
-                  rows="5"
-                ></textarea>
-              </div>
-
-              <button type="submit" className="modal-submit">
-                Send Message
-              </button>
-            </form>
+        <div className="digital-form-row">
+          <div className="digital-form-group">
+            <label>Company Name/Full Name</label>
+            <input
+              type="text"
+              placeholder="Company Name/Full Name"
+              required
+            />
           </div>
         </div>
-      )}
+
+        <div className="digital-form-group">
+          <label>Email</label>
+          <input type="email" placeholder="Enter Email.." required />
+        </div>
+
+        <div className="digital-form-group">
+          <label>Phone Number</label>
+          <input type="text" placeholder="Enter Number.." />
+        </div>
+
+        <div className="digital-form-group">
+          <label>Message</label>
+          <textarea
+            placeholder="Type your message..."
+            rows="5"
+          ></textarea>
+        </div>
+
+        <button type="submit" className="digital-modal-submit">
+          Send Message
+        </button>
+      </form>
+    </div>
+  </div>
+)}
 
     </section>
   );

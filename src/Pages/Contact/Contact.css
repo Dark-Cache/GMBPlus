@@ -1,203 +1,201 @@
-/* ===============================
-   PAGE BACKGROUND
-================================ */
-
+/* PAGE */
 .contact-page {
-  min-height: 100vh;
-  background: #0f172a;
-  padding: 2rem 0rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  background: #f8fafc;
+  padding: 5.5rem 2rem;
+  font-family: "Segoe UI", sans-serif;
 }
 
-/* ===============================
-   MAIN CARD
-================================ */
+/* HEADER */
+.contact-header {
+  text-align: center;
+  max-width: 700px;
+  margin: auto;
+  margin-bottom: 3rem;
+}
 
-.contact-card {
-  background: #0f172a;
-  border-radius: 20px;
+.contact-header h1 {
+  font-size: 48px;
+  color: #1f7a3a;
+  margin-bottom: 10px;
+}
+
+.contact-header p {
+  color: #6b7280;
+  font-size: 14px;
+}
+
+/* WRAPPER */
+.contact-wrapper {
   max-width: 1100px;
-  width: 100%;
-  padding: 2.5rem;
+  margin: auto;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 3rem;
-  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
+  gap: 2rem;
 }
 
-/* LEFT SIDE */
-
-.contact-image {
-  border-radius: 14px;
-  overflow: hidden;
+/* FORM CARD */
+.contact-form-card {
+  background: #ffffff;
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
 }
 
-.contact-image img {
-  width: 100%;
-  border-radius: 14px;
+.contact-form-card h2 {
+  font-size: 22px;
+  margin-bottom: 10px;
 }
 
-/* INFO */
+.contact-form-card p {
+  font-size: 13px;
+  color: #6b7280;
+  margin-bottom: 1.5rem;
+}
 
-.contact-info {
-  margin-top: 2rem;
+/* FORM */
+form {
   display: flex;
   flex-direction: column;
-  gap: 1.2rem;
+  gap: 1rem;
 }
 
-.info-item {
+.row {
   display: flex;
   gap: 1rem;
 }
 
-.info-icon {
-  color: white;
-  width: 40px;
-  height: 40px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 24px;
-}
-
-.info-item h4{
-  color: #4cda7e;
-  font-family: "Segoe UI", sans-serif;
-}
-
-.info-item p {
-  color: white;
-  font-family: "Segoe UI", sans-serif;
-}
-
-/* RIGHT SIDE */
-
-.contact-right h2 {
-  font-size: 38px;
-  color: #4cda7e;
-  font-family: "Segoe UI", sans-serif;
-}
-
-.contact-subtitle {
-  color: white;
-  margin-bottom: 1.5rem;
-  font-family: "Segoe UI", sans-serif;
-}
-
-/* FORM */
-
-.contact-form {
-  display: flex;
-  flex-direction: column;
-  gap: 1.2rem;
-}
-
-.contact-form label {
-  color: white;
-  font-size: 14px;
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-  font-family: "Segoe UI", sans-serif;
-}
-
-.contact-form input,
-.contact-form textarea,
-.contact-form select {
-  padding: 12px 14px;
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 12px;
   border-radius: 8px;
-  color: black;
-  border: 1px solid #d1d5db;
+  border: 1px solid #e5e7eb;
   font-size: 14px;
   outline: none;
-  font-family: "Segoe UI", sans-serif;
 }
 
-.contact-form textarea {
-  min-height: 180px;
-  resize: none;
-  font-family: "Segoe UI", sans-serif;
+textarea {
+  min-height: 120px;
 }
 
 /* BUTTON */
-
 .send-btn {
-  background: #4cda7e;
+  background: #1f7a3a;
   color: white;
+  padding: 12px;
+  border-radius: 30px;
   border: none;
-  padding: 14px;
-  border-radius: 10px;
-  font-size: 15px;
-  font-weight: 600;
   cursor: pointer;
-  transition: all 0.3s ease;
-  font-family: "Segoe UI", sans-serif;
+  margin-top: 10px;
+}
+
+.send-btn:hover {
+  background: #0f172a;
 }
 
 .send-btn:disabled {
   opacity: 0.5;
-  cursor: not-allowed;
 }
 
-.send-btn:hover:not(:disabled) {
-  background: #22c55e;
-  transform: translateY(-2px);
-}
-
-/* SUCCESS MESSAGE */
-
-.success-message {
-  background: linear-gradient(135deg, #5bc27f, #56d283);
-  color: white;
-  padding: 2rem;
-  border-radius: 10px;
-  font-weight: 500;
-  text-align: center;
-  animation: popIn 0.6s ease;
+/* RIGHT SIDE */
+.contact-right {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
-  align-items: center;
-  font-size: 18px;
-  font-family: "Segoe UI", sans-serif;
+  gap: 1rem;
 }
 
-.new-message-btn {
-  background: white;
-  color: #22c55e;
-  border: none;
-  padding: 12px 24px;
-  border-radius: 8px;
-  font-size: 15px;
+/* HERO CARD */
+.contact-hero {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+/* .contact-hero img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+} */
+
+.contact-hero img {
+  width: 100%;
+  height: 220px; /* slightly bigger like design */
+  object-fit: cover;
+  display: block;
+}
+
+.contact-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  /* 🔥 main teal overlay */
+  background: rgba(15, 118, 110, 0.85);
+
+  /* 🔥 pattern overlay */
+  background-image: url("../../Assets/HC2.jpg");
+
+  background-blend-mode: overlay;
+  opacity: 0.9;
+
+  z-index: 1;
+}
+
+.overlay-text {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  color: white;
+  font-size: 26px;
   font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  font-family: "Segoe UI", sans-serif;
+  z-index: 2;
+  max-width: 250px;
+  line-height: 1.3;
 }
 
-.new-message-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+/* INFO CARDS */
+.info-card {
+  background: #e6f4f1;
+  padding: 1rem;
+  border-radius: 12px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
 }
 
-@keyframes popIn {
-  from {
-    opacity: 0;
-    transform: translateY(-10px) scale(0.95);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
+.info-card svg {
+  font-size: 20px;
+  color: #1f7a3a;
+}
+
+.info-card h4 {
+  font-size: 14px;
+  margin-bottom: 2px;
+}
+
+.info-card p {
+  font-size: 13px;
+  color: #374151;
+}
+
+/* SUCCESS */
+.success-message {
+  text-align: center;
+  padding: 2rem;
+}
+
+.success-message button {
+  margin-top: 1rem;
 }
 
 /* RESPONSIVE */
-
-@media (max-width: 922px) {
-  .contact-card {
+@media (max-width: 900px) {
+  .contact-wrapper {
     grid-template-columns: 1fr;
+  }
+
+  .row {
+    flex-direction: column;
   }
 }

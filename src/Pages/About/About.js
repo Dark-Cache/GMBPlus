@@ -5,6 +5,8 @@ import "./About.css";
 import aboutImg from "../../Assets/Blogs.jpg";
 import missionImg1 from "../../Assets/Deliver.jpg";
 
+// import missionImg1 from "../../Assets/Mission2.jpg";
+
 // Team Images
 import team1 from "../../Assets/NewCEO.jpeg";
 import team2 from "../../Assets/Ade.jpeg";

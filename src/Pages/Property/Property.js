@@ -27,52 +27,70 @@ import { GiFamilyHouse } from "react-icons/gi";
 const Pro = () => {
   return (
     <>
+
       {/* HERO SECTION */}
-      <section className="pro">
-        <div className="pro-overlay"></div>
 
-        <div className="pro-container">
+      {/* HERO SECTION (NEW DESIGN) */}
+<section className="pro">
+  <div className="pro-container">
 
-          <div className="pro-left">
-            <span className="pro-tag">🏠 BUILT TO INSPIRE</span>
+    {/* TOP TEXT */}
+    <div className="pro-header">
+      <h1>
+        Elevate Your Property Experience, <br />
+        Simplify Estate Management
+      </h1>
 
-            <h1>
-              Your real state <br />
-              journey starts here
-            </h1>
+      <p>
+        Discover a seamless world of property management services,
+        smart investments, and secure real estate transactions —
+        all in one place.
+      </p>
+    </div>
 
-            <p>
-              Discover properties that match your lifestyle from city condos
-              to suburban homes, we've got you covered.
-            </p>
+    {/* FEATURES */}
+    <div className="pro-features">
 
-            <button className="pro-btn">
-              Get Started
-              <span className="pro-arrow">↗</span>
-            </button>
-          </div>
+      <div className="pro-feature-card">
+        <h4>Custom Property Solutions</h4>
+        <img src={img1} alt="property" />
+        <p>
+          Tailored real estate services designed to match your lifestyle,
+          whether you're buying, renting, or investing.
+        </p>
+      </div>
 
-          <div className="pro-right">
+      <div className="pro-feature-card">
+        <h4>Secure Transactions</h4>
+        <img src={img2} alt="property" />
+        <p>
+          We ensure safe and transparent property deals with verified
+          listings and trusted legal processes.
+        </p>
+      </div>
 
-            <div className="pro-stat stat-one">
-              <h3>50+</h3>
-              <p>Project complete</p>
-            </div>
+      <div className="pro-feature-card">
+        <h4>Smart Property Management</h4>
+        <img src={img3} alt="property" />
+        <p>
+          Manage tenants, rent collection, and maintenance efficiently
+          with our expert-driven solutions.
+        </p>
+      </div>
 
-            <div className="pro-stat stat-two">
-              <h3>$3.5M</h3>
-              <p>Project value</p>
-            </div>
+      <div className="pro-feature-card">
+        <h4>Seamless Communication</h4>
+        <img src={img4} alt="property" />
+        <p>
+          Stay connected with agents, buyers, and tenants through a
+          smooth and responsive communication system.
+        </p>
+      </div>
 
-            <div className="pro-stat stat-three">
-              <h3>100+</h3>
-              <p>Expert teams</p>
-            </div>
+    </div>
 
-          </div>
-
-        </div>
-      </section>
+  </div>
+</section>
 
 
       {/* WHO WE ARE SECTION */}

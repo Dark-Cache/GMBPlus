@@ -1,3 +1,7 @@
+/* body {
+  overscroll-behavior: none;
+} */
+
 .digital {
   padding: 80px 8%;
   /* background: white; */
@@ -173,6 +177,10 @@
     font-size: 28px;
   }
 
+  .digital-card {
+  width: 100%;
+  }
+
   .digital-grid {
     grid-template-columns: 1fr;
   }
@@ -293,8 +301,8 @@
 }
 
 .hire-read-more span {
-  width: 30px;
-  height: 30px;
+  width: 35px;
+  height: 35px;
   background: #111;
   color: #fff;
   border-radius: 50%;
@@ -302,6 +310,13 @@
   align-items: center;
   justify-content: center;
 }
+
+.hire-read-more p {
+  font-size: 16px;
+  color: #111;
+  font-weight: 600;
+}
+
 
 /* ================= RESPONSIVE ================= */
 
@@ -466,10 +481,11 @@
   }
 }
 
+
 /* ================= MODAL OVERLAY ================= */
 
-.modal-overlay {
-  position: fixed; /* 🔥 makes it sit above everything */
+.digital-modal-overlay {
+  position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
@@ -480,24 +496,22 @@
   justify-content: center;
 
   background: rgba(0, 0, 0, 0.6);
-  /* backdrop-filter: blur(5px); */
-
   z-index: 9999;
 }
 
 /* ================= MODAL CONTENT ================= */
 
-.modal-content {
+.digital-modal-content {
   position: relative;
   z-index: 10000;
 
   width: 90%;
   max-width: 600px;
 
-  animation: modalFade 0.3s ease;
+  animation: digitalModalFade 0.3s ease;
 }
 
-@keyframes modalFade {
+@keyframes digitalModalFade {
   from {
     transform: scale(0.9) translateY(20px);
     opacity: 0;
@@ -510,13 +524,13 @@
 
 /* ================= FORM MODAL ================= */
 
-.form-modal {
+.digital-form-modal {
   background: #f2f2f2;
   padding: 30px;
   border-radius: 20px;
 }
 
-.form-modal h2 {
+.digital-form-modal h2 {
   margin-bottom: 20px;
   font-size: 22px;
   color: #111;
@@ -524,33 +538,33 @@
 
 /* ================= FORM ================= */
 
-.modal-form {
+.digital-modal-form {
   display: flex;
   flex-direction: column;
   gap: 18px;
 }
 
 /* ROW */
-.form-row {
+.digital-form-row {
   display: flex;
   gap: 20px;
 }
 
-.form-group {
+.digital-form-group {
   display: flex;
   flex-direction: column;
   width: 100%;
 }
 
-.form-group label {
+.digital-form-group label {
   font-size: 14px;
   margin-bottom: 6px;
   color: #333;
 }
 
 /* INPUTS */
-.form-group input,
-.form-group textarea {
+.digital-form-group input,
+.digital-form-group textarea {
   padding: 12px;
   border-radius: 10px;
   border: 1px solid #ddd;
@@ -560,20 +574,20 @@
   transition: 0.2s;
 }
 
-.form-group input:focus,
-.form-group textarea:focus {
+.digital-form-group input:focus,
+.digital-form-group textarea:focus {
   border-color: #8b5cf6;
   box-shadow: 0 0 0 2px rgba(139, 92, 246, 0.15);
 }
 
-.form-group input::placeholder,
-.form-group textarea::placeholder {
+.digital-form-group input::placeholder,
+.digital-form-group textarea::placeholder {
   color: #aaa;
 }
 
 /* ================= BUTTON ================= */
 
-.modal-submit {
+.digital-modal-submit {
   margin-top: 10px;
   padding: 14px;
   border: none;
@@ -587,14 +601,14 @@
   transition: 0.3s;
 }
 
-.modal-submit:hover {
+.digital-modal-submit:hover {
   transform: translateY(-2px);
   box-shadow: 0 10px 20px rgba(138, 92, 246, 0.4);
 }
 
 /* ================= CLOSE BUTTON ================= */
 
-.modal-close {
+.digital-modal-close {
   position: absolute;
   top: 15px;
   right: 20px;
@@ -608,11 +622,11 @@
 /* ================= RESPONSIVE ================= */
 
 @media (max-width: 576px) {
-  .form-row {
+  .digital-form-row {
     flex-direction: column;
   }
 
-  .form-modal {
+  .digital-form-modal {
     padding: 20px;
   }
 }

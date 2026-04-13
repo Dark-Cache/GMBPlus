@@ -6,10 +6,11 @@ import { FaCheckCircle } from "react-icons/fa";
 import mainImg from "../../Assets/Chemical.jpg";
 import sideImg from "../../Assets/Chemical2.jpg";
 import labIcon from "../../Assets/researcher.gif";
-
 import busIcon from "../../Assets/deal.gif";
-
 import subImg from "../../Assets/Chemical3.jpg";
+
+//PDF
+import catalogPDF from "../../Pdf/GMB PLUS GLOBAL CONCEPT LTD— COMPANY PROFILE 2026.pdf";
 
 // icons
 import waterIcon from "../../Assets/save-water.gif";
@@ -21,24 +22,7 @@ import SayChemical from "../SayChemical/SayChemical";
 
 const Chemical = () => {
 
-  const [activeCategory, setActiveCategory] = useState(null);
-  const [selectedProduct, setSelectedProduct] = useState(null);
-
-const products = {
-  construction: [
-    { name: "Concrete Admixture", desc: "Improves strength and durability." },
-    { name: "Waterproofing Chemical", desc: "Prevents water penetration." }
-  ],
-  water: [
-    { name: "Chlorine", desc: "Disinfection for water treatment." },
-    { name: "Alum", desc: "Used for water purification." },
-    { name: "pH Adjuster", desc: "Balances water acidity levels." }
-  ],
-  specialty: [
-    { name: "Surfactants", desc: "Enhances chemical reactions." },
-    { name: "Industrial Solvent", desc: "Used in manufacturing processes." }
-  ]
-};
+  const [showPDF, setShowPDF] = useState(false);
 
   return (
     <section className="chemical">
@@ -183,7 +167,9 @@ const products = {
         efficient production processes, enhance performance, and ensure consistent 
         results across various industrial applications.
       </p>
-      <button>All Products →</button>
+      <button onClick={() => setShowPDF(true)}>
+            View Product Catalog
+      </button>
     </div>
 
 
@@ -209,9 +195,7 @@ const products = {
     </p>
     <span className="arrow">→</span>
     <button className="pro-view-btn">View Products</button>
-    <button 
-            className="pro-view-btn"
-            onClick={() => setActiveCategory("construction")}>
+    <button className="pro-view-btn">
             View Products
     </button>
   </div>
@@ -226,9 +210,7 @@ const products = {
       Effective solutions for water purification and treatment processes.
     </p>
     <span className="arrow">→</span>
-    <button 
-            className="pro-view-btn"
-            onClick={() => setActiveCategory("water")}>
+    <button className="pro-view-btn">
             View Products
     </button> 
   </div>
@@ -243,59 +225,36 @@ const products = {
       Reliable solvents for manufacturing and production efficiency.
     </p>
     <span className="arrow">→</span>
-    <button 
-            className="pro-view-btn"
-            onClick={() => setActiveCategory("specialty")}>
+    <button className="pro-view-btn">
             View Products
     </button>
   </div>
 
 </div>
-{activeCategory && (
-  <div className="chemical-products-list">
-
-    <h2>Available Products</h2>
-
-    <div className="product-list">
-  {products[activeCategory].map((item, index) => (
-    <div 
-      key={index} 
-      className="product-item"
-      onClick={() => setSelectedProduct(item)}
-    >
-      <h4>{item.name}</h4>
-    </div>
-  ))}
 </div>
+        {showPDF && (
+  <div className="pdf-overlay">
 
+    <div className="pdf-modal">
 
+      <div className="pdf-header">
+        <h3>Product Catalog</h3>
+        <button onClick={() => setShowPDF(false)}>✖</button>
+      </div>
+
+      <iframe
+        src={catalogPDF}
+        title="Product Catalog"
+        className="pdf-frame"
+      ></iframe>
+    </div>
   </div>
 )}
- 
-</div>
-
-{selectedProduct && (
-  <div className="modal-overlay" onClick={() => setSelectedProduct(null)}>
-    
-    <div 
-      className="modal-content"
-      onClick={(e) => e.stopPropagation()}
-    >
-      <h2>{selectedProduct.name}</h2>
-      <p>{selectedProduct.desc}</p>
-
-      <button onClick={() => setSelectedProduct(null)}>
-        Close
-      </button>
-    </div>
-
-  </div>
-)}
-
 
   <SayChemical />
 
     </section>
+    
     
   );
 };
