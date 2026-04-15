@@ -10,73 +10,82 @@ import avatar1 from "../../Assets/Cl1.png";
 import avatar2 from "../../Assets/Cl2.png";
 
 // icon
-import itIcon from "../../Assets/laptop.gif"
-import dataIcon from "../../Assets/analysis.gif"
-import cloudIcon from "../../Assets/cloud.gif"
-import uiIcon from "../../Assets/responsive-design.gif"
-import supportIcon from "../../Assets/repair.gif"
-import mobileIcon from "../../Assets/mobile-phone.gif"
-import cyberIcon from "../../Assets/data-safety.gif"
+import fullIcon from "../../Assets/briefcase.gif"
+import payIcon from "../../Assets/subscribe.gif"
+import scaleIcon from "../../Assets/balance.gif"
+
+
+// icon
+import contentIcon from "../../Assets/writing.gif"
+import logoIcon from "../../Assets/logo-design.gif"
+import socialIcon from "../../Assets/social-marketing.gif"
 import webIcon from "../../Assets/responsive.gif"
 import softIcon from "../../Assets/software.gif"
+import hardIcon from "../../Assets/broken-monitor.gif"
+import uiIcon from "../../Assets/responsive-design.gif"
+import mobileIcon from "../../Assets/mobile-phone.gif"
+import dataIcon from "../../Assets/analysis.gif"
+import itIcon from "../../Assets/laptop.gif"
+import supportIcon from "../../Assets/repair.gif"
+
 
 
 const services = [
   {
-    icon: <img src={cloudIcon} alt="icon" className="cus-icon" />,
-    title: "Content Creation",
-    desc: "Scalable cloud infrastructure to optimize performance and cost.",
-  },
-  {
-    icon: <img src={cyberIcon} alt="icon" className="cus-icon" />,
-    title: "Graphic Design",
-    desc: "Protect your systems and data with advanced security solutions.",
-  },
-  {
-    icon: <img src={cyberIcon} alt="icon" className="cus-icon" />,
-    title: "Social Media Marketing",
-    desc: "Protect your systems and data with advanced security solutions.",
-  },
-  {
-    icon: <img src={webIcon} alt="icon" className="cus-icon" />,
-    title: "Web Development",
-    desc: "Responsive, user-centric websites built with modern technologies.",
-  },
-   {
-    icon: <img src={softIcon} alt="icon" className="cus-icon" />,
-    title: "Software Solutions",
-    desc: "Custom software tailored to your unique business needs.",
-  },
-   {
-    icon: <img src={softIcon} alt="icon" className="cus-icon" />,
-    title: "Hardware Solutions",
-    desc: "Custom software tailored to your unique business needs.",
-  },
-  {
-    icon: <img src={itIcon} alt="icon" className="cus-icon" />,
-    title: "IT Consulting Services",
-    desc: "Proper guidance to align your technology stack with long-term business objectives.",
-  },
-  {
-    icon: <img src={dataIcon} alt="icon" className="cus-icon" />,
-    title: "Data Analytics Solutions",
-    desc: "Transform raw data into actionable insights that drive smarter decisions.",
-  },
-  {
-    icon: <img src={mobileIcon} alt="icon" className="cus-icon" />,
-    title: "Mobile App Development",
-    desc: "High-performance mobile applications for Android and iOS platforms.",
-  },
-  {
-    icon: <img src={uiIcon} alt="icon" className="cus-icon" />,
-    title: "UI/UX Design",
-    desc: "Designing intuitive interfaces and seamless user experiences.",
-  },
-  {
-    icon: <img src={supportIcon} alt="icon" className="cus-icon" />,
-    title: "IT Support & Maintenance",
-    desc: "Reliable technical support to keep your systems running smoothly.",
-  },
+  icon: <img src={contentIcon} alt="icon" className="cus-icon" />,
+  title: "Content Creation",
+  desc: "Blog posts, product descriptions, email newsletters, and scripts written to convert.",
+},
+{
+  icon: <img src={logoIcon} alt="icon" className="cus-icon" />,
+  title: "Graphic Design",
+  desc: "Logos, flyers, social media graphics, brand kits, and marketing materials.",
+},
+{
+  icon: <img src={socialIcon} alt="icon" className="cus-icon" />,
+  title: "Social Media Marketing",
+  desc: "Full management of Instagram, Facebook, X, TikTok, and LinkedIn pages.",
+},
+{
+  icon: <img src={webIcon} alt="icon" className="cus-icon" />,
+  title: "Web Development",
+  desc: "Responsive websites, landing pages, and web apps built for performance and growth.",
+},
+{
+  icon: <img src={softIcon} alt="icon" className="cus-icon" />,
+  title: "Software Solutions",
+  desc: "Custom software systems to automate operations and improve business efficiency.",
+},
+{
+  icon: <img src={hardIcon} alt="icon" className="cus-icon" />,
+  title: "Hardware Solutions",
+  desc: "Installation, setup, and maintenance of reliable hardware infrastructure.",
+},
+{
+  icon: <img src={uiIcon} alt="icon" className="cus-icon" />,
+  title: "UI/UX Design",
+  desc: "Clean, intuitive designs that improve user experience and engagement.",
+},
+{
+  icon: <img src={mobileIcon} alt="icon" className="cus-icon" />,
+  title: "Mobile App Development",
+  desc: "High-performance Android and iOS apps tailored to your users’ needs.",
+},
+{
+  icon: <img src={dataIcon} alt="icon" className="cus-icon" />,
+  title: "Data Analytics Solutions",
+  desc: "Turn raw data into insights for smarter decisions and business growth.",
+},
+{
+  icon: <img src={itIcon} alt="icon" className="cus-icon" />,
+  title: "IT Consulting Services",
+  desc: "Expert guidance to align your technology with your business goals.",
+},
+{
+  icon: <img src={supportIcon} alt="icon" className="cus-icon" />,
+  title: "IT Support & Maintenance",
+  desc: "Ongoing support to keep your systems secure, updated, and running smoothly.",
+}
 ];
 
 const reviews = [
@@ -101,6 +110,9 @@ const reviews = [
 ];
 
 const Digital = () => {
+
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedService, setSelectedService] = useState("");
@@ -123,6 +135,35 @@ const Digital = () => {
     document.body.style.overflow = "auto";
     document.body.style.paddingRight = "0px";
   }
+
+  const handleSubmit = async (e) => {
+  e.preventDefault();
+
+  setIsLoading(true);
+
+  const formData = new FormData(e.target);
+
+  try {
+    const response = await fetch("https://formspree.io/f/mpqkqplv", {
+      method: "POST",
+      body: formData,
+      headers: {
+        Accept: "application/json",
+      },
+    });
+
+    if (response.ok) {
+      setIsSubmitted(true);
+      e.target.reset();
+    } else {
+      alert("Something went wrong.");
+    }
+  } catch (error) {
+    alert("Network error.");
+  }
+
+  setIsLoading(false);
+};
 
   return () => {
     document.body.style.overflow = "auto";
@@ -191,7 +232,9 @@ const Digital = () => {
 
   <div className="digital-subscribe-grid">
     <div className="digital-subscribe-card">
-      <div className="sub-icon">💼</div>
+      <div className="sub-icon"> 
+            <img src={fullIcon} alt="icon" />
+        </div>
       <h3>No Full-Time Staff Needed</h3>
       <p>
         Access specialists across six disciplines without salaries, pensions,
@@ -200,7 +243,9 @@ const Digital = () => {
     </div>
 
     <div className="digital-subscribe-card">
-      <div className="sub-icon">🔄</div>
+      <div className="sub-icon">
+            <img src={payIcon} alt="icon" />
+      </div>
       <h3>Subscribe or Pay-As-You-Go</h3>
       <p>
         Choose a monthly plan for ongoing support, or request one-time services
@@ -209,7 +254,9 @@ const Digital = () => {
     </div>
 
     <div className="digital-subscribe-card">
-      <div className="sub-icon">📈</div>
+      <div className="sub-icon">
+            <img src={scaleIcon} alt="icon" />
+      </div>
       <h3>Scales With Your Business</h3>
       <p>
         Upgrade, downgrade, or pause anytime. Built for SMEs, startups, and
@@ -479,15 +526,9 @@ const Digital = () => {
           <div>
   <h2>
     {entryType === "plan"
-      ? "Select a Service to Hire"
+      ? "Hire Us"
       : selectedService}
   </h2>
-
-  {/* {entryType === "plan" && (
-    <p className="modal-subtitle">
-      Choose a service you want us to handle for you.
-    </p>
-  )} */}
 </div>
 
         <button
@@ -542,7 +583,7 @@ const Digital = () => {
               <div
                 className={`toggle-option ${paymentType === "oneoff" ? "active" : ""}`}
                 onClick={() => {
-                  setPaymentType("oneoff");
+                  setPaymentType("Oneoff");
                   setSelectedPlan("");
                 }}
               >
@@ -611,7 +652,8 @@ const Digital = () => {
         </div>
 
         {/* ================= FORM ================= */}
-        <form className="digital-modal-form">
+        <form className="digital-modal-form" action="https://formspree.io/f/mpqkqplv" method="POST">
+        
 
           {/* Hidden Fields */}
           <input type="hidden" name="service" value={selectedService} />
@@ -619,11 +661,22 @@ const Digital = () => {
           <input type="hidden" name="plan" value={selectedPlan} />
           <input type="hidden" name="budget" value={budget} />
 
+          <input
+                type="hidden"
+                name="_subject"
+                value={`New Request - ${selectedService || selectedPlan}`} />
+
+              <input
+                type="hidden"
+                name="_replyto"
+                value="" />
+
           <div className="digital-form-row">
             <div className="digital-form-group">
               <label>Company Name/Full Name</label>
               <input
                 type="text"
+                name="fullName"
                 placeholder="Company Name/Full Name"
                 required
               />
@@ -632,17 +685,27 @@ const Digital = () => {
 
           <div className="digital-form-group">
             <label>Email</label>
-            <input type="email" placeholder="Enter Email.." required />
+            <input 
+            type="email" 
+            name="email"
+            placeholder="Enter Email.." 
+            required />
           </div>
 
           <div className="digital-form-group">
             <label>Phone Number</label>
-            <input type="text" placeholder="Enter Number.." />
+            <input 
+            type="text" 
+            name="phone"
+            placeholder="Enter Number.." 
+            required
+            />
           </div>
 
           <div className="digital-form-group">
             <label>Message</label>
             <textarea
+              name="message"
               placeholder="Type your message..."
               rows="5"
             ></textarea>

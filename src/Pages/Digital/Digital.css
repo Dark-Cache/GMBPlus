@@ -251,7 +251,12 @@
 /* ICON */
 .sub-icon {
   font-size: 28px;
-  margin-bottom: 15px;
+  margin-bottom: 5px;
+}
+
+.sub-icon img {
+  width: 50px;
+  height: 50px;
 }
 
 /* TEXT */
@@ -1174,4 +1179,69 @@
   border-color: #10b981;
   background: #ecfdf5;
   font-weight: 600;
+}
+
+.success-modal {
+  position: relative;
+  text-align: center;
+  padding: 40px 20px;
+  background: #f9fafb;
+  border-radius: 20px;
+}
+
+/* CLOSE BUTTON (TOP RIGHT) */
+.success-close {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  border: none;
+  background: transparent;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+/* ICON */
+.success-icon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 20px;
+  border-radius: 50%;
+  background: #10b981; /* green */
+  color: #fff;
+  font-size: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 25px rgba(16, 185, 129, 0.3);
+}
+
+/* TITLE */
+.success-modal h2 {
+  font-size: 28px;
+  color: #0f172a;
+  margin-bottom: 10px;
+}
+
+/* TEXT */
+.success-modal p {
+  font-size: 15px;
+  color: #4b5563;
+  margin-bottom: 25px;
+  line-height: 1.6;
+}
+
+/* BUTTON */
+.success-btn {
+  padding: 12px 30px;
+  border: none;
+  border-radius: 25px;
+  background: #0f172a;
+  color: #fff;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.success-btn:hover {
+  background: #10b981;
 }
