@@ -990,6 +990,7 @@
 
 .digital-modal-submit {
   margin-top: 10px;
+  margin-bottom: 10px;
   padding: 14px;
   border: none;
   border-radius: 30px;
@@ -998,7 +999,6 @@
   background-color: #0f172a;
   color: #fff;
   font-size: 15px;
-
   cursor: pointer;
   transition: 0.3s;
 }
@@ -1039,6 +1039,10 @@
 
   .digital-form-modal {
     padding: 20px;
+  }
+
+  .digital-modal-submit {
+  margin-bottom: 40px;
   }
 }
 
