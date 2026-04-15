@@ -23,6 +23,36 @@ import softIcon from "../../Assets/software.gif"
 
 const services = [
   {
+    icon: <img src={cloudIcon} alt="icon" className="cus-icon" />,
+    title: "Content Creation",
+    desc: "Scalable cloud infrastructure to optimize performance and cost.",
+  },
+  {
+    icon: <img src={cyberIcon} alt="icon" className="cus-icon" />,
+    title: "Graphic Design",
+    desc: "Protect your systems and data with advanced security solutions.",
+  },
+  {
+    icon: <img src={cyberIcon} alt="icon" className="cus-icon" />,
+    title: "Social Media Marketing",
+    desc: "Protect your systems and data with advanced security solutions.",
+  },
+  {
+    icon: <img src={webIcon} alt="icon" className="cus-icon" />,
+    title: "Web Development",
+    desc: "Responsive, user-centric websites built with modern technologies.",
+  },
+   {
+    icon: <img src={softIcon} alt="icon" className="cus-icon" />,
+    title: "Software Solutions",
+    desc: "Custom software tailored to your unique business needs.",
+  },
+   {
+    icon: <img src={softIcon} alt="icon" className="cus-icon" />,
+    title: "Hardware Solutions",
+    desc: "Custom software tailored to your unique business needs.",
+  },
+  {
     icon: <img src={itIcon} alt="icon" className="cus-icon" />,
     title: "IT Consulting Services",
     desc: "Proper guidance to align your technology stack with long-term business objectives.",
@@ -33,11 +63,6 @@ const services = [
     desc: "Transform raw data into actionable insights that drive smarter decisions.",
   },
   {
-    icon: <img src={webIcon} alt="icon" className="cus-icon" />,
-    title: "Website Development Service",
-    desc: "Responsive, user-centric websites built with modern technologies.",
-  },
-  {
     icon: <img src={mobileIcon} alt="icon" className="cus-icon" />,
     title: "Mobile App Development",
     desc: "High-performance mobile applications for Android and iOS platforms.",
@@ -46,21 +71,6 @@ const services = [
     icon: <img src={uiIcon} alt="icon" className="cus-icon" />,
     title: "UI/UX Design",
     desc: "Designing intuitive interfaces and seamless user experiences.",
-  },
-  {
-    icon: <img src={cloudIcon} alt="icon" className="cus-icon" />,
-    title: "Cloud Solutions",
-    desc: "Scalable cloud infrastructure to optimize performance and cost.",
-  },
-  {
-    icon: <img src={cyberIcon} alt="icon" className="cus-icon" />,
-    title: "Cybersecurity Services",
-    desc: "Protect your systems and data with advanced security solutions.",
-  },
-  {
-    icon: <img src={softIcon} alt="icon" className="cus-icon" />,
-    title: "Software Development",
-    desc: "Custom software tailored to your unique business needs.",
   },
   {
     icon: <img src={supportIcon} alt="icon" className="cus-icon" />,
@@ -91,8 +101,16 @@ const reviews = [
 ];
 
 const Digital = () => {
+  
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedService, setSelectedService] = useState("");
+
+
+
+  const [entryType, setEntryType] = useState(""); // "service" or "plan"
+  const [paymentType, setPaymentType] = useState("subscription");
+  const [selectedPlan, setSelectedPlan] = useState("");
+  const [budget, setBudget] = useState("");
 
   useEffect(() => {
   if (isModalOpen) {
@@ -157,6 +175,50 @@ const Digital = () => {
         </div>
       </div>
 
+        {/* SUBSCRIPTION SECTION */}
+<div className="digital-subscribe">
+  <div className="digital-subscribe-header">
+    <h2>
+      Skip the Hiring Headache. Subscribe to a Full Digital Team.
+    </h2>
+
+    <p>
+      Running a business in Nigeria is already demanding. You shouldn't have
+      to juggle recruiting designers, developers, marketers, and IT staff
+      just to stay competitive. We give you all of that on a flexible plan.
+    </p>
+  </div>
+
+  <div className="digital-subscribe-grid">
+    <div className="digital-subscribe-card">
+      <div className="sub-icon">💼</div>
+      <h3>No Full-Time Staff Needed</h3>
+      <p>
+        Access specialists across six disciplines without salaries, pensions,
+        or office space.
+      </p>
+    </div>
+
+    <div className="digital-subscribe-card">
+      <div className="sub-icon">🔄</div>
+      <h3>Subscribe or Pay-As-You-Go</h3>
+      <p>
+        Choose a monthly plan for ongoing support, or request one-time services
+        when you need them.
+      </p>
+    </div>
+
+    <div className="digital-subscribe-card">
+      <div className="sub-icon">📈</div>
+      <h3>Scales With Your Business</h3>
+      <p>
+        Upgrade, downgrade, or pause anytime. Built for SMEs, startups, and
+        growing brands.
+      </p>
+    </div>
+  </div>
+</div>
+
       {/* SERVICES */}
       <div className="hire">
         <div className="hire-header">
@@ -175,19 +237,199 @@ const Digital = () => {
               <p>{item.desc}</p>
 
               <div
-                className="hire-read-more"
-                onClick={() => {
-                  setIsModalOpen(true);
-                  setSelectedService(item.title);
-                }}
-              >
-                <span>+</span>
-                <p>Hire</p>
-              </div>
+  className="hire-read-more"
+  onClick={() => {
+    setSelectedService(item.title);
+    setEntryType("service");
+
+    setPaymentType("subscription");
+    setSelectedPlan("");
+    setBudget("");
+
+    setIsModalOpen(true);
+  }}
+>
+  <span>+</span>
+  <p>Hire</p>
+</div>
             </div>
           ))}
         </div>
       </div>
+
+
+            {/* PLANS SECTION */}
+<div className="digital-plans">
+
+  {/* HEADER */}
+  <div className="plans-header">
+    <h2>Simple, Transparent Pricing</h2>
+    <p>All prices in Nigerian Naira (₦). No hidden fees.</p>
+  </div>
+
+  <div className="plans-grid">
+
+    {/* BASIC */}
+    <div className="plan-card">
+      <h4>BASIC PLAN</h4>
+
+      <h2>₦50,000 <span>– ₦80,000/mo</span></h2>
+
+      <p>
+        Perfect for small businesses and solo founders starting out.
+      </p>
+
+      <ul>
+        <li>✓ Up to 5 requests per month</li>
+        <li>✓ Standard delivery (3–5 days)</li>
+        <li>✓ Email support</li>
+        <li>✓ Access to 2 service categories</li>
+        <li>✓ 1 revision per task</li>
+      </ul>
+
+          <button
+  onClick={() => {
+    setEntryType("plan");
+    setSelectedPlan("Basic Plan");
+    setSelectedService("");
+
+    setPaymentType("subscription");
+    setBudget("");
+
+    setIsModalOpen(true);
+  }}
+>
+  Choose Basic
+</button>
+    </div>
+
+    {/* STANDARD */}
+    <div className="plan-card popular">
+      <div className="popular-tag">MOST POPULAR</div>
+
+      <h4>STANDARD PLAN</h4>
+
+      <h2>₦100,000 <span>– ₦150,000/mo</span></h2>
+
+      <p>
+        For growing SMEs and brands that need consistent output.
+      </p>
+
+      <ul>
+        <li>✓ Up to 15 requests per month</li>
+        <li>✓ Faster delivery (1–3 days)</li>
+        <li>✓ Priority WhatsApp & email support</li>
+        <li>✓ Access to 4 service categories</li>
+        <li>✓ 3 revisions per task</li>
+        <li>✓ Monthly performance report</li>
+      </ul>
+
+      <button
+  className="primary"
+  onClick={() => {
+    setEntryType("plan");
+    setSelectedPlan("Standard Plan");
+    setSelectedService("");
+
+    setPaymentType("subscription");
+    setBudget("");
+
+    setIsModalOpen(true);
+  }}
+>
+  Choose Standard
+</button>
+    </div>
+
+    {/* PREMIUM */}
+    <div className="plan-card">
+      <h4>PREMIUM PLAN</h4>
+
+      <h2>₦200,000+ <span>/mo</span></h2>
+
+      <p>
+        For established businesses needing a full outsourced team.
+      </p>
+
+      <ul>
+        <li>✓ Unlimited / high-volume requests</li>
+        <li>✓ Fastest delivery (24–48 hrs)</li>
+        <li>✓ Dedicated account manager</li>
+        <li>✓ All service categories</li>
+        <li>✓ Unlimited revisions</li>
+        <li>✓ Strategy calls & quarterly reviews</li>
+      </ul>
+
+      <button
+  onClick={() => {
+    setEntryType("plan");
+    setSelectedPlan("Premium Plan");
+    setSelectedService("");
+
+    setPaymentType("subscription");
+    setBudget("");
+
+    setIsModalOpen(true);
+  }}
+>
+  Choose Premium
+</button>
+    </div>
+
+  </div>
+</div>
+
+            {/* PRICING SECTION */}
+<div className="digital-pricing">
+  <div className="digital-pricing-header">
+    <h2>One-Off Service Pricing</h2>
+    <p>Not ready for a subscription? Pay only for what you need.</p>
+  </div>
+
+  <div className="digital-pricing-table">
+    <div className="pricing-row pricing-head">
+      <span>Service</span>
+      <span>Starting Price</span>
+      <span>Typical Range</span>
+    </div>
+
+    <div className="pricing-row">
+      <span>Content Creation (per article/piece)</span>
+      <span>₦20,000</span>
+      <span>₦20,000 – ₦60,000</span>
+    </div>
+
+    <div className="pricing-row">
+      <span>Graphic Design (logo, flyer, brand kit)</span>
+      <span>₦25,000</span>
+      <span>₦25,000 – ₦100,000</span>
+    </div>
+
+    <div className="pricing-row">
+      <span>Social Media Campaign (one-off)</span>
+      <span>₦40,000</span>
+      <span>₦40,000 – ₦120,000</span>
+    </div>
+
+    <div className="pricing-row">
+      <span>Website Development</span>
+      <span>₦80,000</span>
+      <span>₦80,000 – ₦600,000+</span>
+    </div>
+
+    <div className="pricing-row">
+      <span>Custom Software / App</span>
+      <span>₦150,000</span>
+      <span>₦150,000 – ₦1.5M+</span>
+    </div>
+
+    <div className="pricing-row">
+      <span>Hardware Setup & Installation</span>
+      <span>₦30,000</span>
+      <span>₦30,000 – ₦500,000</span>
+    </div>
+  </div>
+</div>
 
       {/* REVIEW */}
       <div className="review">
@@ -221,7 +463,7 @@ const Digital = () => {
         </div>
       </div>
 
-      {/* MODAL */}
+            {/* MODAL */}
 {isModalOpen && (
   <div
     className="digital-modal-overlay"
@@ -231,52 +473,188 @@ const Digital = () => {
       className="digital-modal-content digital-form-modal"
       onClick={(e) => e.stopPropagation()}
     >
-      <button
-        className="digital-modal-close"
-        onClick={() => setIsModalOpen(false)}
-      >
-        ✕
-      </button>
 
-      <h2>{selectedService}</h2>
+      {/* ================= HEADER (STICKY) ================= */}
+      <div className="digital-modal-header">
+          <div>
+  <h2>
+    {entryType === "plan"
+      ? "Select a Service to Hire"
+      : selectedService}
+  </h2>
 
-      <form className="digital-modal-form">
-        {/* Hidden service field */}
-        <input type="hidden" name="service" value={selectedService} />
+  {/* {entryType === "plan" && (
+    <p className="modal-subtitle">
+      Choose a service you want us to handle for you.
+    </p>
+  )} */}
+</div>
 
-        <div className="digital-form-row">
-          <div className="digital-form-group">
-            <label>Company Name/Full Name</label>
-            <input
-              type="text"
-              placeholder="Company Name/Full Name"
-              required
-            />
-          </div>
-        </div>
-
-        <div className="digital-form-group">
-          <label>Email</label>
-          <input type="email" placeholder="Enter Email.." required />
-        </div>
-
-        <div className="digital-form-group">
-          <label>Phone Number</label>
-          <input type="text" placeholder="Enter Number.." />
-        </div>
-
-        <div className="digital-form-group">
-          <label>Message</label>
-          <textarea
-            placeholder="Type your message..."
-            rows="5"
-          ></textarea>
-        </div>
-
-        <button type="submit" className="digital-modal-submit">
-          Send Message
+        <button
+          className="digital-modal-close"
+          onClick={() => setIsModalOpen(false)}
+        >
+          ✕
         </button>
-      </form>
+      </div>
+
+      {/* ================= BODY (SCROLLABLE) ================= */}
+      <div className="digital-modal-body">
+
+        {/* ================= PAYMENT SECTION ================= */}
+        <div className="payment-section">
+
+          {entryType === "plan" && (
+  <div className="service-selection">
+    <p className="service-label">Select Service</p>
+
+    <div className="service-options">
+      {services.map((item, index) => (
+        <div
+          key={index}
+          className={`service-option ${
+            selectedService === item.title ? "active" : ""
+          }`}
+          onClick={() => setSelectedService(item.title)}
+        >
+          {item.title}
+        </div>
+      ))}
+    </div>
+  </div>
+)}
+
+          {/* PAYMENT TYPE */}
+          <div className="payment-type">
+            <p>Select Payment Type</p>
+
+            <div className="payment-toggle">
+              <div
+                className={`toggle-option ${paymentType === "subscription" ? "active" : ""}`}
+                onClick={() => {
+                  setPaymentType("subscription");
+                  setBudget("");
+                }}
+              >
+                Subscription Plan
+              </div>
+
+              <div
+                className={`toggle-option ${paymentType === "oneoff" ? "active" : ""}`}
+                onClick={() => {
+                  setPaymentType("oneoff");
+                  setSelectedPlan("");
+                }}
+              >
+                One-Off Service
+              </div>
+            </div>
+          </div>
+
+          {/* SUBSCRIPTION PLANS */}
+          {paymentType === "subscription" && (
+            <div className="plan-options">
+
+              <div
+                className={`plan-option ${selectedPlan === "Basic Plan" ? "active" : ""}`}
+                onClick={() => setSelectedPlan("Basic Plan")}
+              >
+                <h4>Basic Plan</h4>
+                <p className="price">₦50k – ₦80k/mo</p>
+                <ul>
+                  <li>Up to 5 requests</li>
+                  <li>Email support</li>
+                </ul>
+              </div>
+
+              <div
+                className={`plan-option ${selectedPlan === "Standard Plan" ? "active" : ""}`}
+                onClick={() => setSelectedPlan("Standard Plan")}
+              >
+                <h4>Standard Plan</h4>
+                <p className="price">₦100k – ₦150k/mo</p>
+                <ul>
+                  <li>Up to 15 requests</li>
+                  <li>Priority support</li>
+                </ul>
+              </div>
+
+              <div
+                className={`plan-option ${selectedPlan === "Premium Plan" ? "active" : ""}`}
+                onClick={() => setSelectedPlan("Premium Plan")}
+              >
+                <h4>Premium Plan</h4>
+                <p className="price">₦200k+/mo</p>
+                <ul>
+                  <li>Unlimited requests</li>
+                  <li>Dedicated manager</li>
+                </ul>
+              </div>
+
+            </div>
+          )}
+
+          {/* ONE-OFF */}
+          {paymentType === "oneoff" && (
+            <div className="oneoff-section">
+              <p className="budget-label">Enter Your Budget</p>
+
+              <input
+                type="text"
+                placeholder="e.g ₦50,000"
+                value={budget}
+                onChange={(e) => setBudget(e.target.value)}
+              />
+            </div>
+          )}
+
+        </div>
+
+        {/* ================= FORM ================= */}
+        <form className="digital-modal-form">
+
+          {/* Hidden Fields */}
+          <input type="hidden" name="service" value={selectedService} />
+          <input type="hidden" name="paymentType" value={paymentType} />
+          <input type="hidden" name="plan" value={selectedPlan} />
+          <input type="hidden" name="budget" value={budget} />
+
+          <div className="digital-form-row">
+            <div className="digital-form-group">
+              <label>Company Name/Full Name</label>
+              <input
+                type="text"
+                placeholder="Company Name/Full Name"
+                required
+              />
+            </div>
+          </div>
+
+          <div className="digital-form-group">
+            <label>Email</label>
+            <input type="email" placeholder="Enter Email.." required />
+          </div>
+
+          <div className="digital-form-group">
+            <label>Phone Number</label>
+            <input type="text" placeholder="Enter Number.." />
+          </div>
+
+          <div className="digital-form-group">
+            <label>Message</label>
+            <textarea
+              placeholder="Type your message..."
+              rows="5"
+            ></textarea>
+          </div>
+
+          <button type="submit" className="digital-modal-submit">
+            Send Message
+          </button>
+
+        </form>
+
+      </div>
     </div>
   </div>
 )}

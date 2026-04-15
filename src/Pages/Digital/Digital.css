@@ -200,12 +200,111 @@
 
 }
 
+/* ================= SUBSCRIBE SECTION ================= */
+
+.digital-subscribe {
+  margin-top: 80px;
+  text-align: center;
+}
+
+/* HEADER */
+.digital-subscribe-header {
+  max-width: 800px;
+  margin: 0 auto 10px;
+}
+
+.digital-subscribe-header h2 {
+  font-size: 42px;
+  font-weight: 500;
+  color: #0f172a;
+  margin-bottom: 20px;
+  line-height: 1.3;
+}
+
+.digital-subscribe-header p {
+  font-size: 16px;
+  color: #4b5563;
+  line-height: 1.7;
+}
+
+/* GRID */
+.digital-subscribe-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+/* CARD */
+.digital-subscribe-card {
+  background: #f3f4f6;
+  padding: 30px;
+  border-radius: 20px;
+  text-align: left;
+  transition: 0.3s ease;
+}
+
+.digital-subscribe-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+/* ICON */
+.sub-icon {
+  font-size: 28px;
+  margin-bottom: 15px;
+}
+
+/* TEXT */
+.digital-subscribe-card h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #111;
+}
+
+.digital-subscribe-card p {
+  font-size: 14px;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 922px) {
+  .digital-subscribe-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .digital-subscribe-header h2 {
+    font-size: 34px;
+  }
+}
+
+@media (max-width: 576px) {
+  .digital-subscribe {
+    margin-top: 70px;
+  }
+
+  .digital-subscribe-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .digital-subscribe-header h2 {
+    font-size: 26px;
+  }
+
+  .digital-subscribe-header p {
+    font-size: 15px;
+  }
+}
+
+
 
 /* ================= HIRES ================= */
 
 .hire {
   margin-top: 100px;
-  background: linear-gradient(to bottom, #f5f5f5, #e9f1e4);
+  /* background: linear-gradient(to bottom, #f5f5f5, #e9f1e4); */
   /* background: #fff; */
 }
 
@@ -369,6 +468,252 @@
 
 }
 
+/* ================= PLANS SECTION ================= */
+
+.digital-plans {
+  margin-top: 100px;
+}
+
+/* HEADER */
+.plans-header {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 60px;
+}
+
+.plans-header h2 {
+  font-size: 40px;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 10px;
+}
+
+.plans-header p {
+  font-size: 16px;
+  color: #555;
+}
+
+/* GRID */
+.plans-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+/* CARD */
+.plan-card {
+  background: #f3f4f6;
+  padding: 30px;
+  border-radius: 20px;
+  position: relative;
+  transition: 0.3s ease;
+}
+
+.plan-card:hover {
+  transform: translateY(-5px);
+}
+
+/* TITLE */
+.plan-card h4 {
+  font-size: 14px;
+  color: #64748b;
+  margin-bottom: 10px;
+}
+
+/* PRICE */
+.plan-card h2 {
+  font-size: 32px;
+  font-weight: 700;
+  color: #111;
+  margin-bottom: 15px;
+}
+
+.plan-card h2 span {
+  font-size: 15px;
+  color: rgb(129, 126, 126);
+  font-weight: 500;
+}
+
+/* DESC */
+.plan-card p {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+/* LIST */
+.plan-card ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 25px;
+}
+
+.plan-card ul li {
+  margin-bottom: 10px;
+  font-size: 14px;
+  color: #333;
+}
+
+/* BUTTON */
+.plan-card button {
+  width: 100%;
+  padding: 12px;
+  border-radius: 12px;
+  border: 2px solid #111;
+  background: transparent;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.plan-card button:hover {
+  background: #111;
+  color: #fff;
+}
+
+/* POPULAR CARD */
+.plan-card.popular {
+  background: #0f172a;
+  color: #fff;
+  border: 2px solid #10b981;
+}
+
+.plan-card.popular h2,
+.plan-card.popular p,
+.plan-card.popular li,
+.plan-card.popular h4 {
+  color: #fff;
+}
+
+/* PRIMARY BUTTON */
+.plan-card.popular button {
+  background: #10b981;
+  border: none;
+  color: #fff;
+}
+
+.plan-card.popular button:hover {
+  background: #059669;
+}
+
+/* TAG */
+.popular-tag {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #10b981;
+  color: #fff;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 922px) {
+  .plans-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 576px) {
+  .plans-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .plans-header h2 {
+    font-size: 28px;
+  }
+
+  .digital-plans {
+    margin-top: 70px;
+  }
+}
+
+
+
+/* ================= PRICING SECTION ================= */
+
+.digital-pricing {
+  margin-top: 100px;
+}
+
+/* HEADER */
+.digital-pricing-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.digital-pricing-header h2 {
+  font-size: 36px;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 10px;
+}
+
+.digital-pricing-header p {
+  font-size: 16px;
+  color: #555;
+}
+
+/* TABLE */
+.digital-pricing-table {
+  background: #f3f4f6;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+/* ROW */
+.pricing-row {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  padding: 18px 20px;
+  border-bottom: 1px solid #ddd;
+  align-items: center;
+}
+
+/* HEADER ROW */
+.pricing-head {
+  background: #e5e7eb;
+  font-weight: 600;
+  color: #111;
+}
+
+/* TEXT */
+.pricing-row span {
+  font-size: 15px;
+  color: #333;
+}
+
+/* LAST ROW REMOVE BORDER */
+.pricing-row:last-child {
+  border-bottom: none;
+}
+
+/* HOVER EFFECT */
+.pricing-row:not(.pricing-head):hover {
+  background: #ffffff;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 768px) {
+  .pricing-row {
+    grid-template-columns: 1fr;
+    gap: 5px;
+  }
+
+  .pricing-head {
+    display: none;
+  }
+
+  .pricing-row span {
+    font-size: 14px;
+  }
+}
+
 /* ================= REVIEW ================= */
 
 .Review {
@@ -502,13 +847,64 @@
 /* ================= MODAL CONTENT ================= */
 
 .digital-modal-content {
+  width: 90%;
+  max-width: 600px;
+  max-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+
+  border-radius: 20px;
+  overflow: hidden; /* 🔥 important */
+}
+
+.digital-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f2f2f2;
+
+  border-bottom: 1px solid #ddd;
+
+  /* position: sticky; */
+  top: 0;
+  z-index: 10;
+}
+
+.digital-modal-header h2 {
+  font-size: 20px;
+  margin: 0;
+}
+
+.digital-modal-body {
+  overflow-y: auto;
+  padding: 20px;
+}
+
+
+
+/* .digital-modal-content {
   position: relative;
   z-index: 10000;
 
-  width: 90%;
+  width: 100%;
   max-width: 600px;
 
+  max-height: 90vh;         
+  overflow-y: auto;          
+
+  border-radius: 20px;
+
   animation: digitalModalFade 0.3s ease;
+} */
+
+.digital-modal-content::-webkit-scrollbar {
+  width: 6px;
+}
+
+.digital-modal-content::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 10px;
 }
 
 @keyframes digitalModalFade {
@@ -593,7 +989,8 @@
   border: none;
   border-radius: 30px;
 
-  background: linear-gradient(90deg, #6a5af9, #8b5cf6);
+  /* background: linear-gradient(90deg, #6a5af9, #8b5cf6); */
+  background-color: #0f172a;
   color: #fff;
   font-size: 15px;
 
@@ -603,21 +1000,30 @@
 
 .digital-modal-submit:hover {
   transform: translateY(-2px);
-  box-shadow: 0 10px 20px rgba(138, 92, 246, 0.4);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
 }
 
 /* ================= CLOSE BUTTON ================= */
 
 .digital-modal-close {
+  background: transparent;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+
+/* .digital-modal-close {
   position: absolute;
   top: 15px;
   right: 20px;
 
   background: transparent;
   border: none;
-  font-size: 20px;
+  font-size: 28px;
+  font-weight: 800;
   cursor: pointer;
-}
+} */
 
 /* ================= RESPONSIVE ================= */
 
@@ -629,4 +1035,143 @@
   .digital-form-modal {
     padding: 20px;
   }
+}
+
+/* ================= PAYMENT SECTION ================= */
+
+.payment-section {
+  margin-bottom: 25px;
+}
+
+/* TOGGLE */
+.payment-type p {
+  font-size: 14px;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.payment-toggle {
+  display: flex;
+  gap: 10px;
+}
+
+.toggle-option {
+  flex: 1;
+  padding: 10px;
+  border-radius: 10px;
+  background: #e5e7eb;
+  text-align: center;
+  cursor: pointer;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+.toggle-option.active {
+  background: #0f172a;
+  color: #fff;
+}
+
+/* PLAN OPTIONS */
+.plan-options {
+  display: grid;
+  gap: 12px;
+  margin-top: 15px;
+}
+
+.plan-option {
+  padding: 15px;
+  border-radius: 12px;
+  background: #fff;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.plan-option:hover {
+  border-color: #0f172a;
+}
+
+.plan-option.active {
+  border-color: #10b981;
+  background: #ecfdf5;
+}
+
+/* PLAN TEXT */
+.plan-option h4 {
+  margin-bottom: 5px;
+  font-size: 16px;
+}
+
+.plan-option .price {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 8px;
+}
+
+.plan-option ul {
+  padding-left: 18px;
+  font-size: 13px;
+  color: #666;
+}
+
+/* ONE OFF */
+.oneoff-section {
+  margin-top: 15px;
+}
+
+.budget-label {
+  font-size: 14px;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.oneoff-section input {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  outline: none;
+}
+
+.modal-subtitle {
+  font-size: 14px;
+  color: #666;
+  margin-top: 4px;
+}
+
+.service-selection {
+  margin-bottom: 20px;
+}
+
+.service-label {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.service-options {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.service-option {
+  padding: 12px;
+  background: #fff;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: 0.3s;
+  text-align: center;
+}
+
+.service-option:hover {
+  border-color: #0f172a;
+}
+
+.service-option.active {
+  border-color: #10b981;
+  background: #ecfdf5;
+  font-weight: 600;
 }
