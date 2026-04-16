@@ -236,7 +236,7 @@
 
 /* CARD */
 .digital-subscribe-card {
-  background: #f3f4f6;
+  background: white;
   padding: 30px;
   border-radius: 20px;
   text-align: left;
@@ -839,14 +839,13 @@
   top: 0;
   left: 0;
   width: 100vw;
-  height: 100vh;
-
+  height: 80vh;
+  margin-top: 90px;
   display: flex;
   align-items: center;
   justify-content: center;
-
   background: rgba(0, 0, 0, 0.6);
-  z-index: 9999;
+  z-index: 1000;
 }
 
 /* ================= MODAL CONTENT ================= */
@@ -1040,7 +1039,7 @@
   .digital-form-modal {
     padding: 20px;
   }
-
+  
   .digital-modal-submit {
   margin-bottom: 40px;
   }
