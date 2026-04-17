@@ -2,16 +2,16 @@ import React from "react";
 import "./Work.css";
 
 // Import your images
-import work1 from "../../Assets/Law.jpg";
+import work1 from "../../Assets/NigWater.jpg";
 import work2 from "../../Assets/Embassy.jpg";
 import work3 from "../../Assets/Lagostank.jpg";
 import work4 from "../../Assets/ModelLagos.jpg";
-import work5 from "../../Assets/Chemical.jpg";
-import work6 from "../../Assets/Chemical.jpg";
-import work7 from "../../Assets/Chemical.jpg";
-import work8 from "../../Assets/Chemical.jpg";
-import work9 from "../../Assets/Chemical.jpg";
-import work10 from "../../Assets/Chemical.jpg";
+import work5 from "../../Assets/AtSchool.jpg";
+import work6 from "../../Assets/Larry.jpg";
+import work7 from "../../Assets/NatWater.jpg";
+import work8 from "../../Assets/ProTank.jpg";
+import work9 from "../../Assets/ClinicWater.jpg";
+import work10 from "../../Assets/ViEstate.jpg";
 
 const works = [
   {
