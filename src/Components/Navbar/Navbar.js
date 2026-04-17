@@ -12,7 +12,7 @@ import lightLogo from "../../Assets/greenlogo.png"; // Light mode logo
 const serviceLinks = [
   { label: "Industrial Chemical", path: "/chemical" },
   { label: "Facilities Management", path: "/facility" },
-  { label: "Digital Solutions", path: "/digital" },
+  { label: " Business & Digital Solutions", path: "/digital" },
   { label: "Property & Estate Management", path: "/property" },
 ];
 

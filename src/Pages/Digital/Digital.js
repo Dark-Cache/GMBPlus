@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import "./Digital.css";
 
 // Header images
@@ -38,56 +39,73 @@ const services = [
   icon: <img src={contentIcon} alt="icon" className="cus-icon" />,
   title: "Content Creation",
   desc: "Blog posts, product descriptions, email newsletters, and scripts written to convert.",
+  path: "/digital/content-creation",
 },
 {
   icon: <img src={logoIcon} alt="icon" className="cus-icon" />,
   title: "Graphic Design",
   desc: "Logos, flyers, social media graphics, brand kits, and marketing materials.",
+  path: "/digital/graphic-design",
 },
 {
   icon: <img src={socialIcon} alt="icon" className="cus-icon" />,
   title: "Social Media Marketing",
   desc: "Full management of Instagram, Facebook, X, TikTok, and LinkedIn pages.",
+  path: "/digital/social-media-marketing",
 },
 {
   icon: <img src={webIcon} alt="icon" className="cus-icon" />,
   title: "Web Development",
   desc: "Responsive websites, landing pages, and web apps built for performance and growth.",
+  path: "/digital/web-development",
 },
 {
   icon: <img src={softIcon} alt="icon" className="cus-icon" />,
   title: "Software Solutions",
   desc: "Custom software systems to automate operations and improve business efficiency.",
+  path: "/digital/software-solutions",
 },
 {
   icon: <img src={hardIcon} alt="icon" className="cus-icon" />,
   title: "Hardware Solutions",
   desc: "Installation, setup, and maintenance of reliable hardware infrastructure.",
+  path: "/digital/hardware-solutions",
 },
 {
   icon: <img src={uiIcon} alt="icon" className="cus-icon" />,
   title: "UI/UX Design",
   desc: "Clean, intuitive designs that improve user experience and engagement.",
+  path: "/digital/ui-ux-design",
 },
 {
   icon: <img src={mobileIcon} alt="icon" className="cus-icon" />,
   title: "Mobile App Development",
-  desc: "High-performance Android and iOS apps tailored to your users’ needs.",
+  desc: "High-performance Android and iOS apps tailored to your users' needs.",
+  path: "/digital/mobile-app-development",
+},
+{
+  icon: <img src={dataIcon} alt="icon" className="cus-icon" />,
+  title: "Business Solutions",
+  desc: "Turn raw data into insights for smarter decisions and business growth.",
+  path: "/digital/business-solutions",
 },
 {
   icon: <img src={dataIcon} alt="icon" className="cus-icon" />,
   title: "Data Analytics Solutions",
   desc: "Turn raw data into insights for smarter decisions and business growth.",
+  path: "/digital/data-analytics-solutions",
 },
 {
   icon: <img src={itIcon} alt="icon" className="cus-icon" />,
   title: "IT Consulting Services",
   desc: "Expert guidance to align your technology with your business goals.",
+  path: "/digital/it-consulting-services",
 },
 {
   icon: <img src={supportIcon} alt="icon" className="cus-icon" />,
   title: "IT Support & Maintenance",
   desc: "Ongoing support to keep your systems secure, updated, and running smoothly.",
+  path: "/digital/it-support-maintenance",
 }
 ];
 
@@ -114,7 +132,7 @@ const reviews = [
 
 const Digital = () => {
 
-  const [isSubmitted, setIsSubmitted] = useState(false);
+
   const [isLoading, setIsLoading] = useState(false);
   
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -141,8 +159,7 @@ const Digital = () => {
       });
 
       if (response.ok) {
-        setIsSubmitted(true);
-        e.target.reset();
+e.target.reset();
         setIsModalOpen(false);
         setIsThankYouOpen(true);
       } else {
@@ -285,22 +302,23 @@ const Digital = () => {
               <h3>{item.title}</h3>
               <p>{item.desc}</p>
 
-              <div
-  className="hire-read-more"
-  onClick={() => {
-    setSelectedService(item.title);
-    setEntryType("service");
-
-    setPaymentType("subscription");
-    setSelectedPlan("");
-    setBudget("");
-
-    setIsModalOpen(true);
-  }}
->
-  <span>+</span>
-  <p>Hire</p>
-</div>
+              <div className="hire-card-actions">
+                <div
+                  className="hire-read-more"
+                  onClick={() => {
+                    setSelectedService(item.title);
+                    setEntryType("service");
+                    setPaymentType("subscription");
+                    setSelectedPlan("");
+                    setBudget("");
+                    setIsModalOpen(true);
+                  }}
+                >
+                  <span>+</span>
+                  <p>Hire</p>
+                </div>
+                <Link to={item.path} className="hire-learn-more">Learn More →</Link>
+              </div>
             </div>
           ))}
         </div>
@@ -652,14 +670,6 @@ const Digital = () => {
               />
             </div>
           )}
-
-           {/* SUCCESS MESSAGE */}
-              {isSubmitted && (
-                <p className="success-msg">
-                  ✅ Message sent successfully!
-                </p>
-              )}
-
 
         </div>
 

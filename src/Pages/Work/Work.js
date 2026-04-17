@@ -2,10 +2,10 @@ import React from "react";
 import "./Work.css";
 
 // Import your images
-import work1 from "../../Assets/Chemical.jpg";
-import work2 from "../../Assets/Chemical.jpg";
-import work3 from "../../Assets/Chemical.jpg";
-import work4 from "../../Assets/Chemical.jpg";
+import work1 from "../../Assets/Law.jpg";
+import work2 from "../../Assets/Embassy.jpg";
+import work3 from "../../Assets/Lagostank.jpg";
+import work4 from "../../Assets/ModelLagos.jpg";
 import work5 from "../../Assets/Chemical.jpg";
 import work6 from "../../Assets/Chemical.jpg";
 import work7 from "../../Assets/Chemical.jpg";

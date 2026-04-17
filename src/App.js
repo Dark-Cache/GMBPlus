@@ -19,6 +19,7 @@ import Digital from "./Pages/Digital/Digital";
 import Property from "./Pages/Property/Property";
 import Work from "./Pages/Work/Work";
 import Contact from "./Pages/Contact/Contact";
+import ServiceDetail from "./Pages/ServiceDetail/ServiceDetail";
 
 
 
@@ -41,6 +42,7 @@ function App() {
         <Route path="/digital" element={<Digital />} />
         <Route path="/facility" element={<Facility />} />
         <Route path="/property" element={<Property />} />
+        <Route path="/digital/:slug" element={<ServiceDetail />} />
       </Routes>
 
       <Footer />
