@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./Digital.css";
 
-// Import your images
+// Header images
 import hero1 from "../../Assets/Digital1.jpg";
 import hero2 from "../../Assets/Digital3.jpg";
 
@@ -9,13 +9,13 @@ import hero2 from "../../Assets/Digital3.jpg";
 import avatar1 from "../../Assets/Cl1.png";
 import avatar2 from "../../Assets/Cl2.png";
 
-// icon
+// Skip icon
 import fullIcon from "../../Assets/briefcase.gif"
 import payIcon from "../../Assets/subscribe.gif"
 import scaleIcon from "../../Assets/balance.gif"
 
 
-// icon
+// Hire icon
 import contentIcon from "../../Assets/writing.gif"
 import logoIcon from "../../Assets/logo-design.gif"
 import socialIcon from "../../Assets/social-marketing.gif"
@@ -115,14 +115,42 @@ const Digital = () => {
   const [isLoading, setIsLoading] = useState(false);
   
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isThankYouOpen, setIsThankYouOpen] = useState(false);
   const [selectedService, setSelectedService] = useState("");
-
-
 
   const [entryType, setEntryType] = useState(""); // "service" or "plan"
   const [paymentType, setPaymentType] = useState("subscription");
   const [selectedPlan, setSelectedPlan] = useState("");
   const [budget, setBudget] = useState("");
+
+   // ✅ FIXED: handleSubmit OUTSIDE useEffect
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setIsLoading(true);
+
+    const formData = new FormData(e.target);
+
+    try {
+      const response = await fetch("https://formspree.io/f/mpqkqplv", {
+        method: "POST",
+        body: formData,
+        headers: { Accept: "application/json" },
+      });
+
+      if (response.ok) {
+        setIsSubmitted(true);
+        e.target.reset();
+        setIsModalOpen(false);
+        setIsThankYouOpen(true);
+      } else {
+        alert("Something went wrong.");
+      }
+    } catch (error) {
+      alert("Network error.");
+    }
+
+    setIsLoading(false);
+  };
 
   useEffect(() => {
   if (isModalOpen) {
@@ -136,40 +164,11 @@ const Digital = () => {
     document.body.style.paddingRight = "0px";
   }
 
-  const handleSubmit = async (e) => {
-  e.preventDefault();
-
-  setIsLoading(true);
-
-  const formData = new FormData(e.target);
-
-  try {
-    const response = await fetch("https://formspree.io/f/mpqkqplv", {
-      method: "POST",
-      body: formData,
-      headers: {
-        Accept: "application/json",
-      },
-    });
-
-    if (response.ok) {
-      setIsSubmitted(true);
-      e.target.reset();
-    } else {
-      alert("Something went wrong.");
-    }
-  } catch (error) {
-    alert("Network error.");
-  }
-
-  setIsLoading(false);
-};
-
   return () => {
-    document.body.style.overflow = "auto";
-    document.body.style.paddingRight = "0px";
-  };
-}, [isModalOpen]);
+      document.body.style.overflow = "auto";
+      document.body.style.paddingRight = "0px";
+    };
+  }, [isModalOpen]);
 
   return (
     <section className="digital">
@@ -542,10 +541,12 @@ const Digital = () => {
       {/* ================= BODY (SCROLLABLE) ================= */}
       <div className="digital-modal-body">
 
+        
+
         {/* ================= PAYMENT SECTION ================= */}
         <div className="payment-section">
 
-          {entryType === "plan" && (
+  {entryType === "plan" && (
   <div className="service-selection">
     <p className="service-label">Select Service</p>
 
@@ -649,16 +650,24 @@ const Digital = () => {
             </div>
           )}
 
+           {/* SUCCESS MESSAGE */}
+              {isSubmitted && (
+                <p className="success-msg">
+                  ✅ Message sent successfully!
+                </p>
+              )}
+
+
         </div>
 
         {/* ================= FORM ================= */}
-        <form className="digital-modal-form" action="https://formspree.io/f/mpqkqplv" method="POST">
+        <form className="digital-modal-form" onSubmit={handleSubmit}>
         
 
           {/* Hidden Fields */}
-          <input type="hidden" name="service" value={selectedService} />
-          <input type="hidden" name="paymentType" value={paymentType} />
-          <input type="hidden" name="plan" value={selectedPlan} />
+          <input type="hidden" name="service" value={selectedService} required />
+          <input type="hidden" name="paymentType" value={paymentType} required />
+          <input type="hidden" name="plan" value={selectedPlan} required />
           <input type="hidden" name="budget" value={budget} />
 
           <input
@@ -711,13 +720,51 @@ const Digital = () => {
             ></textarea>
           </div>
 
-          <button type="submit" className="digital-modal-submit">
-            Send Message
+          <button type="submit" 
+                  className="digital-modal-submit"
+                  disabled={isLoading}
+                  >
+            {isLoading ? "Sending..." : "Send Message"}
           </button>
 
         </form>
 
       </div>
+    </div>
+  </div>
+)}
+
+{/* THANK YOU MODAL */}
+{isThankYouOpen && (
+  <div
+    className="digital-modal-overlay"
+    onClick={() => setIsThankYouOpen(false)}
+  >
+    <div
+      className="digital-modal-content thank-you-modal"
+      onClick={(e) => e.stopPropagation()}
+    >
+      <button
+        className="digital-modal-close"
+        onClick={() => setIsThankYouOpen(false)}
+      >
+        ✕
+      </button>
+
+      <div className="thank-you-icon">✓</div>
+
+      <h2>Thank You!</h2>
+
+      <p>
+        Your request has been received successfully. We'll get back to you within 24 hours.
+      </p>
+
+      <button
+        className="thank-you-btn"
+        onClick={() => setIsThankYouOpen(false)}
+      >
+        Close
+      </button>
     </div>
   </div>
 )}

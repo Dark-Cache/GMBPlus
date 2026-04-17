@@ -839,8 +839,8 @@
   top: 0;
   left: 0;
   width: 100vw;
-  height: 80vh;
-  margin-top: 90px;
+  height: 100vh;
+  margin-top: 2px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -885,22 +885,6 @@
   padding: 20px;
 }
 
-
-
-/* .digital-modal-content {
-  position: relative;
-  z-index: 10000;
-
-  width: 100%;
-  max-width: 600px;
-
-  max-height: 90vh;         
-  overflow-y: auto;          
-
-  border-radius: 20px;
-
-  animation: digitalModalFade 0.3s ease;
-} */
 
 .digital-modal-content::-webkit-scrollbar {
   width: 6px;
@@ -1016,22 +1000,15 @@
   cursor: pointer;
 }
 
-
-/* .digital-modal-close {
-  position: absolute;
-  top: 15px;
-  right: 20px;
-
-  background: transparent;
-  border: none;
-  font-size: 28px;
-  font-weight: 800;
-  cursor: pointer;
-} */
-
 /* ================= RESPONSIVE ================= */
 
 @media (max-width: 576px) {
+
+  .digital-modal-overlay {
+  height: 80%;
+  margin-top: 76px;
+}
+
   .digital-form-row {
     flex-direction: column;
   }
@@ -1246,5 +1223,66 @@
 }
 
 .success-btn:hover {
+  background: #10b981;
+}
+
+
+/* ================= THANK YOU MODAL ================= */
+
+.thank-you-modal {
+  background: #fff;
+  padding: 50px 40px;
+  border-radius: 20px;
+  text-align: center;
+  position: relative;
+  max-width: 450px;
+  animation: digitalModalFade 0.3s ease;
+}
+
+.thank-you-modal .digital-modal-close {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+}
+
+.thank-you-icon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 20px;
+  border-radius: 50%;
+  background: #10b981;
+  color: #fff;
+  font-size: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 25px rgba(16, 185, 129, 0.3);
+}
+
+.thank-you-modal h2 {
+  font-size: 28px;
+  color: #0f172a;
+  margin-bottom: 12px;
+}
+
+.thank-you-modal p {
+  font-size: 15px;
+  color: #4b5563;
+  line-height: 1.6;
+  margin-bottom: 25px;
+}
+
+.thank-you-btn {
+  padding: 12px 35px;
+  border: none;
+  border-radius: 25px;
+  background: #0f172a;
+  color: #fff;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.thank-you-btn:hover {
   background: #10b981;
 }
