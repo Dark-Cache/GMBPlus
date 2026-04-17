@@ -962,21 +962,25 @@
 /* ================= BUTTON ================= */
 
 .digital-modal-submit {
-  margin-top: 10px;
-  margin-bottom: 10px;
-  padding: 14px;
+  margin-top: 20px;
+  margin-bottom: 16px;
+  padding: 16px;
   border: none;
   border-radius: 30px;
-  background-color: #0f172a;
+  background-color: #10b981;
   color: #fff;
-  font-size: 15px;
+  font-size: 16px;
+  font-weight: 700;
   cursor: pointer;
   transition: 0.3s;
+  width: 100%;
+  letter-spacing: 0.3px;
 }
 
 .digital-modal-submit:hover {
+  background-color: #059669;
   transform: translateY(-2px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 10px 20px rgba(16, 185, 129, 0.4);
 }
 
 /* ================= CLOSE BUTTON ================= */
@@ -995,6 +999,7 @@
 @media (max-width: 576px) {
   .digital-modal-overlay {
     align-items: flex-end;
+    padding: 0;
   }
 
   .digital-modal-content {
@@ -1023,13 +1028,18 @@
   }
 
   .digital-modal-submit {
-    margin-bottom: 10px;
+    margin-top: 24px;
+    margin-bottom: 16px;
+    padding: 18px;
+    font-size: 17px;
   }
 
   .thank-you-modal {
     width: 100%;
+    max-width: 100%;
     border-radius: 20px 20px 0 0;
-    padding: 40px 20px;
+    padding: 40px 20px 50px;
+    box-sizing: border-box;
   }
 }
 
@@ -1246,8 +1256,10 @@
   border-radius: 20px;
   text-align: center;
   position: relative;
+  width: 90%;
   max-width: 450px;
   animation: digitalModalFade 0.3s ease;
+  box-sizing: border-box;
 }
 
 .thank-you-modal .digital-modal-close {
