@@ -29,6 +29,9 @@ import itIcon from "../../Assets/laptop.gif"
 import supportIcon from "../../Assets/repair.gif"
 
 
+// Modal cancel button
+import { IoCloseSharp } from "react-icons/io5";
+
 
 const services = [
   {
@@ -534,7 +537,7 @@ const Digital = () => {
           className="digital-modal-close"
           onClick={() => setIsModalOpen(false)}
         >
-          ✕
+          <IoCloseSharp />
         </button>
       </div>
 
