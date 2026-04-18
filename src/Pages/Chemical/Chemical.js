@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./Chemical.css";
 import { FaCheckCircle } from "react-icons/fa";
 
@@ -21,6 +22,8 @@ import chemIcon from "../../Assets/crane.gif";
 import SayChemical from "../SayChemical/SayChemical";
 
 const Chemical = () => {
+
+  const navigate = useNavigate();
 
   const [showPDF, setShowPDF] = useState(false);
 
@@ -193,11 +196,7 @@ const Chemical = () => {
     <p>
       High-quality cleaning agents designed for industrial and commercial use.
     </p>
-    <span className="arrow">→</span>
-    <button className="pro-view-btn">View Products</button>
-    <button className="pro-view-btn">
-            View Products
-    </button>
+    <button className="pro-view-btn" onClick={() => navigate("/chemical/construction-chemicals")}>View Products</button>
   </div>
 
   {/* CARD 2 */}
@@ -209,10 +208,7 @@ const Chemical = () => {
     <p>
       Effective solutions for water purification and treatment processes.
     </p>
-    <span className="arrow">→</span>
-    <button className="pro-view-btn">
-            View Products
-    </button> 
+    <button className="pro-view-btn" onClick={() => navigate("/chemical/water-treatment-chemicals")}>View Products</button>
   </div>
 
   {/* CARD 3 */}
@@ -224,10 +220,7 @@ const Chemical = () => {
     <p>
       Reliable solvents for manufacturing and production efficiency.
     </p>
-    <span className="arrow">→</span>
-    <button className="pro-view-btn">
-            View Products
-    </button>
+    <button className="pro-view-btn" onClick={() => navigate("/chemical/specialty-surfactant-chemicals")}>View Products</button>
   </div>
 
 </div>
@@ -250,6 +243,59 @@ const Chemical = () => {
     </div>
   </div>
 )}
+
+
+{/* PRODUCT REFERENCE SUMMARY */}
+<div className="chem-ref">
+
+  <div className="chem-ref-header">
+    <h2>Product Reference Summary</h2>
+    <p>Quick Reference for All Products Supplied</p>
+  </div>
+
+  <div className="chem-ref-table">
+
+    <div className="chem-ref-row chem-ref-head">
+      <span>#</span>
+      <span>Product Name</span>
+      <span>Category</span>
+      <span>Key Use</span>
+      <span>Pack Size</span>
+    </div>
+
+    {[
+      { num: 1, name: "Antisol FL 30000 (PAC)", category: "Construction", use: "Piling & Slurry", pack: "20 kg bags" },
+      { num: 2, name: "Bentonite (Drilling Grade)", category: "Construction", use: "Bored Pile Slurry", pack: "25–50 kg bags" },
+      { num: 3, name: "Chlorine 70%", category: "Water Treatment", use: "Disinfection", pack: "45 kg / 25 kg drums" },
+      { num: 4, name: "Limbux Hydrated Lime", category: "Water Treatment", use: "pH Correction", pack: "25 kg bags" },
+      { num: 5, name: "Aluminium Sulphate (Alum)", category: "Water Treatment", use: "Coagulation", pack: "25–50 kg bags" },
+      { num: 6, name: "Sodium Lauryl Sulphate (SLS)", category: "Speciality / Surfactant", use: "Detergent & Pharma", pack: "25 kg / 220 kg" },
+      { num: 7, name: "Sodium Lignosulphonate", category: "Construction / Speciality", use: "Concrete Plasticiser", pack: "25 kg bags" },
+      { num: 8, name: "Other Chemicals (on request)", category: "Various", use: "Custom sourcing", pack: "Various" },
+    ].map((row) => (
+      <div className="chem-ref-row" key={row.num}>
+        <span>{row.num}</span>
+        <span>{row.name}</span>
+        <span>{row.category}</span>
+        <span>{row.use}</span>
+        <span>{row.pack}</span>
+      </div>
+    ))}
+
+  </div>
+
+  <div className="chem-ref-footer">
+    <p>✅  All GMB Plus products are supported by:</p>
+    <div className="chem-ref-badges">
+      <span>Certificate of Analysis (COA)</span>
+      <span>Safety Data Sheet (SDS)</span>
+      <span>SONCAP Certification</span>
+      <span>NAFDAC Registration</span>
+      <span>SON Approval</span>
+    </div>
+  </div>
+
+</div>
 
   <SayChemical />
 

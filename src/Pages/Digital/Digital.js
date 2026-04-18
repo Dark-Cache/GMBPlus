@@ -317,7 +317,7 @@ e.target.reset();
                   <span>+</span>
                   <p>Hire</p>
                 </div>
-                <Link to={item.path} className="hire-learn-more">Learn More →</Link>
+                <Link to={item.path} className="d-hire-learn-more">More Details →</Link>
               </div>
             </div>
           ))}

@@ -1,9 +1,11 @@
 import React from "react";
 import "./Facility.css";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 // Header Image
 import firstPic from "../../Assets/Cleanman.jpg";
+import secondPic from "../../Assets/OfficeCleanNew.jpg";
 import thirdPic from "../../Assets/Cleanerbend.jpg";
 
 // Icon
@@ -13,9 +15,12 @@ import proIcon from "../../Assets/protection.gif";
 
 // 
 import service1 from "../../Assets/Officeclean.jpg";
-import service2 from "../../Assets/EffHome.jpg";
-import service3 from "../../Assets/Glassclean.jpg";
-import service4 from "../../Assets/ExpertConst.jpg";
+import service2 from "../../Assets/Movein.jpg";
+import service3 from "../../Assets/GlassWash.jpg";
+import service4 from "../../Assets/PostConst.jpg";
+import service5 from "../../Assets/Fumigate.jpg";
+import service6 from "../../Assets/JanSuply.jpg";
+import service7 from "../../Assets/CarpetWash.jpg";
 
 /* WORK PROCESS IMAGES */
 import work1 from "../../Assets/Tech6.jpg";
@@ -29,6 +34,7 @@ import review2 from "../../Assets/HC2.jpg";
 import review3 from "../../Assets/HC3.jpg";
 
 const Facility = () => {
+  const navigate = useNavigate();
   return (
     <>
       {/* ================= HERO SECTION ================= */}
@@ -67,7 +73,7 @@ const Facility = () => {
     </div>
 
     <div className="facility-card-b">
-      <img src={service2} alt="Cleaning service" />
+      <img src={secondPic} alt="Cleaning service" />
     </div>
 
     <div className="facility-card-c">
@@ -118,64 +124,41 @@ const Facility = () => {
       <section className="clean-section">
 
   <div className="clean-header">
-    <p>✨ Our Cleaning Services</p>
-    <h2>Professional Cleaning Solutions</h2>
+    <div className="clean-header-left">
+      <p>✨ Our Cleaning Services</p>
+      <h2>Professional Cleaning Solutions</h2>
+    </div>
+    <div className="clean-header-right">
+      <p>From offices and homes to post-construction sites and pest control — we deliver expert cleaning solutions tailored to every need.</p>
+    </div>
   </div>
 
-  {[
-    {
-      title: "Commercial & Office Cleaning",
-      img: service1,
-      description:
-        "Keep your workspace clean, organized, and productive with our tailored office cleaning solutions designed for businesses of all sizes.",
-      tags: ["#OfficeCleaning", "#WorkplaceHygiene", "#ProductiveSpace"]
-    },
-    {
-      title: "Move-In / Move-Out Cleaning",
-      img: service2,
-      description:
-        "Enjoy a fresh start or leave a lasting impression with our detailed move-in and move-out cleaning services for a spotless transition.",
-      tags: ["#MoveInCleaning", "#MoveOutCleaning", "#FreshStart"]
-    },
-    {
-      title: "Window & Glass Cleaning",
-      img: service3,
-      description:
-        "Achieve crystal-clear views with our streak-free window and glass cleaning that removes dirt, smudges, and buildup.",
-      tags: ["#GlassCleaning", "#StreakFree", "#ClearView"]
-    },
-    {
-      title: "Post-Construction Cleaning",
-      img: service4,
-      description:
-        "We transform construction sites into clean, safe, and ready-to-use spaces by removing dust, debris, and residues.",
-      tags: ["#PostConstruction", "#DeepCleaning", "#SiteCleanup"]
-    }
-  ].map((item, index) => (
-    <div className="clean-row" key={index}>
-
-      <div className="clean-left">
-        <h3>{item.title}</h3>
-
-        <p>{item.description}</p>
-
-        <div className="clean-tags">
-          {item.tags.map((tag, i) => (
-            <span key={i}>{tag}</span>
-          ))}
+  <div className="clean-list">
+    {[
+      { title: "Commercial & Office Cleaning", img: service1, slug: "commercial-office-cleaning", desc: "Tailored office cleaning solutions for businesses of all sizes — desks, floors, restrooms, and common areas handled on your schedule.", tags: ["Office", "Corporate", "Daily/Weekly"] },
+      { title: "Move-In / Move-Out Cleaning", img: service2, slug: "move-in-move-out-cleaning", desc: "Deep cleaning for a spotless transition. Every room, cupboard, bathroom, and surface covered for handover or occupation.", tags: ["Residential", "Landlords", "Tenants"] },
+      { title: "Window & Glass Cleaning", img: service3, slug: "window-glass-cleaning", desc: "Streak-free results for interior and exterior windows, glass partitions, shopfronts, and high-rise glazing.", tags: ["Commercial", "High-Rise", "Shopfronts"] },
+      { title: "Post-Construction Cleaning", img: service4, slug: "post-construction-cleaning", desc: "We remove dust, debris, paint splatters, and construction residue — transforming sites into clean, move-in ready spaces.", tags: ["Construction", "Renovation", "Site Cleanup"] },
+      { title: "Fumigation & Pest Control", img: service5, slug: "fumigation-pest-control", desc: "WHO-approved treatments for cockroaches, rodents, termites, bedbugs, and more. 30-day satisfaction guarantee.", tags: ["Residential", "Commercial", "Warehouses"] },
+      { title: "Janitorial Supply", img: service6, slug: "janitorial-supply", desc: "Scheduled supply of cleaning chemicals, paper products, hygiene consumables, and equipment for your facility.", tags: ["Offices", "Hotels", "Hospitals"] },
+      { title: "Carpet & Upholstery Cleaning", img: service7, slug: "carpet-upholstery-cleaning", desc: "Professional steam and dry cleaning for carpets, sofas, rugs, and curtains. Removes stains, odours, and allergens.", tags: ["Residential", "Hotels", "Event Centres"] },
+    ].map((item, i) => (
+      <div className="clean-list-item" key={i}>
+        <div className="clean-list-num">{String(i + 1).padStart(2, "0")}</div>
+        <div className="clean-list-img">
+          <img src={item.img} alt={item.title} />
         </div>
-
-        <Link to="/contact">
-          <button className="clean-btn">Request</button>
-        </Link>
+        <div className="clean-list-text">
+          <div className="clean-list-tags">
+            {item.tags.map((tag, j) => <span key={j}>{tag}</span>)}
+          </div>
+          <h3>{item.title}</h3>
+          <p>{item.desc}</p>
+        </div>
+        <button className="clean-list-btn" onClick={() => navigate(`/facility/${item.slug}`)}> Book Now</button>
       </div>
-
-      <div className="clean-image">
-        <img src={item.img} alt={item.title} />
-      </div>
-
-    </div>
-  ))}
+    ))}
+  </div>
 
 </section>
 

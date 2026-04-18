@@ -154,10 +154,11 @@
   font-size: 20px;
   display: inline-block;
   transition: transform 0.3s ease;
+  transform: rotate(180deg);
 }
 
 .dropdown-arr.up {
-  transform: rotate(180deg);
+  transform: rotate(360deg);
 }
 .arr{
   padding-top: 5px;

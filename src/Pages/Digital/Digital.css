@@ -1320,7 +1320,7 @@
   width: 100%;
 }
 
-.hire-learn-more {
+.d-hire-learn-more {
   font-size: 13px;
   color: #0f172a;
   font-weight: 600;
@@ -1332,7 +1332,7 @@
   white-space: nowrap;
 }
 
-.hire-learn-more:hover {
+.d-hire-learn-more:hover {
   background: #0f172a;
   color: #fff;
 }
