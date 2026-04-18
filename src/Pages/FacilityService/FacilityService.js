@@ -5,11 +5,11 @@ import "./FacilityService.css";
 
 import service1 from "../../Assets/Officeclean.jpg";
 import service2 from "../../Assets/Movein.jpg";
-import service3 from "../../Assets/Glassclean.jpg";
+import service3 from "../../Assets/GlassWash.jpg";
 import service4 from "../../Assets/PostConst.jpg";
-import service5 from "../../Assets/Repair.jpg";
-import service6 from "../../Assets/Supply.jpg";
-import service7 from "../../Assets/Clean2.jpg";
+import service5 from "../../Assets/Fumigate.jpg";
+import service6 from "../../Assets/JanSuply.jpg";
+import service7 from "../../Assets/CarpetWash.jpg";
 
 const serviceData = {
   "commercial-office-cleaning": {
