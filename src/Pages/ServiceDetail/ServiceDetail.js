@@ -445,7 +445,7 @@ const ServiceDetail = () => {
             <Link to={`/digital/${s.slug}`} className="sd-related-card" key={s.slug}>
               <img src={s.icon} alt={s.title} />
               <h3>{s.title}</h3>
-              <span>Learn More →</span>
+              <span> Hire </span>
             </Link>
           ))}
         </div>

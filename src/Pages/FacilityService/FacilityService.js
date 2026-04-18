@@ -394,7 +394,7 @@ const FacilityService = () => {
           {relatedServices.map((s) => (
             <Link to={`/facility/${s.slug}`} className="fs-related-card" key={s.slug}>
               <h3>{s.title}</h3>
-              <span>Learn More →</span>
+              <span>Book Now</span>
             </Link>
           ))}
         </div>
