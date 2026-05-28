@@ -18,7 +18,7 @@ const categoryData = {
         id: "antisol",
         name: "ANTISOL FL 30000",
         chemical: "Polyanionic Cellulose Polymer (PAC)",
-        sector: "Construction & Civil Engineering | Oil & Gas Drilling",
+        sector: "Construction & Civil Engineering | Drillings ",
         description:
           "A high-performance fluid loss additive and viscosity modifier manufactured in Germany. ANTISOL is the preferred PAC polymer for bored pile operations, diaphragm wall construction, and deep excavation slurry systems in Nigeria. It dissolves in water to form a viscous, stable gel that prevents slurry from penetrating the borehole walls, ensuring excavation stability.",
         packSizes: ["20 kg Polyethene (PE) bags"],
@@ -75,7 +75,7 @@ const categoryData = {
           { label: "Origin", value: "🇺🇸 United States" },
           { label: "Certifications", value: "NAFDAC Registered | SON Certified | WHO-approved grade" },
         ],
-        origin: "🇺🇸 United States",
+        origin: "🇺🇸 United States | 🇮🇳 India | 🇨🇳 China ",
         tag: "Disinfectant",
       },
       {

@@ -207,7 +207,8 @@ e.target.reset();
               real problems and drive measurable results.
             </p>
 
-            <button>Get Started</button>
+            <button onClick={() => document.querySelector(".hire").scrollIntoView({ behavior: "smooth" })}>
+              Get Started</button>
           </div>
         </div>
       </div>

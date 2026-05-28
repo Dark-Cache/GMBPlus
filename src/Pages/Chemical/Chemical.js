@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { useNavigate } from "react-router-dom";
 import "./Chemical.css";
 import { FaCheckCircle } from "react-icons/fa";
@@ -24,8 +24,6 @@ import SayChemical from "../SayChemical/SayChemical";
 const Chemical = () => {
 
   const navigate = useNavigate();
-
-  const [showPDF, setShowPDF] = useState(false);
 
   return (
     <section className="chemical">
@@ -58,7 +56,7 @@ const Chemical = () => {
           </div>
           
 
-          <button className="chemical-btn">
+          <button className="chemical-btn" onClick={() => document.querySelector(".chemical-stats").scrollIntoView({ behavior: "smooth" })}>
             Request Supply →
           </button>
 
@@ -161,18 +159,14 @@ const Chemical = () => {
     
 
     <div className="chemical-products-right">
-      {/* <p>
-        Explore our diverse range of high-quality fertilizers tailored to enrich
-        soil, boost crop health, and increase productivity for sustainable farming.
-      </p> */}
       <p>
         Explore our wide range of high-quality chemical products developed to support 
         efficient production processes, enhance performance, and ensure consistent 
         results across various industrial applications.
       </p>
-      <button onClick={() => setShowPDF(true)}>
+<button onClick={() => window.open(catalogPDF, '_blank')}>
             View Product Catalog
-      </button>
+        </button>
     </div>
 
 
@@ -224,26 +218,7 @@ const Chemical = () => {
   </div>
 
 </div>
-</div>
-        {showPDF && (
-  <div className="pdf-overlay">
-
-    <div className="pdf-modal">
-
-      <div className="pdf-header">
-        <h3>Product Catalog</h3>
-        <button onClick={() => setShowPDF(false)}>✖</button>
-      </div>
-
-      <iframe
-        src={catalogPDF}
-        title="Product Catalog"
-        className="pdf-frame"
-      ></iframe>
-    </div>
   </div>
-)}
-
 
 {/* PRODUCT REFERENCE SUMMARY */}
 <div className="chem-ref">
