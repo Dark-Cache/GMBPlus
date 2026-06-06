@@ -85,7 +85,7 @@ const Work = () => {
       <div className="work-header">
         <h1>
           RECENT — <br />
-          WORKS FROM <br /> ©2018-2024
+          WORKS FROM <br /> ©2018-2026
         </h1>
       </div>
 

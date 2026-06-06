@@ -82,7 +82,7 @@ const Footer = () => {
 
       {/* BOTTOM */}
       <div className="footer-bottom">
-        <p>© 2026 Dark_Cache. All rights reserved.</p>
+        <p>© 2026 GMBPlus. All right reserved.</p>
       </div>
     </footer>
   );

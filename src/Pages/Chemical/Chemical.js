@@ -56,7 +56,7 @@ const Chemical = () => {
           </div>
           
 
-          <button className="chemical-btn" onClick={() => document.querySelector(".chemical-stats").scrollIntoView({ behavior: "smooth" })}>
+          <button className="chemical-btn" onClick={() => document.querySelector(".tryout").scrollIntoView({ behavior: "smooth" })}>
             Request Supply →
           </button>
 
@@ -147,6 +147,7 @@ const Chemical = () => {
 
 
 {/* PRODUCTS SECTION */}
+<div className="tryout"></div>
 <div className="chemical-products">
 
   {/* TOP HEADER */}

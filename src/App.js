@@ -21,7 +21,6 @@ import Work from "./Pages/Work/Work";
 import Contact from "./Pages/Contact/Contact";
 import ServiceDetail from "./Pages/ServiceDetail/ServiceDetail";
 import CategoryProducts from "./Pages/CategoryProducts/CategoryProducts";
-import FacilityService from "./Pages/FacilityService/FacilityService";
 
 
 
@@ -41,12 +40,11 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/work" element={<Work />} />
         <Route path="/chemical" element={<Chemical />} />
+          <Route path="/facility" element={<Facility />} />
         <Route path="/digital" element={<Digital />} />
-        <Route path="/facility" element={<Facility />} />
         <Route path="/property" element={<Property />} />
         <Route path="/digital/:slug" element={<ServiceDetail />} />
         <Route path="/chemical/:slug" element={<CategoryProducts />} />
-        <Route path="/facility/:slug" element={<FacilityService />} />
       </Routes>
 
       <Footer />

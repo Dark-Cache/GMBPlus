@@ -82,6 +82,10 @@
 
 /* Responsive */
 @media (max-width: 992px) {
+    .testimonial-header {
+  margin-bottom: 20px;
+}
+
   .testimonial-grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -90,9 +94,19 @@
 @media (max-width: 600px) {
   .testimonial-grid {
     grid-template-columns: 1fr;
+    padding-bottom: 30px;
   }
+
+  .testimonial-section {
+  padding: 0px;
+}
 
   .testimonial-header h2 {
     font-size: 28px;
   }
+
+  .testimonial-header {
+  margin-bottom: 30px;
+}
+
 }
