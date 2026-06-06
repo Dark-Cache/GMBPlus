@@ -473,3 +473,156 @@
     font-size: 16px;
   }
 }
+
+
+
+/* ===================================
+   TEAM SECTION
+=================================== */
+
+.about-team {
+  padding: 10px 6%;
+  background: #f8f8f5;
+}
+
+.about-team-container {
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.about-team-header {
+  text-align: center;
+  margin-bottom: 70px;
+}
+
+.about-team-header h2 {
+  font-size: 46px;
+  font-weight: 600;
+  color: #000;
+  margin-bottom: 24px;
+  line-height: 1.1;
+}
+
+.about-team-header p {
+  max-width: 720px;
+  margin: 0 auto;
+  font-size: 16px;
+  line-height: 1.8;
+  color: #666;
+}
+
+.about-team-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.team-card {
+  transition: all 0.4s ease;
+}
+
+.team-card:hover {
+  transform: translateY(-8px);
+}
+
+.team-image {
+  height: 420px;
+  overflow: hidden;
+  border-radius: 24px;
+  margin-bottom: 24px;
+}
+
+.team-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.team-card:hover .team-image img {
+  transform: scale(1.05);
+}
+
+.team-card h3 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #000;
+  /* margin-bottom: 10px; */
+}
+
+.team-card span {
+  display: block;
+  font-size: 16px;
+  color: #555;
+}
+
+/* ==========================
+   Tablet
+========================== */
+
+@media (max-width: 1024px) {
+
+  .about-team-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .about-team-header h2 {
+    font-size: 56px;
+  }
+
+  .about-team-header p {
+    font-size: 18px;
+  }
+
+  .team-image {
+    height: 380px;
+  }
+
+  .team-card h3 {
+    font-size: 30px;
+  }
+
+  .team-card span {
+    font-size: 20px;
+  }
+}
+
+/* ==========================
+   Mobile
+========================== */
+
+@media (max-width: 768px) {
+
+  .about-team {
+    padding: 80px 5%;
+  }
+
+  .about-team-header {
+    margin-bottom: 50px;
+  }
+
+  .about-team-header h2 {
+    font-size: 42px;
+  }
+
+  .about-team-header p {
+    font-size: 16px;
+  }
+
+  .about-team-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .team-image {
+    height: 350px;
+  }
+
+  .team-card h3 {
+    font-size: 28px;
+  }
+
+  .team-card span {
+    font-size: 18px;
+  }
+}

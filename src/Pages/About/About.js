@@ -12,6 +12,12 @@ import InoIcon from "../../Assets/innovation.gif";
 import ExeIcon from "../../Assets/trophy.gif";
 import CollaIcon from "../../Assets/collaboration.gif";
 
+//Team Pictures
+import teamOne from "../../Assets/CEO.jpeg";
+import teamTwo from "../../Assets/Ade.jpeg";
+import teamThree from "../../Assets/Bukola.jpeg";
+import teamFour from "../../Assets/Red.jpeg";
+
 const About = () => {
   return (
     <>
@@ -180,6 +186,67 @@ const About = () => {
           We build strong partnerships through teamwork,
           trust, and mutual respect.
         </p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+{/* ==========================
+    TEAM SECTION
+========================== */}
+
+<section className="about-team">
+  <div className="about-team-container">
+
+    <div className="about-team-header">
+      <h2>Meet the team</h2>
+
+      <p>
+        Behind every successful project is a dedicated team of professionals
+        committed to delivering excellence, innovation, and exceptional
+        service across all our business divisions.
+      </p>
+    </div>
+
+    <div className="about-team-grid">
+
+      <div className="team-card">
+        <div className="team-image">
+          <img src={teamOne} alt="Team Member" />
+        </div>
+
+        <h3> Mr Olayinka Yusuf </h3>
+        <span>Managing Director</span>
+      </div>
+
+      <div className="team-card">
+        <div className="team-image">
+          <img src={teamTwo} alt="Team Member" />
+        </div>
+
+        <h3> Mr Adeola Yusuf | MSc GMNSE</h3>
+        <span>Operations Manager</span>
+      </div>
+
+      <div className="team-card">
+        <div className="team-image">
+          <img src={teamThree} alt="Team Member" />
+        </div>
+
+        <h3>Mrs Adebukola Eiche</h3>
+        <span>Account Manager</span>
+      </div>
+
+      <div className="team-card">
+        <div className="team-image">
+          <img src={teamFour} alt="Team Member" />
+        </div>
+
+        <h3>Mrs Damilola</h3>
+        <span>Director of Facility Management</span>
       </div>
 
     </div>
