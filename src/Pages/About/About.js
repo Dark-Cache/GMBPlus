@@ -1,5 +1,6 @@
 import React from "react";
 import "./About.css";
+import Say from "../Say/Say";
 
 // About Images
 import aboutOne from "../../Assets/HC1.jpg";
@@ -254,6 +255,7 @@ const About = () => {
   </div>
 </section>
 
+  <Say />
     </>
   );
 };

@@ -20,7 +20,7 @@
 
 .about-tag {
   display: inline-block;
-  font-size: 0.85rem;
+  font-size: 1rem;
   font-weight: 600;
   letter-spacing: 2px;
   color: #10b981;
@@ -481,7 +481,7 @@
 =================================== */
 
 .about-team {
-  padding: 10px 6%;
+  padding: 0px 6% 60px;
   background: #f8f8f5;
 }
 
@@ -626,3 +626,4 @@
     font-size: 18px;
   }
 }
+
