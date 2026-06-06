@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { IoCloseSharp } from "react-icons/io5";
 import "./Facility.css";
 
 
@@ -34,9 +35,138 @@ import EduIcon from "../../Assets/education.gif"
 import HosIcon from "../../Assets/hospital.gif"
 import ShopIcon from "../../Assets/shop-store.gif"
 
+const facilityServices = [
+  {
+    icon: JanIcon,
+    title: "Cleaning & Janitorial",
+    desc: "Daily, deep, and post-construction cleaning for any space.",
+    benefit: "Healthier environment, better hygiene.",
+    tag: "Homes, Estates, Offices",
+  },
+  {
+    icon: SecureIcon,
+    title: "Security Services",
+    desc: "Trained guards, access control, patrol, and CCTV monitoring.",
+    benefit: "24/7 safety, fewer incidents.",
+    tag: "Estates, Offices, Malls",
+  },
+  {
+    icon: FixIcon,
+    title: "Electrical & Plumbing",
+    desc: "Installations, fault finding, and emergency repairs.",
+    benefit: "Safe systems, reduced downtime.",
+    tag: "Homes, Estates, Offices",
+  },
+  {
+    icon: AirIcon,
+    title: "HVAC (Air Conditioning)",
+    desc: "AC servicing, installation, repairs, and gas refills.",
+    benefit: "Longer AC life, lower bills.",
+    tag: "Homes, Offices, Retail",
+  },
+  {
+    icon: WasteIcon,
+    title: "Waste Management",
+    desc: "Scheduled pickup, disposal, and recycling coordination.",
+    benefit: "Cleaner space, LAWMA compliance.",
+    tag: "Estates, Offices, Schools",
+  },
+  {
+    icon: LandIcon,
+    title: "Landscaping",
+    desc: "Garden design, lawn care, tree trimming, and grounds keeping.",
+    benefit: "Better curb appeal, higher property value.",
+    tag: "Homes, Estates, Hotels",
+  },
+  {
+    icon: AntIcon,
+    title: "Pest Control",
+    desc: "Fumigation, rodent control, and termite treatment.",
+    benefit: "Healthier spaces, protected property.",
+    tag: "Homes, Offices, Restaurants",
+  },
+  {
+    icon: DoIcon,
+    title: "General Repairs",
+    desc: "Carpentry, painting, tiling, roofing, and handyman work.",
+    benefit: "One call fixes everything.",
+    tag: "Homes, Estates, Offices",
+  },
+];
 
+const propertyTypes = [
+  "Private Homes",
+  "Residential Estates",
+  "Offices & Businesses",
+  "Schools & Hospitals",
+  "Retail & Malls",
+  "Other",
+];
 
 const Facility = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isThankYouOpen, setIsThankYouOpen] = useState(false);
+  const [selectedService, setSelectedService] = useState("");
+  const [paymentType, setPaymentType] = useState("contract");
+  const [selectedPlan, setSelectedPlan] = useState("Contract-Based Service");
+  const [budget, setBudget] = useState("");
+  const [propertyType, setPropertyType] = useState(propertyTypes[0]);
+  const [schedule, setSchedule] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
+
+  const openModal = (service) => {
+    setSelectedService(service);
+    setPaymentType("contract");
+    setSelectedPlan("Contract-Based Service");
+    setBudget("");
+    setPropertyType(propertyTypes[0]);
+    setSchedule("");
+    setIsModalOpen(true);
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setIsLoading(true);
+
+    const formData = new FormData(e.target);
+
+    try {
+      const response = await fetch("https://formspree.io/f/mpqkqplv", {
+        method: "POST",
+        body: formData,
+        headers: { Accept: "application/json" },
+      });
+
+      if (response.ok) {
+        e.target.reset();
+        setIsModalOpen(false);
+        setIsThankYouOpen(true);
+      } else {
+        alert("Something went wrong.");
+      }
+    } catch (error) {
+      alert("Network error.");
+    }
+
+    setIsLoading(false);
+  };
+
+  useEffect(() => {
+    if (isModalOpen) {
+      const scrollBarWidth = window.innerWidth - document.documentElement.clientWidth;
+      document.body.style.overflow = "hidden";
+      document.body.style.paddingRight = `${scrollBarWidth}px`;
+    } else {
+      document.body.style.overflow = "auto";
+      document.body.style.paddingRight = "0px";
+    }
+
+    return () => {
+      document.body.style.overflow = "auto";
+      document.body.style.paddingRight = "0px";
+    };
+  }, [isModalOpen]);
+
   return (
     <>
 
@@ -200,123 +330,181 @@ const Facility = () => {
     </div>
 
     <div className="facility-services-grid">
+      {facilityServices.map((item, index) => (
+        <div key={index} className="facility-service-card">
+          <img src={item.icon} alt={item.title} />
+          <h3>{item.title}</h3>
+          <p>{item.desc}</p>
 
-      <div className="facility-service-card">
-        <img src={JanIcon} alt="Janitor" />
-        <h3>Cleaning & Janitorial</h3>
-        <p>
-          Daily, deep, and post-construction cleaning for any space.
-        </p>
+          <p className="service-benefit">
+            <strong>Benefits:</strong> {item.benefit}
+          </p>
 
-        <p className="service-benefit">
-          <strong>Benefits:</strong> Healthier environment, better hygiene.
-        </p>
+          <span>{item.tag}</span>
 
-        <span>Homes, Estates, Offices</span>
-      </div>
-
-      <div className="facility-service-card">
-        <img src={SecureIcon} alt="Security" />
-        <h3>Security Services</h3>
-        <p>
-          Trained guards, access control, patrol, and CCTV monitoring.
-        </p>
-
-        <p className="service-benefit">
-          <strong>Benefits:</strong> 24/7 safety, fewer incidents.
-        </p>
-
-        <span>Estates, Offices, Malls</span>
-      </div>
-
-      <div className="facility-service-card">
-        <img src={FixIcon} alt="Repairs" />
-        <h3>Electrical & Plumbing</h3>
-        <p>
-          Installations, fault finding, and emergency repairs.
-        </p>
-
-        <p className="service-benefit">
-          <strong>Benefits:</strong> Safe systems, reduced downtime.
-        </p>
-
-        <span>Homes, Estates, Offices</span>
-      </div>
-
-      <div className="facility-service-card">
-        <img src={AirIcon} alt="HVAC" />
-        <h3>HVAC (Air Conditioning)</h3>
-        <p>
-          AC servicing, installation, repairs, and gas refills.
-        </p>
-
-        <p className="service-benefit">
-          <strong>Benefits:</strong> Longer AC life, lower bills.
-        </p>
-
-        <span>Homes, Offices, Retail</span>
-      </div>
-
-      <div className="facility-service-card">
-        <img src={WasteIcon} alt="Waste Management" />
-        <h3>Waste Management</h3>
-        <p>
-          Scheduled pickup, disposal, and recycling coordination.
-        </p>
-
-        <p className="service-benefit">
-          <strong>Benefits:</strong> Cleaner space, LAWMA compliance.
-        </p>
-
-        <span>Estates, Offices, Schools</span>
-      </div>
-
-      <div className="facility-service-card">
-        <img src={LandIcon} alt="Landscaping" />
-        <h3>Landscaping</h3>
-        <p>
-          Garden design, lawn care, tree trimming, and grounds keeping.
-        </p>
-
-        <p className="service-benefit">
-          <strong>Benefits:</strong> Better curb appeal, higher property value.
-        </p>
-
-        <span>Homes, Estates, Hotels</span>
-      </div>
-
-      <div className="facility-service-card">
-        <img src={AntIcon} alt="Pest Control" />
-        <h3>Pest Control</h3>
-        <p>
-          Fumigation, rodent control, and termite treatment.
-        </p>
-
-        <p className="service-benefit">
-          <strong>Benefits:</strong> Healthier spaces, protected property.
-        </p>
-
-        <span>Homes, Offices, Restaurants</span>
-      </div>
-
-      <div className="facility-service-card">
-        <img src={DoIcon} alt="Repair" />
-        <h3>General Repairs</h3>
-        <p>
-          Carpentry, painting, tiling, roofing, and handyman work.
-        </p>
-
-        <p className="service-benefit">
-          <strong>Benefits:</strong> One call fixes everything.
-        </p>
-
-        <span>Homes, Estates, Offices</span>
-      </div>
-
+          <button
+            className="facility-hire-btn"
+            onClick={() => openModal(item.title)}
+          >
+            Hire Service
+          </button>
+        </div>
+      ))}
     </div>
 
   </div>
 </section>
+
+{isModalOpen && (
+  <div className="facility-modal-overlay" onClick={() => setIsModalOpen(false)}>
+    <div className="facility-modal-content" onClick={(e) => e.stopPropagation()}>
+      <div className="facility-modal-header">
+        <div>
+          <h2>Hire {selectedService}</h2>
+          <p className="facility-modal-subtitle">
+            Choose a service type, property type, and let us know your preferred schedule.
+          </p>
+        </div>
+        <button className="facility-modal-close" onClick={() => setIsModalOpen(false)}>
+          <IoCloseSharp />
+        </button>
+      </div>
+
+      <div className="facility-modal-body">
+        <div className="facility-form-group facility-select-group">
+          <label>Property Type</label>
+          <select
+            name="propertyType"
+            value={propertyType}
+            onChange={(e) => setPropertyType(e.target.value)}
+          >
+            {propertyTypes.map((type) => (
+              <option key={type} value={type}>{type}</option>
+            ))}
+          </select>
+        </div>
+
+        <div className="facility-form-group facility-select-group">
+          <label>Service Option</label>
+          <div className="facility-toggle-row">
+            <button
+              type="button"
+              className={paymentType === "contract" ? "facility-toggle active" : "facility-toggle"}
+              onClick={() => {
+                setPaymentType("contract");
+                setBudget("");
+                setSelectedPlan("Contract-Based Service");
+              }}
+            >
+              Contract-Based
+            </button>
+            <button
+              type="button"
+              className={paymentType === "oneoff" ? "facility-toggle active" : "facility-toggle"}
+              onClick={() => {
+                setPaymentType("oneoff");
+                setSelectedPlan("One-Off Service");
+              }}
+            >
+              One-Off
+            </button>
+          </div>
+        </div>
+
+        {paymentType === "contract" ? (
+          <div className="facility-plan-summary">
+            <p><strong>Plan:</strong> Dedicated team, regular inspections, and ongoing support.</p>
+          </div>
+        ) : (
+          <div className="facility-plan-summary">
+            <p><strong>One-off request:</strong> Fixed-scope service with a clear job quote.</p>
+          </div>
+        )}
+
+        <form className="facility-modal-form" onSubmit={handleSubmit}>
+          <input type="hidden" name="service" value={selectedService} required />
+          <input type="hidden" name="paymentType" value={paymentType} required />
+          <input type="hidden" name="plan" value={selectedPlan} required />
+          <input type="hidden" name="_subject" value={`New Facility Request - ${selectedService}`} />
+
+          <div className="facility-form-group">
+            <label>Company Name / Full Name</label>
+            <input
+              type="text"
+              name="fullName"
+              placeholder="Company Name / Full Name"
+              required
+            />
+          </div>
+
+          <div className="facility-form-group">
+            <label>Email</label>
+            <input type="email" name="email" placeholder="Enter Email.." required />
+          </div>
+
+          <div className="facility-form-group">
+            <label>Phone Number</label>
+            <input type="text" name="phone" placeholder="Enter Phone Number.." required />
+          </div>
+
+          <div className="facility-form-row">
+            <div className="facility-form-group">
+              <label>Preferred Schedule</label>
+              <input
+                type="text"
+                name="schedule"
+                placeholder="e.g. next week, 14th June, ASAP"
+                value={schedule}
+                onChange={(e) => setSchedule(e.target.value)}
+                required
+              />
+            </div>
+
+            <div className="facility-form-group">
+              <label>Budget</label>
+              <input
+                type="text"
+                name="budget"
+                placeholder="e.g. ₦50,000"
+                value={budget}
+                onChange={(e) => setBudget(e.target.value)}
+              />
+            </div>
+          </div>
+
+          <div className="facility-form-group">
+            <label>Message</label>
+            <textarea
+              name="message"
+              placeholder="Tell us more about your property and needs."
+              rows="5"
+            ></textarea>
+          </div>
+
+          <button type="submit" className="facility-modal-submit" disabled={isLoading}>
+            {isLoading ? "Sending..." : "Send Request"}
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+)}
+
+{isThankYouOpen && (
+  <div className="facility-modal-overlay" onClick={() => setIsThankYouOpen(false)}>
+    <div className="facility-modal-content facility-thank-you" onClick={(e) => e.stopPropagation()}>
+      <button className="facility-modal-close" onClick={() => setIsThankYouOpen(false)}>
+        ✕
+      </button>
+      <div className="facility-thank-you-icon">✓</div>
+      <h2>Thank You!</h2>
+      <p>Your request has been received successfully. We'll get back to you within 24 hours.</p>
+      <button className="facility-thank-you-btn" onClick={() => setIsThankYouOpen(false)}>
+        Close
+      </button>
+    </div>
+  </div>
+)}
 
 {/* WORKING OPTIONS SECTION */}
 
