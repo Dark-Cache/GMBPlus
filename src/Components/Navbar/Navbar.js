@@ -96,7 +96,7 @@ const Navbar = () => {
           </li>
           <li><Link to="/about" onClick={() => setMenuOpen(false)}>About Us</Link></li>
           <li><Link to="/work" onClick={() => setMenuOpen(false)}>Work Done</Link></li>
-          <li><Link to="/quote" onClick={() => setMenuOpen(false)}> Brochure</Link></li>
+          <li><Link to="/brochure" onClick={() => setMenuOpen(false)}> Brochure</Link></li>
           <li className="mobile-contact">
             <Link to="/contact" onClick={() => setMenuOpen(false)}>Contact Us</Link>
           </li>
