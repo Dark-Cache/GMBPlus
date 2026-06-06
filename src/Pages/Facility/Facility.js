@@ -180,7 +180,6 @@ const Facility = () => {
     <div className="facility-content">
 
       <p className="facility-subtitle">
-        {/* Welcome to Cleanora, */}
       </p>
 
       <h1 className="facility-title">
@@ -198,12 +197,9 @@ const Facility = () => {
 
       <div className="facility-buttons">
         <button className="facility-primaryBtn" onClick={() => document.querySelector(".clean").scrollIntoView({ behavior: "smooth" })}>
-          Search Your Service
+          Request A Service
         </button>
 
-        {/* <button className="facility-secondaryBtn">
-          Book Inspection
-        </button> */}
       </div>
 
       <div className="facility-rating">
@@ -275,7 +271,7 @@ const Facility = () => {
 
             <div className="facility-solution-card">
               <span>
-                  <img src={OneIcon} alt="icon" className="cus-icon" />
+                  <img src={OneIcon} alt="icon" />
                 </span>
 
               <h3>One-Off Services</h3>
@@ -288,7 +284,7 @@ const Facility = () => {
 
             <div className="facility-solution-card">
               <span>
-                  <img src={ContractIcon} alt="icon" className="cus-icon" />
+                  <img src={ContractIcon} alt="icon"/>
                 </span>
 
               <h3>Contract-Based Management</h3>
@@ -301,7 +297,7 @@ const Facility = () => {
 
             <div className="facility-solution-card">
               <span>
-                  <img src={PropertyIcon} alt="icon" className="cus-icon" />
+                  <img src={PropertyIcon} alt="icon" />
                 </span>
 
               <h3>For Every Property Type</h3>

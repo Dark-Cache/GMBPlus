@@ -11,15 +11,15 @@ import Footer from "./Components/Footer/Footer";
 
 // Pages
 import Home from "./Pages/Home/Home";
-import About from "./Pages/About/About";
 import Services from "./Pages/Services/Services";
 import Chemical from "./Pages/Chemical/Chemical";
 import Facility from "./Pages/Facility/Facility";
 import Digital from "./Pages/Digital/Digital";
 import Property from "./Pages/Property/Property";
+import About from "./Pages/About/About";
 import Work from "./Pages/Work/Work";
-import Contact from "./Pages/Contact/Contact";
 import Brochure from "./Pages/Brochure/Brochure";
+import Contact from "./Pages/Contact/Contact";
 import ServiceDetail from "./Pages/ServiceDetail/ServiceDetail";
 import CategoryProducts from "./Pages/CategoryProducts/CategoryProducts";
 
@@ -42,7 +42,7 @@ function App() {
         <Route path="/work" element={<Work />} />
         <Route path="/brochure" element={<Brochure />} />
         <Route path="/chemical" element={<Chemical />} />
-          <Route path="/facility" element={<Facility />} />
+        <Route path="/facility" element={<Facility />} />
         <Route path="/digital" element={<Digital />} />
         <Route path="/property" element={<Property />} />
         <Route path="/digital/:slug" element={<ServiceDetail />} />

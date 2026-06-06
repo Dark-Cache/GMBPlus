@@ -9,14 +9,15 @@ import { FaWarehouse } from "react-icons/fa";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
-    fullName: "",
+    firstName: "",
     email: "",
     phone: "",
     subject: "",
     message: "",
   });
 
-  const [submitted, setSubmitted] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const [isThankYouOpen, setIsThankYouOpen] = useState(false);
 
   const handleChange = (e) => {
     setFormData({
@@ -27,26 +28,38 @@ const Contact = () => {
 
   const isFormValid =
     formData.firstName &&
-    formData.lastName &&
     formData.email &&
     formData.phone &&
     formData.subject &&
     formData.message;
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (!isFormValid) return;
 
-    setSubmitted(true);
+    setIsLoading(true);
 
-    setFormData({
-      firstName: "",
-      lastName: "",
-      email: "",
-      phone: "",
-      subject: "",
-      message: "",
-    });
+    const data = new FormData(e.target);
+
+    try {
+      const response = await fetch("https://formspree.io/f/mpqkqplv", {
+        method: "POST",
+        body: data,
+        headers: { Accept: "application/json" },
+      });
+
+      if (response.ok) {
+        e.target.reset();
+        setFormData({ firstName: "", email: "", phone: "", subject: "", message: "" });
+        setIsThankYouOpen(true);
+      } else {
+        alert("Something went wrong.");
+      }
+    } catch (err) {
+      alert("Network error.");
+    }
+
+    setIsLoading(false);
   };
 
   return (
@@ -71,15 +84,7 @@ const Contact = () => {
             Fill out the form below, and one of our team members will get back to you shortly.
           </p>
 
-          {submitted ? (
-            <div className="success-message">
-              Message sent successfully!
-              <button onClick={() => setSubmitted(false)}>
-                Send another
-              </button>
-            </div>
-          ) : (
-            <form onSubmit={handleSubmit}>
+          <form onSubmit={handleSubmit}>
 
               <div className="row">
                 <input
@@ -128,11 +133,22 @@ const Contact = () => {
                 onChange={handleChange}
               />
 
-              <button className="send-btn" disabled={!isFormValid}>
-                Send Message →
+              <button type="submit" className="send-btn" disabled={isLoading || !isFormValid}>
+                {isLoading ? "Sending..." : "Send Message →"}
               </button>
 
             </form>
+
+          {isThankYouOpen && (
+            <div className="facility-modal-overlay" onClick={() => setIsThankYouOpen(false)}>
+              <div className="facility-modal-content facility-thank-you" onClick={(e) => e.stopPropagation()}>
+                <button className="facility-modal-close" onClick={() => setIsThankYouOpen(false)}>✕</button>
+                <div className="facility-thank-you-icon">✓</div>
+                <h2>Thank You!</h2>
+                <p>Your message has been received. We'll get back to you within 24 hours.</p>
+                <button className="facility-thank-you-btn" onClick={() => setIsThankYouOpen(false)}>Close</button>
+              </div>
+            </div>
           )}
         </div>
 

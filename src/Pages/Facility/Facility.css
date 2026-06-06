@@ -337,6 +337,11 @@
   transform: translateY(-8px);
 }
 
+.facility-solution-card img{
+  width: 7 0px;
+  height: 70px;
+}
+
 .facility-solution-card h3 {
   font-size: 16px;
   font-weight: 600;
@@ -1426,11 +1431,12 @@
 @media (max-width: 768px) {
 
   .facility-pricing {
-    padding: 0px 5%;
+    padding: 60px 5%;
   }
 
   .facility-pricing-header h2 {
-    font-size: 40px;
+    font-size: 36px;
+    margin-bottom: 5px;
   }
 
   .facility-pricing-header p {
@@ -1546,7 +1552,7 @@
 @media (max-width: 768px) {
 
   .facility-why {
-    padding: 0px 5%;
+    padding: 60px 5%;
   }
 
   .facility-why-grid {
