@@ -7,7 +7,7 @@ import { FaCheckCircle } from "react-icons/fa";
 import mainImg from "../../Assets/Chemical.jpg";
 import sideImg from "../../Assets/Chemical2.jpg";
 import labIcon from "../../Assets/researcher.gif";
-import busIcon from "../../Assets/deal.gif";
+import busIcon from "../../Assets/dealchem.gif";
 import subImg from "../../Assets/Chemical3.jpg";
 
 //PDF
@@ -126,21 +126,6 @@ const Chemical = () => {
       ensuring consistent product availability and customer satisfaction across
       different industries.
     </p>
-
-    {/* STATS */}
-    <div className="chemical-stats">
-
-      <div>
-        <h3>+5</h3>
-        <span>Years Experience</span>
-      </div>
-
-      <div>
-        <h3>+8</h3>
-        <span>Product Diversity</span>
-      </div>
-
-    </div>
   </div>
 </div>
 

@@ -1,16 +1,62 @@
-/* PAGE */
+/* ===========================
+   ANIMATIONS
+=========================== */
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* ===========================
+   PAGE
+=========================== */
+
 .contact-page {
   background: #f8fafc;
   padding: 5.5rem 2rem;
   font-family: "Segoe UI", sans-serif;
 }
 
-/* HEADER */
+/* ===========================
+   HEADER
+=========================== */
+
 .contact-header {
   text-align: center;
   max-width: 700px;
   margin: auto;
   margin-bottom: 3rem;
+
+  opacity: 0;
+  animation: fadeUp 0.8s ease forwards;
 }
 
 .contact-header h1 {
@@ -22,9 +68,13 @@
 .contact-header p {
   color: #6b7280;
   font-size: 14px;
+  line-height: 1.7;
 }
 
-/* WRAPPER */
+/* ===========================
+   WRAPPER
+=========================== */
+
 .contact-wrapper {
   max-width: 1100px;
   margin: auto;
@@ -33,17 +83,25 @@
   gap: 2rem;
 }
 
-/* FORM CARD */
+/* ===========================
+   FORM CARD
+=========================== */
+
 .contact-form-card {
   background: #ffffff;
   padding: 2rem;
   border-radius: 16px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+
+  opacity: 0;
+  animation: fadeLeft 0.8s ease forwards;
+  animation-delay: 0.2s;
 }
 
 .contact-form-card h2 {
   font-size: 22px;
   margin-bottom: 10px;
+  color: #0f172a;
 }
 
 .contact-form-card p {
@@ -52,7 +110,10 @@
   margin-bottom: 1.5rem;
 }
 
-/* FORM */
+/* ===========================
+   FORM
+=========================== */
+
 form {
   display: flex;
   flex-direction: column;
@@ -73,13 +134,25 @@ textarea {
   border: 1px solid #e5e7eb;
   font-size: 14px;
   outline: none;
+  transition: all 0.3s ease;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: #1f7a3a;
+  box-shadow: 0 0 0 4px rgba(31, 122, 58, 0.1);
 }
 
 textarea {
   min-height: 120px;
+  resize: vertical;
 }
 
-/* BUTTON */
+/* ===========================
+   BUTTON
+=========================== */
+
 .send-btn {
   background: #1f7a3a;
   color: white;
@@ -88,57 +161,64 @@ textarea {
   border: none;
   cursor: pointer;
   margin-top: 10px;
+  font-weight: 600;
+  transition: all 0.3s ease;
 }
 
 .send-btn:hover {
   background: #0f172a;
+  transform: translateY(-3px);
 }
 
 .send-btn:disabled {
   opacity: 0.5;
+  cursor: not-allowed;
 }
 
-/* RIGHT SIDE */
+/* ===========================
+   RIGHT SIDE
+=========================== */
+
 .contact-right {
   display: flex;
   flex-direction: column;
   gap: 1rem;
+
+  opacity: 0;
+  animation: fadeRight 0.8s ease forwards;
+  animation-delay: 0.4s;
 }
 
-/* HERO CARD */
+/* ===========================
+   HERO CARD
+=========================== */
+
 .contact-hero {
   position: relative;
   border-radius: 16px;
   overflow: hidden;
 }
 
-/* .contact-hero img {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-} */
-
 .contact-hero img {
   width: 100%;
-  height: 220px; /* slightly bigger like design */
+  height: 220px;
   object-fit: cover;
   display: block;
+  transition: transform 0.6s ease;
+}
+
+.contact-hero:hover img {
+  transform: scale(1.08);
 }
 
 .contact-hero::before {
   content: "";
   position: absolute;
   inset: 0;
-
-  /* 🔥 main teal overlay */
   background: rgba(15, 118, 110, 0.85);
-
-  /* 🔥 pattern overlay */
   background-image: url("../../Assets/HC2.jpg");
-
   background-blend-mode: overlay;
   opacity: 0.9;
-
   z-index: 1;
 }
 
@@ -154,7 +234,10 @@ textarea {
   line-height: 1.3;
 }
 
-/* INFO CARDS */
+/* ===========================
+   INFO CARDS
+=========================== */
+
 .info-card {
   background: #e6f4f1;
   padding: 1rem;
@@ -162,24 +245,36 @@ textarea {
   display: flex;
   gap: 10px;
   align-items: center;
+  transition: all 0.3s ease;
+}
+
+.info-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.08);
 }
 
 .info-card svg {
   font-size: 20px;
   color: #1f7a3a;
+  flex-shrink: 0;
 }
 
 .info-card h4 {
   font-size: 14px;
   margin-bottom: 2px;
+  color: #0f172a;
 }
 
 .info-card p {
   font-size: 13px;
   color: #374151;
+  line-height: 1.5;
 }
 
-/* SUCCESS */
+/* ===========================
+   SUCCESS
+=========================== */
+
 .success-message {
   text-align: center;
   padding: 2rem;
@@ -189,7 +284,10 @@ textarea {
   margin-top: 1rem;
 }
 
-/* RESPONSIVE */
+/* ===========================
+   RESPONSIVE
+=========================== */
+
 @media (max-width: 900px) {
   .contact-wrapper {
     grid-template-columns: 1fr;
@@ -197,5 +295,54 @@ textarea {
 
   .row {
     flex-direction: column;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-page {
+    padding: 5rem 1.2rem;
+  }
+
+  .contact-header h1 {
+    font-size: 38px;
+  }
+
+  .overlay-text {
+    font-size: 22px;
+  }
+
+  .contact-form-card {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .contact-page {
+    padding: 5rem 1rem;
+  }
+
+  .contact-header h1 {
+    font-size: 30px;
+  }
+
+  .contact-header p {
+    font-size: 13px;
+  }
+
+  .contact-hero img {
+    height: 190px;
+  }
+
+  .overlay-text {
+    font-size: 18px;
+    max-width: 200px;
+  }
+
+  .contact-form-card h2 {
+    font-size: 20px;
+  }
+
+  .info-card {
+    padding: 0.9rem;
   }
 }

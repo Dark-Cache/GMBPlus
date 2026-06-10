@@ -3,6 +3,64 @@
   background: #f7f7f7;
 }
 
+/* ===========================
+   ANIMATIONS
+=========================== */
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideRight {
+  from {
+    opacity: 0;
+    transform: translateX(-60px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideLeft {
+  from {
+    opacity: 0;
+    transform: translateX(60px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes floating {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+/* ===========================
+   LAYOUT
+=========================== */
+
 .chemical-container {
   display: flex;
   align-items: center;
@@ -10,7 +68,10 @@
   gap: 40px;
 }
 
-/* LEFT */
+/* ===========================
+   LEFT CONTENT
+=========================== */
+
 .chemical-left {
   flex: 1;
 }
@@ -20,12 +81,22 @@
   font-weight: 700;
   color: #0b2545;
   line-height: 1.2;
+  animation: fadeUp 0.8s ease forwards;
 }
 
 .chemical-left p {
   margin: 20px 0;
   color: #555;
   font-size: 16px;
+  opacity: 0;
+  animation: fadeUp 0.8s ease forwards;
+  animation-delay: 0.2s;
+}
+
+.chemical-points {
+  opacity: 0;
+  animation: fadeUp 0.8s ease forwards;
+  animation-delay: 0.4s;
 }
 
 .chemical-points div {
@@ -35,65 +106,109 @@
 }
 
 .chemical-points .icon {
-  color: green;
+  color: #1f7a3a;
   margin-right: 10px;
 }
 
-/* BUTTON */
+/* ===========================
+   BUTTON
+=========================== */
+
 .chemical-btn {
-  margin-top: 10px;
   padding: 14px 26px;
   background: #1f7a3a;
   color: #fff;
   border: none;
   border-radius: 30px;
   cursor: pointer;
-  transition: 0.3s;
+  transition: all 0.3s ease;
+  opacity: 0;
+  animation: fadeUp 0.8s ease forwards;
+  animation-delay: 0.6s;
 }
 
 .chemical-btn:hover {
   background: #145c2b;
+  transform: translateY(-4px);
+  box-shadow: 0 12px 25px rgba(31, 122, 58, 0.3);
 }
 
-/* CLIENTS */
+/* ===========================
+   CLIENTS
+=========================== */
+
 .chemical-clients {
   display: flex;
   align-items: center;
-  margin-top: 10px;
+  margin-top: 5px;
+  opacity: 0;
+  animation: fadeUp 0.8s ease forwards;
+  animation-delay: 0.8s;
 }
 
 .chemical-clients img {
-  width: 40px;
+  width: 45px;
   border-radius: 50%;
   margin-right: 10px;
 }
 
-/* RIGHT */
+/* ===========================
+   RIGHT CONTENT
+=========================== */
+
 .chemical-right {
   flex: 1;
   position: relative;
 }
 
-/* MAIN IMAGE */
+/* ===========================
+   MAIN IMAGE
+=========================== */
+
+.chemical-main-img {
+  overflow: hidden;
+  border-radius: 20px;
+  animation: slideLeft 1s ease forwards;
+}
+
 .chemical-main-img img {
   width: 100%;
   border-radius: 20px;
+  transition: transform 0.5s ease;
 }
 
-/* SIDE IMAGE */
+.chemical-main-img:hover img {
+  transform: scale(1.08);
+}
+
+/* ===========================
+   SIDE IMAGE
+=========================== */
+
 .chemical-side-img {
   position: absolute;
   right: 0;
   bottom: -30px;
   width: 200px;
+  overflow: hidden;
+  border-radius: 20px;
+  animation: slideRight 1s ease forwards;
 }
 
 .chemical-side-img img {
   width: 100%;
   border-radius: 20px;
+  transition: transform 0.5s ease;
 }
 
-/* RATING */
+.chemical-side-img:hover img {
+  transform: scale(1.08);
+}
+
+/* ===========================
+   RATING CARD
+=========================== */
+
 .chemical-rating {
   position: absolute;
   top: 0px;
@@ -102,9 +217,17 @@
   color: #fff;
   padding: 12px 18px;
   border-radius: 12px;
+  animation: floating 4s ease-in-out infinite;
 }
 
-/* EXPERT CARD */
+.chemical-rating h4 {
+  margin-bottom: 4px;
+}
+
+/* ===========================
+   EXPERT CARD
+=========================== */
+
 .chemical-expert {
   position: absolute;
   bottom: -20px;
@@ -114,7 +237,8 @@
   background: #fff;
   padding: 10px 14px;
   border-radius: 12px;
-  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  animation: floating 5s ease-in-out infinite;
 }
 
 .chemical-expert img {
@@ -123,7 +247,20 @@
   margin-right: 10px;
 }
 
-/* RESPONSIVE */
+.chemical-expert h5 {
+  margin: 0;
+  color: #0b2545;
+}
+
+.chemical-expert span {
+  color: #666;
+  font-size: 14px;
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+
 @media (max-width: 992px) {
   .chemical-container {
     flex-direction: column;
@@ -140,9 +277,17 @@
   .chemical-side-img {
     display: none;
   }
+
+  .chemical-expert {
+    left: 20px;
+  }
 }
 
 @media (max-width: 600px) {
+  .chemical {
+    padding: 80px 20px;
+  }
+
   .chemical-left h1 {
     font-size: 28px;
   }
@@ -153,105 +298,155 @@
 
   .chemical-rating {
     left: 0;
-    top: 0px;
-    background: transparent;
-  } 
+    top: 0;
+    background: rgba(31, 122, 58, 0.95);
+  }
+
+  .chemical-expert {
+    left: 10px;
+    bottom: -15px;
+  }
 }
 
 
-/* ABOUT SECTION */
+/* ==================================
+   ABOUT SECTION
+================================== */
+
 .chemical-about {
   display: flex;
   align-items: center;
-  gap: 50px;
-  margin-top: 50px;
+  gap: 60px;
+  margin-top: 40px;
 }
 
 /* LEFT IMAGE */
+
 .chemical-about-left {
   flex: 1;
+  overflow: hidden;
+  border-radius: 24px;
+  animation: slideRight 1s ease forwards;
 }
 
 .chemical-about-left img {
   width: 100%;
-  border-radius: 20px;
+  border-radius: 24px;
   object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.chemical-about-left:hover img {
+  transform: scale(1.08);
 }
 
 /* RIGHT CONTENT */
+
 .chemical-about-right {
   flex: 1;
 }
 
-
 .chemical-tag {
+  display: inline-block;
+  padding: 10px 18px;
+  background: rgba(31, 122, 58, 0.08);
+  border: 1px solid rgba(31, 122, 58, 0.15);
+  border-radius: 50px;
   font-size: 14px;
   color: #1f7a3a;
   font-weight: 600;
+  margin-bottom: 10px;
+  opacity: 0;
+  animation: fadeUp 0.8s ease forwards;
 }
 
 .chemical-about-right h2 {
-  font-size: 36px;
-  margin: 15px 0;
+  font-size: 42px;
+  line-height: 1.2;
   color: #0b2545;
+  margin-bottom: 10px;
+  opacity: 0;
+  animation: fadeUp 0.8s ease forwards;
+  animation-delay: 0.2s;
 }
 
 .chemical-about-right p {
   color: #555;
-  margin-bottom: 15px;
-  line-height: 1.6;
+  margin-bottom: 10px;
+  line-height: 1.8;
+  font-size: 16px;
+
+  opacity: 0;
+  animation: fadeUp 0.8s ease forwards;
+  animation-delay: 0.4s;
 }
 
-/* STATS */
-.chemical-stats {
-  display: flex;
-  gap: 50px;
-  margin-top: 10px;
-}
 
-.chemical-stats h3 {
-  font-size: 40px;
-  color: #666666;
-  font-weight: 700;
-}
+/* ==================================
+   RESPONSIVE
+================================== */
 
-.chemical-stats span {
-  display: block;
-  margin-top: 5px;
-  color: #333;
-}
-
-/* RESPONSIVE */
 @media (max-width: 992px) {
   .chemical-about {
     flex-direction: column;
+    gap: 40px;
+    margin-top: 80px;
   }
 
+  .chemical-about-right h2 {
+    font-size: 32px;
+  }
+
+  .chemical-stats {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .chemical-stats div {
+    flex: 1;
+    min-width: auto;
+  }
+}
+
+@media (max-width: 768px) {
   .chemical-about-right h2 {
     font-size: 28px;
   }
 
   .chemical-stats {
-    justify-content: space-between;
+    flex-direction: column;
+  }
+
+  .chemical-stats div {
     width: 100%;
   }
 }
 
 @media (max-width: 600px) {
-  .chemical-stats {
-    text-align: center;
-    flex-direction: row;
-    gap: 20px;
+  .chemical-about {
+    margin-top: 60px;
+    margin-bottom: -30px;
+  }
+
+  .chemical-tag {
+    font-size: 13px;
+    padding: 8px 15px;
+  }
+
+  .chemical-about-right h2 {
+    font-size: 26px;
+  }
+
+  .chemical-about-right p {
+    font-size: 15px;
   }
 
   .chemical-stats h3 {
-    font-size: 30px;
-  }
-
-  .chemical-about{
-    margin-bottom: -50px;
+    font-size: 38px;
   }
 }
+
+
 
 
 /* PRODUCTS SECTION */

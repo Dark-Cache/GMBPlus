@@ -11,7 +11,6 @@ import Footer from "./Components/Footer/Footer";
 
 // Pages
 import Home from "./Pages/Home/Home";
-import Services from "./Pages/Services/Services";
 import Chemical from "./Pages/Chemical/Chemical";
 import Facility from "./Pages/Facility/Facility";
 import Digital from "./Pages/Digital/Digital";
@@ -37,7 +36,6 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
-        <Route path="/services" element={<Services /> } />
         <Route path="/contact" element={<Contact />} />
         <Route path="/work" element={<Work />} />
         <Route path="/brochure" element={<Brochure />} />
