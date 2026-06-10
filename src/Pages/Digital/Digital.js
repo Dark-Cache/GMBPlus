@@ -296,8 +296,7 @@ e.target.reset();
             From cloud infrastructure to cybersecurity and software development.
           </p>
         </div>
-
-        <div className="hire-grid">
+      <div className="hire-grid">
           {services.map((item, index) => (
             <div className="hire-card" key={index}>
               <div className="hire-icon">{item.icon}</div>
@@ -324,12 +323,14 @@ e.target.reset();
             </div>
           ))}
         </div>
-      </div>
+
+
+        </div>
+      
 
 
             {/* PLANS SECTION */}
-<div className="digital-plans">
-
+  <div className="digital-plans">
   {/* HEADER */}
   <div className="plans-header">
     <h2>Simple, Transparent Pricing</h2>

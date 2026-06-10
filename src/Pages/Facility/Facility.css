@@ -32,7 +32,7 @@
   font-size: 44px;
   font-weight: 700;
   line-height: 1.1;
-  color: #0f172a;
+  color: #0b2545;
   margin-bottom: 20px;
 }
 
@@ -1283,7 +1283,7 @@
   }
 
   .facility-process-header h2 {
-    font-size: 42px;
+    font-size: 38px;
   }
 
   .facility-process-grid {
@@ -1552,7 +1552,7 @@
 @media (max-width: 768px) {
 
   .facility-why {
-    padding: 60px 5%;
+    padding: 50px 5%;
   }
 
   .facility-why-grid {
@@ -1702,7 +1702,7 @@
 @media (max-width: 480px) {
 
   .facility-clients {
-  padding: 0px 5% 30px;
+  padding: 10px 5% 30px;
 }
 
   .facility-clients-grid {

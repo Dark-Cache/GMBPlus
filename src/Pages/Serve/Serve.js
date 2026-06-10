@@ -103,7 +103,7 @@ const Serve = () => {
             ref={(el) => (cardsRefs.current[3] = el)}
           >
             <img src={repair} alt="IT" />
-            <h3>Digital Solutions</h3>
+            <h3>Business & Digital Solutions</h3>
             <p>
               We provide reliable IT solutions through the supply of quality
               software and hardware, system deployment, and technical

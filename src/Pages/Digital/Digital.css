@@ -3,7 +3,7 @@
 } */
 
 .digital {
-  padding: 80px 8%;
+  padding: 80px 5%;
   /* background: white; */
   background: linear-gradient(to bottom, #f5f5f5, #e9f1e4);
 }
@@ -25,7 +25,7 @@
 .digital-header h1 {
   font-size: 52px;
   font-weight: 700;
-  color: #111;
+  color: #0b2545;
   line-height: 1.2;
 }
 
@@ -43,7 +43,7 @@
   padding: 10px 22px;
   border: none;
   /* background: #9caf88; */
-  background: #0f172a;
+  background: #0b2545;
   color: #fff;
   border-radius: 20px;
   cursor: pointer;
@@ -88,7 +88,7 @@
 .digital-card h2 {
   font-size: 40px;
   font-weight: 700;
-  color: #111;
+  color: #0b2545;
 }
 
 /* AVATARS */
@@ -119,7 +119,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #111;
+  background: #0b2545;
   color: #fff;
   font-size: 16px;
 }
@@ -216,7 +216,7 @@
 .digital-subscribe-header h2 {
   font-size: 42px;
   font-weight: 500;
-  color: #0f172a;
+  color:#0b2545;
   margin-bottom: 20px;
   line-height: 1.3;
 }
@@ -324,7 +324,7 @@
 .hire-header h2 {
   font-size: 40px;
   font-weight: 700;
-  color: #111;
+  color: #0b2545;
   max-width: 500px;
   line-height: 3.0rem;
 }
@@ -349,35 +349,18 @@
   padding: 30px;
   border-radius: 15px;
   transition: all 0.3s ease;
-
   background: #fff; /* 🔥 card background */
   border: 1px solid transparent;
 }
 
-/* .hire-card:hover {
-  border-color: #0f172a;
-  transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
-} */
-
-.hire-card:hover {
-  border-color: #0f172a;
-  transform: translateY(-5px);
-
-  box-shadow:
-    8px -8px 20px rgba(15, 23, 42, 0.25),   /* 🔥 top-right glow (strong) */
-   -8px 8px 20px rgba(15, 23, 42, 0.25),   /* 🔥 bottom-left glow (strong) */
-    4px 4px 10px rgba(0, 0, 0, 0.08),      /* soft bottom-right */
-   -4px -4px 10px rgba(0, 0, 0, 0.08); 
-}
 
 /* ICON */
-.hire-card .icon {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background: #fff; /* 🔥 icon background */
+.hire-card .cus-icon {
+  width: 50px;
+  height: 50px;
+  background: #fff;
 }
+
 
 .hire-icon{
     font-size: 35px;
@@ -418,6 +401,16 @@
   font-size: 16px;
   color: #111;
   font-weight: 600;
+}
+
+.hire-card:hover {
+  border-color: #0f172a;
+  transform: translateY(-5px);
+  box-shadow:
+    8px -8px 20px rgba(15, 23, 42, 0.25),   /* 🔥 top-right glow (strong) */
+   -8px 8px 20px rgba(15, 23, 42, 0.25),   /* 🔥 bottom-left glow (strong) */
+    4px 4px 10px rgba(0, 0, 0, 0.08),      /* soft bottom-right */
+   -4px -4px 10px rgba(0, 0, 0, 0.08); 
 }
 
 
@@ -488,7 +481,7 @@
 .plans-header h2 {
   font-size: 40px;
   font-weight: 700;
-  color: #0f172a;
+  color: #0b2545;
   margin-bottom: 10px;
 }
 
@@ -653,7 +646,7 @@
 .digital-pricing-header h2 {
   font-size: 36px;
   font-weight: 700;
-  color: #0f172a;
+  color: #0b2545;
   margin-bottom: 10px;
 }
 
@@ -742,6 +735,7 @@
   font-size: 42px;
   font-weight: 700;
   line-height: 1.2;
+  color: #0b2545;
 }
 
 .review-header p {

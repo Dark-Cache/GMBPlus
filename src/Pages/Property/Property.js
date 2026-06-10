@@ -1,250 +1,446 @@
 import React from "react";
 import "./Property.css";
 
-import teamImg from "../../Assets/Team.jpg";
 
-// NEW IMAGES (make sure you have these in Assets)
-import img1 from "../../Assets/House1.jpg";
-import img2 from "../../Assets/House2.jpg";
-import img3 from "../../Assets/House3.jpg";
-import img4 from "../../Assets/House4.jpg";
-import img5 from "../../Assets/House5.jpg";
+// Images
+import mainHouse from "../../Assets/Manage2.jpg";
+import smallHouse from "../../Assets/Manage1.jpg";
 
+//Header Icon
+import LeftIcon from "../../Assets/Cl2.png"; 
+import MiddleIcon from "../../Assets/Cl1.png";
+import RightIcon from "../../Assets/Cl2.png";
 
-import bringimg from "../../Assets/Bring.jpg";
-import bringimg1 from "../../Assets/Bring1.jpg";
-
-import { IoEyeOutline } from "react-icons/io5";
-import { TbFlag } from "react-icons/tb";
-
-
-// House icons
-import { BsHousesFill } from "react-icons/bs";
-import { BsFillHouseFill } from "react-icons/bs";
-import { GiFamilyHouse } from "react-icons/gi";
+// Solution Icons
+import ManageIcon from "../../Assets/management-consulting.gif";
+import MaintainIcon from "../../Assets/maintenancesol.gif";
+import EnhanceIcon from "../../Assets/protectionsol.gif";
 
 
-const Pro = () => {
+
+
+const Property = () => {
   return (
     <>
+    <section className="property-section">
+      <div className="property-header">
+        <h2>
+          Complete <span>Property & Estate
+          <br /> 
+          Management </span> Solutions
+        </h2>
 
-      {/* HERO SECTION */}
+        <div className="property-top-badge">
 
-      {/* HERO SECTION (NEW DESIGN) */}
-<section className="pro">
-  <div className="pro-container">
+            <p>
+              We manage, maintain, let, and modernize your property. 
+              From full estate operations to smart security and access control.
+            </p>
+        </div>
+      </div>
 
-    {/* TOP TEXT */}
-    <div className="pro-header">
-      <h1>
-        Elevate Your Property Experience, <br />
-        Simplify Estate Management
-      </h1>
+      <div className="property-grid">
+        {/* Left Card */}
+        <div className="property-main-card">
+          <img src={mainHouse} alt="Luxury Home" />
+
+          <div className="property-thumbnails">
+            <div className="thumb"><img src={LeftIcon} alt="Icon" /></div>
+            <div className="thumb"><img src={MiddleIcon} alt="Icon" /></div>
+            <div className="thumb"><img src={RightIcon} alt="Icon" /></div>
+          </div>
+        </div>
+
+        {/* Middle Card */}
+        <div className="property-content-card">
+          <h3>
+            Big things can
+            happen in small
+            spaces.
+          </h3>
+
+          <p>
+            With thoughtful design and smart
+            organization, you can maximize every
+            inch, making room for creativity.
+          </p>
+        
+        </div>
+
+        {/* Right Card */}
+        <div className="property-side-card">
+          <img src={smallHouse} alt="Modern Property" />
+
+          <h4>Pricing Start at your budget</h4>
+
+          <button onClick={() => document.querySelector(".prop").scrollIntoView({ behavior: "smooth" })}>
+            Explore Our Services →
+          </button>
+        </div>
+
+        <div className="property-bottom">
+          <p>
+            Whether it's creating a cozy corner for
+            relaxation or transforming a small area
+            into a workspace.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section className="property-solutions">
+  <div className="property-solutions-header">
+    <h2>
+      Property Solutions, Powered by Technology
+    </h2>
+
+    <p>
+      We combine traditional property management expertise with modern
+      technology to manage, maintain, and enhance properties across
+      Nigeria. 
+    </p>
+  </div>
+
+  <div className="property-solutions-grid">
+    <div className="property-solution-card">
+      <div className="property-solution-icon">
+        <img src={ManageIcon} alt="Manage Icon" />
+      </div>
+
+      <h5>Manage</h5>
 
       <p>
-        Discover a seamless world of property management services,
-        smart investments, and secure real estate transactions —
-        all in one place.
+        Full operational control of your property or estate,
+        handled by professionals.
       </p>
     </div>
 
-    {/* FEATURES */}
-    <div className="pro-features">
-
-      <div className="pro-feature-card">
-        <h4>Custom Property Solutions</h4>
-        <img src={img1} alt="property" />
-        <p>
-          Tailored real estate services designed to match your lifestyle,
-          whether you're buying, renting, or investing.
-        </p>
+    <div className="property-solution-card">
+      <div className="property-solution-icon">
+        <img src={MaintainIcon} alt="Maintain Icon" />
       </div>
 
-      <div className="pro-feature-card">
-        <h4>Secure Transactions</h4>
-        <img src={img2} alt="property" />
-        <p>
-          We ensure safe and transparent property deals with verified
-          listings and trusted legal processes.
-        </p>
-      </div>
+      <h5>Maintain</h5>
 
-      <div className="pro-feature-card">
-        <h4>Smart Property Management</h4>
-        <img src={img3} alt="property" />
-        <p>
-          Manage tenants, rent collection, and maintenance efficiently
-          with our expert-driven solutions.
-        </p>
-      </div>
-
-      <div className="pro-feature-card">
-        <h4>Seamless Communication</h4>
-        <img src={img4} alt="property" />
-        <p>
-          Stay connected with agents, buyers, and tenants through a
-          smooth and responsive communication system.
-        </p>
-      </div>
-
+      <p>
+        Proactive upkeep that prevents costly repairs and
+        extends asset life.
+      </p>
     </div>
 
+    <div className="property-solution-card">
+      <div className="property-solution-icon">
+        <img src={EnhanceIcon} alt="Enhance Icon" />
+      </div>
+
+      <h5>Enhance</h5>
+
+      <p>
+        Modern upgrades, smart systems, and strategic advice
+        that grow value.
+      </p>
+    </div>
   </div>
 </section>
 
-
-      {/* WHO WE ARE SECTION */}
-      <section className="who">
-        <div className="who-container">
-
-          <span className="who-tag"> 💪 Who We Are</span>
-
-          <h2 className="who-title">
-            We’re a trusted real estate agency helping people
-            find their dream homes and investments.
-            <span className="who-light">
-              {" "}Helping you find home, effortlessly.
-            </span>
-          </h2>
-
-        </div>
-      </section>
-
-
-      {/* THIRD SECTION */}
-      <section className="abt">
-
-        <div className="abt-container">
-
-          {/* LEFT SIDE */}
-          <div className="abt-left">
-
-            <div className="abt-image">
-              <img src={teamImg} alt="team" />
-            </div>
-
-            <div className="abt-info">
-
-              <div className="abt-card">
-                <h4> <IoEyeOutline className="abt-icon-e" /> Our Vision</h4>
-                <p>
-                  To redefine real estate by making property buying
-                  and selling smooth, secure, and transparent.
-                </p>
-              </div>
-
-              <div className="abt-card">
-                <h4> <TbFlag className="abt-icon" /> Mission</h4>
-                <p>
-                  Deliver personalized real estate solutions with trust,
-                  clarity, and expert market knowledge.
-                </p>
-              </div>
-
-            </div>
-
-          </div>
-
-
-          {/* RIGHT SIDE */}
-          <div className="abt-right">
-
-            <div className="abt-stat">
-              <h3>1,200+</h3>
-              <p>Project Complete</p>
-            </div>
-
-            <div className="abt-stat">
-              <h3>250+</h3>
-              <p>Happy Clients</p>
-            </div>
-
-            <div className="abt-stat">
-              <h3>$10M+</h3>
-              <p>Project Value</p>
-            </div>
-
-            <div className="abt-stat">
-              <h3>90%</h3>
-              <p>Client Retention Rate</p>
-            </div>
-
-          </div>
-
-        </div>
-
-      </section>
-
-      {/* 🔥 UPDATED IMAGE SHOWCASE SECTION */}
-<section className="check">
-  <div className="check-container">
-
-    {/* TOP TEXT */}
-    <h2 className="check-title">OUR PROPERTY REALTY</h2>
-
-    <p className="check-desc">
-      We connect families and investors with thoughtfully
-      built homes and premium properties. Our commitment to clarity, quality,
-      and exceptional service ensures a seamless real-estate experience
-      no matter where you are in your journey.
-    </p>
-
-    {/* IMAGES */}
-    <div className="check-images">
-      <img src={img1} alt="property" />
-      <img src={img2} alt="property" />
-      <img src={img3} alt="property" />
-      <img src={img4} alt="property" />
-      <img src={img5} alt="property" />
-    </div>
-
+<div className="prop"></div>
+<section className="property-pillars">
+  <div className="property-pillars-header">
+    <h2>Five Pillars of Complete Property Care</h2>
   </div>
-</section>
 
-{/* 🔥 WHERE SECTION */}
-<section className="where">
-  <div className="where-container">
+  <div className="property-pillars-grid">
+    {/* Property Management */}
+    <div className="property-pillar-card">
+      <div className="property-pillar-icon">🏠</div>
 
-    {/* LEFT SIDE */}
-    <div className="where-left">
-      <h2>
-        WHERE IMAGINATION COMES <br />
-        TO LIFE AND EVERY <span className="sign"> DESIGN </span> <br />
-        SPEAKS ITS OWN STORY.
-      </h2>
+      <h3>Property Management</h3>
 
-      <img src={bringimg} alt="main property" className="where-main-img" />
+      <ul>
+        <li>Tenant management & relations</li>
+        <li>Rent collection support</li>
+        <li>Regular property inspections</li>
+        <li>Maintenance coordination</li>
+      </ul>
     </div>
 
-    {/* RIGHT SIDE */}
-    <div className="where-right">
+    {/* Estate Management */}
+    <div className="property-pillar-card">
+      <div className="property-pillar-icon">🏙️</div>
 
-      <p className="where-top-text">
-        GMBPlus brings families and investors closer to
-        refined properties crafted for comfort, exceptional
-        value, and enduring quality
+      <h3>Estate Management</h3>
+
+      <ul>
+        <li>Day-to-day estate operations</li>
+        <li>Vendor & staff supervision</li>
+        <li>Common area maintenance</li>
+        <li>Security coordination</li>
+      </ul>
+    </div>
+
+    {/* Letting */}
+    <div className="property-pillar-card">
+      <div className="property-pillar-icon">🔑</div>
+
+      <h3>Letting & Property Sales</h3>
+
+      <ul>
+        <li>Property listing & marketing</li>
+        <li>Tenant sourcing & screening</li>
+        <li>Property sales support</li>
+        <li>Investment advisory</li>
+      </ul>
+    </div>
+
+    {/* Smart Technology */}
+    <div className="property-pillar-card">
+      <div className="property-pillar-icon">🤖</div>
+
+      <h3>Smart Property Technology</h3>
+
+      <ul>
+        <li>Smart doors & automated gates</li>
+        <li>Alexa & Google Home integration</li>
+        <li>CCTV & AI-powered monitoring</li>
+        <li>Full smart home automation</li>
+      </ul>
+    </div>
+
+    {/* Administrative */}
+    <div className="property-pillar-card">
+      <div className="property-pillar-icon">📋</div>
+
+      <h3>Administrative Services</h3>
+
+      <ul>
+        <li>Resident communication</li>
+        <li>Complaint resolution</li>
+        <li>Documentation & reporting</li>
+        <li>Operational coordination</li>
+      </ul>
+    </div>
+
+    {/* CTA Card */}
+    <div className="property-pillar-cta">
+      <h3>One Provider. Every Need.</h3>
+
+      <p>
+        Stop juggling multiple vendors. We unify every
+        property function into one accountable team with
+        one point of contact.
       </p>
 
-      <div className="where-bottom-row">
-        <img src={bringimg1} alt="small property" className="where-small-img" />
-        <p className="where-bottom-text">
-          At GMBPlus, we guide families and investors toward
-          premium properties backed by insight, quality, and long-term
-          potential. Each home is curated to offer comfort, value and
-          confidence, ensuring your investment is built on a strong foundation.
+      <a href="/contact">
+        Talk to our team →
+      </a>
+    </div>
+  </div>
+</section>
+
+
+<section className="property-tech-benefits">
+  <div className="property-tech-benefits-container">
+    <h2>Why Smart Property Technology Matters</h2>
+
+    <div className="property-tech-benefits-grid">
+      <div className="property-tech-benefit-item">
+        <div className="property-tech-benefit-icon">🛡️</div>
+
+        <h3>Improved Security</h3>
+
+        <p>
+          Fewer incidents, faster response.
         </p>
       </div>
 
-      {/* <button className="where-btn">LEARN MORE</button> */}
-      <button className="where-btn"> <BsFillHouseFill /> <BsHousesFill /> <GiFamilyHouse /> </button>
+      <div className="property-tech-benefit-item">
+        <div className="property-tech-benefit-icon">✨</div>
 
+        <h3>Everyday Convenience</h3>
+
+        <p>
+          Seamless entry for residents and owners.
+        </p>
+      </div>
+
+      <div className="property-tech-benefit-item">
+        <div className="property-tech-benefit-icon">💎</div>
+
+        <h3>Premium Experience</h3>
+
+        <p>
+          Modern amenities that attract tenants.
+        </p>
+      </div>
+
+      <div className="property-tech-benefit-item">
+        <div className="property-tech-benefit-icon">📊</div>
+
+        <h3>Higher Property Value</h3>
+
+        <p>
+          Smart features boost market worth.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<section className="property-engagement">
+  <div className="property-engagement-header">
+    <h2>Work With Us the Way That Suits You</h2>
+  </div>
+
+  <div className="property-engagement-grid">
+
+    {/* Contract Card */}
+    <div className="property-engagement-card contract-card">
+
+      <div className="property-engagement-badge">
+        CORE OFFERING
+      </div>
+
+      <h3>Contract-Based Services</h3>
+
+      <p>
+        Our primary model. A dedicated team managing your
+        property long-term.
+      </p>
+
+      <ul>
+        <li>Monthly or annual agreements</li>
+        <li>Dedicated management team</li>
+        <li>SLA-driven service delivery</li>
+        <li>Continuous monitoring & reporting</li>
+        <li>Quarterly strategy reviews</li>
+      </ul>
+    </div>
+
+    {/* One-Off Card */}
+    <div className="property-engagement-card oneoff-card">
+
+      <h3>One-Off Services</h3>
+
+      <p>
+        Specific projects delivered on demand,
+        no long-term commitment.
+      </p>
+
+      <ul>
+        <li>Letting & property sales</li>
+        <li>Technology installation & upgrades</li>
+        <li>Repairs & maintenance projects</li>
+        <li>Short-term management support</li>
+        <li>Property assessments & advisory</li>
+      </ul>
     </div>
 
   </div>
 </section>
 
-    </>
+
+<section className="property-process">
+  <div className="property-process-header">
+    <h2>From First Call to Ongoing Care</h2>
+  </div>
+
+  <div className="property-process-grid">
+
+    <div className="property-process-card">
+      <div className="property-process-number">1</div>
+
+      <h3>Assessment</h3>
+
+      <p>
+        We inspect your property or estate.
+      </p>
+    </div>
+
+    <div className="property-process-card">
+      <div className="property-process-number">2</div>
+
+      <h3>Consultation</h3>
+
+      <p>
+        We analyse your needs and goals.
+      </p>
+    </div>
+
+    <div className="property-process-card">
+      <div className="property-process-number">3</div>
+
+      <h3>Custom Proposal</h3>
+
+      <p>
+        Tailored service plan delivered.
+      </p>
+    </div>
+
+    <div className="property-process-card">
+      <div className="property-process-number">4</div>
+
+      <h3>Agreement</h3>
+
+      <p>
+        Contract signed, team onboarded.
+      </p>
+    </div>
+
+    <div className="property-process-card">
+      <div className="property-process-number">5</div>
+
+      <h3>Ongoing Support</h3>
+
+      <p>
+        We manage, report, and improve.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+
+<section className="property-partners">
+  <div className="property-partners-header">
+    <h2>Partners Across Nigeria's Property Sector</h2>
+  </div>
+
+  <div className="property-partners-grid">
+
+    <div className="property-partner-card">
+      <div className="property-partner-icon">🏠</div>
+      <h3>Property Owners</h3>
+    </div>
+
+    <div className="property-partner-card">
+      <div className="property-partner-icon">💼</div>
+      <h3>Real Estate Investors</h3>
+    </div>
+
+    <div className="property-partner-card">
+      <div className="property-partner-icon">🏗️</div>
+      <h3>Estate Developers</h3>
+    </div>
+
+    <div className="property-partner-card">
+      <div className="property-partner-icon">🏘️</div>
+      <h3>Resident Associations</h3>
+    </div>
+
+    <div className="property-partner-card">
+      <div className="property-partner-icon">🏢</div>
+      <h3>Corporate Organisations</h3>
+    </div>
+
+  </div>
+</section>
+
+
+
+  </>
   );
 };
 
-export default Pro;
+export default Property;

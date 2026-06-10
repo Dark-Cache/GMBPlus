@@ -174,15 +174,17 @@
 
 @media (max-width: 768px) {
   .about-hero {
-    padding: 80px 5%;
+    padding: 100px 5%;
   }
+  
 
   .about-heading {
     margin-bottom: 50px;
   }
 
   .about-heading h1 {
-    font-size: 2.8rem;
+    font-size: 2.3rem;
+    Font-weight: 700;
   }
 
   .about-heading p {
@@ -275,8 +277,9 @@
 
 .about-stat-item h3 {
   font-size: 2.5rem;
-  font-weight: 600;
-  color: #000;
+  font-weight: 700;
+  /* color: #000; */
+  color: #10b981;
   line-height: 1;
   margin-bottom: 5px;
 }
@@ -329,7 +332,7 @@
 @media (max-width: 768px) {
 
   .about-story {
-    padding: 80px 5%;
+    padding: 0px 5%;
   }
 
   .about-story-left h2 {
@@ -343,8 +346,9 @@
 
   .about-stats {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     gap: 35px;
+    text-align: center;
   }
 
   .about-stat-item h3 {
@@ -352,7 +356,7 @@
   }
 
   .about-stat-item p {
-    font-size: 1rem;
+    font-size: 1.1rem;
   }
 }
 
@@ -594,7 +598,7 @@
 @media (max-width: 768px) {
 
   .about-team {
-    padding: 80px 5%;
+    padding: 20px 5% 100px;
   }
 
   .about-team-header {
@@ -615,15 +619,15 @@
   }
 
   .team-image {
-    height: 350px;
+    height: 500px;
   }
 
   .team-card h3 {
-    font-size: 28px;
+    font-size: 22px;
   }
 
   .team-card span {
-    font-size: 18px;
+    font-size: 20px;
   }
 }
 

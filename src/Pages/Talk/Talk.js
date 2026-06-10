@@ -59,7 +59,7 @@ const Talk = () => {
           <a href="/contact" className="cta-btn primary">
             Book a Call
           </a>
-          <a href="/get-started" className="cta-btn secondary">
+          <a href="/contact" className="cta-btn secondary">
             Get Started
           </a>
         </div>
