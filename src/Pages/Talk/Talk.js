@@ -56,9 +56,6 @@ const Talk = () => {
         </p>
 
         <div className="cta-buttons" ref={buttonsRef}>
-          <a href="/contact" className="cta-btn primary">
-            Book a Call
-          </a>
           <a href="/contact" className="cta-btn secondary">
             Get Started
           </a>

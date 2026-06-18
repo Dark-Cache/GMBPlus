@@ -7,9 +7,9 @@ import mainHouse from "../../Assets/Manage2.jpg";
 import smallHouse from "../../Assets/Manage1.jpg";
 
 //Header Icon
-import LeftIcon from "../../Assets/Cl2.png"; 
-import MiddleIcon from "../../Assets/Cl1.png";
-import RightIcon from "../../Assets/Cl2.png";
+// import LeftIcon from "../../Assets/Cl2.png"; 
+// import MiddleIcon from "../../Assets/Cl1.png";
+// import RightIcon from "../../Assets/Cl2.png";
 
 // Solution Icons
 import ManageIcon from "../../Assets/management-consulting.gif";
@@ -44,11 +44,11 @@ const Property = () => {
         <div className="property-main-card">
           <img src={mainHouse} alt="Luxury Home" />
 
-          <div className="property-thumbnails">
+          {/* <div className="property-thumbnails">
             <div className="thumb"><img src={LeftIcon} alt="Icon" /></div>
             <div className="thumb"><img src={MiddleIcon} alt="Icon" /></div>
             <div className="thumb"><img src={RightIcon} alt="Icon" /></div>
-          </div>
+          </div> */}
         </div>
 
         {/* Middle Card */}
@@ -182,13 +182,13 @@ const Property = () => {
     <div className="property-pillar-card">
       <div className="property-pillar-icon">🔑</div>
 
-      <h3>Letting & Property Sales</h3>
+      <h3>Self Service Smart Home</h3>
 
       <ul>
-        <li>Property listing & marketing</li>
-        <li>Tenant sourcing & screening</li>
-        <li>Property sales support</li>
-        <li>Investment advisory</li>
+        <li>Smart lighting automation</li>
+        <li>Smart access & security control</li>
+        <li>Remote device monitoring & control</li>
+        <li>Voice & app-based home management</li>
       </ul>
     </div>
 

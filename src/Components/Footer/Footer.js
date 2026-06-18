@@ -9,17 +9,7 @@ import Talk from "../../Pages/Talk/Talk";
 const Footer = () => {
   return (
     <footer className="site-footer">
-      {/* TOP CTA */}
-      {/* <div className="footer-cta-bar">
-        <h2>Connect With GBMPlus. <br ></br> 
-        Your Business Solutions.</h2>
 
-         <Link to="/quote" className="footer-cta-btn">
-           Get a Quote <span><FaPlus /></span>
-          </Link>
-
-
-      </div> */}
 
       <Talk />
 

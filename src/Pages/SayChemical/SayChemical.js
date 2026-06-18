@@ -2,8 +2,8 @@ import React from "react";
 import "./SayChemical.css";
 
 // Sample images (replace with yours)
-import avatar1 from "../../Assets/Cl1.png";
-import avatar2 from "../../Assets/Cl2.png";
+// import avatar1 from "../../Assets/Cl1.png";
+// import avatar2 from "../../Assets/Cl2.png";
 
 const SayChemical = () => {
   return (
@@ -35,9 +35,9 @@ const SayChemical = () => {
           </p>
 
           <div className="profile-a">
-            <img src={avatar1} alt="client" />
+            {/* <img src={avatar1} alt="client" /> */}
             <div>
-              <h5>David Callahan</h5>
+              <h5>David Omotosho</h5>
               <span>Project Manager, BuildCore Ltd.</span>
             </div>
           </div>
@@ -56,9 +56,9 @@ const SayChemical = () => {
             </p>
 
             <div className="profile">
-              <img src={avatar2} alt="client" />
+              {/* <img src={avatar2} alt="client" /> */}
               <div>
-                <h5>Sarah Mitchel</h5>
+                <h5>Sarah Ajibode</h5>
                 <span>Operations Lead, AquaPure Systems</span>
               </div>
             </div>
@@ -75,9 +75,9 @@ const SayChemical = () => {
               </p>
 
               <div className="profile">
-                <img src={avatar1} alt="client" />
+                {/* <img src={avatar1} alt="client" /> */}
                 <div>
-                  <h5>Tom Becker</h5>
+                  <h5>Jide Omilana</h5>
                   <span>Head of Production, ChemPro Industries</span>
                 </div>
               </div>
@@ -91,9 +91,9 @@ const SayChemical = () => {
               </p>
 
               <div className="profile">
-                <img src={avatar2} alt="client" />
+                {/* <img src={avatar2} alt="client" /> */}
                 <div>
-                  <h5>Sarah Mitchel</h5>
+                  <h5>Ruth Akinwunmi</h5>
                   <span>Technical Director, PrimeChem Solutions</span>
                 </div>
               </div>

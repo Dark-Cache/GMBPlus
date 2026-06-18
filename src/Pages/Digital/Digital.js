@@ -43,7 +43,7 @@ const services = [
 },
 {
   icon: <img src={logoIcon} alt="icon" className="cus-icon" />,
-  title: "Graphic Design",
+  title: "UI/UX Design & Graphic Design",
   desc: "Logos, flyers, social media graphics, brand kits, and marketing materials.",
   path: "/digital/graphic-design",
 },
@@ -73,7 +73,7 @@ const services = [
 },
 {
   icon: <img src={uiIcon} alt="icon" className="cus-icon" />,
-  title: "UI/UX Design",
+  title: "AI & Machine Learning Solution",
   desc: "Clean, intuitive designs that improve user experience and engagement.",
   path: "/digital/ui-ux-design",
 },
@@ -522,7 +522,7 @@ e.target.reset();
               <p className="review-text">"{item.text}"</p>
 
               <div className="review-user">
-                <img src={item.img} alt="" />
+                {/* <img src={item.img} alt="" /> */}
                 <div>
                   <h4>{item.name}</h4>
                   <span>{item.role}</span>

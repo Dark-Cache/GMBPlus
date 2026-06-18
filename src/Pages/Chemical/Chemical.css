@@ -321,12 +321,11 @@
 }
 
 /* LEFT IMAGE */
-
 .chemical-about-left {
   flex: 1;
   overflow: hidden;
   border-radius: 24px;
-  animation: slideRight 1s ease forwards;
+  /* animation: slideRight 1s ease forwards; */
 }
 
 .chemical-about-left img {

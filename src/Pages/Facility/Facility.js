@@ -43,33 +43,29 @@ const facilityServices = [
     benefit: "Healthier environment, better hygiene.",
     tag: "Homes, Estates, Offices",
   },
-  {
-    icon: SecureIcon,
-    title: "Security Services",
-    desc: "Trained guards, access control, patrol, and CCTV monitoring.",
-    benefit: "24/7 safety, fewer incidents.",
-    tag: "Estates, Offices, Malls",
+
+   {
+    icon: WasteIcon,
+    title: "Waste Management",
+    desc: "Scheduled pickup, disposal, and recycling coordination.",
+    benefit: "Cleaner space, LAWMA compliance.",
+    tag: "Estates, Offices, Schools",
   },
+
+   {
+    icon: AntIcon,
+    title: "Pest Control",
+    desc: "Fumigation, rodent control, and termite treatment.",
+    benefit: "Healthier spaces, protected property.",
+    tag: "Homes, Offices, Restaurants",
+  },
+  
   {
     icon: FixIcon,
     title: "Electrical & Plumbing",
     desc: "Installations, fault finding, and emergency repairs.",
     benefit: "Safe systems, reduced downtime.",
     tag: "Homes, Estates, Offices",
-  },
-  {
-    icon: AirIcon,
-    title: "HVAC (Air Conditioning)",
-    desc: "AC servicing, installation, repairs, and gas refills.",
-    benefit: "Longer AC life, lower bills.",
-    tag: "Homes, Offices, Retail",
-  },
-  {
-    icon: WasteIcon,
-    title: "Waste Management",
-    desc: "Scheduled pickup, disposal, and recycling coordination.",
-    benefit: "Cleaner space, LAWMA compliance.",
-    tag: "Estates, Offices, Schools",
   },
   {
     icon: LandIcon,
@@ -79,17 +75,24 @@ const facilityServices = [
     tag: "Homes, Estates, Hotels",
   },
   {
-    icon: AntIcon,
-    title: "Pest Control",
-    desc: "Fumigation, rodent control, and termite treatment.",
-    benefit: "Healthier spaces, protected property.",
-    tag: "Homes, Offices, Restaurants",
+    icon: AirIcon,
+    title: "HVAC (Air Conditioning)",
+    desc: "AC servicing, installation, repairs, and gas refills.",
+    benefit: "Reliable cooling, longer AC life, lower bills.",
+    tag: "Homes, Offices, Retail",
   },
+  {
+    icon: SecureIcon,
+    title: "Security Services",
+    desc: "Trained guards, access control, patrol, and CCTV monitoring.",
+    benefit: "24/7 protection, theft prevention, fewer incidents.",
+    tag: "Estates, Offices, Malls",
+  }, 
   {
     icon: DoIcon,
     title: "General Repairs",
     desc: "Carpentry, painting, tiling, roofing, and handyman work.",
-    benefit: "One call fixes everything.",
+    benefit: "Fast repair, cost savings, well-maintained properties.",
     tag: "Homes, Estates, Offices",
   },
 ];
@@ -183,10 +186,16 @@ const Facility = () => {
       </p>
 
       <h1 className="facility-title">
+        Professional <span> Facility Services </span> for Every
+        <br />
+        Environment
+      </h1>
+
+      {/* <h1 className="facility-title">
         Expert <span>Cleaning</span> for Your
         <br />
         Elevated Living
-      </h1>
+      </h1> */}
 
       <p className="facility-description">
         Professional facility management, janitorial services,
