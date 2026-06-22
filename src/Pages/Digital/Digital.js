@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 import "./Digital.css";
 
 // Header images
-import hero1 from "../../Assets/Digital1.jpg";
-import hero2 from "../../Assets/Digital3.jpg";
+import hero1 from "../../Assets/digitalstart.jpg";
+import hero2 from "../../Assets/digitalstartup.jpg";
 
 // avatar
 import avatar1 from "../../Assets/Cl1.png";
@@ -18,12 +18,12 @@ import scaleIcon from "../../Assets/balance.gif"
 
 // Hire icon
 import contentIcon from "../../Assets/writing.gif"
-import logoIcon from "../../Assets/logo-design.gif"
+import uiIcon from "../../Assets/responsive-design.gif"
 import socialIcon from "../../Assets/social-marketing.gif"
 import webIcon from "../../Assets/responsive.gif"
 import softIcon from "../../Assets/software.gif"
 import hardIcon from "../../Assets/broken-monitor.gif"
-import uiIcon from "../../Assets/responsive-design.gif"
+import aiIcon from "../../Assets/artificial-intelligence.gif"
 import mobileIcon from "../../Assets/mobile-phone.gif"
 import dataIcon from "../../Assets/analysis.gif"
 import itIcon from "../../Assets/laptop.gif"
@@ -42,9 +42,9 @@ const services = [
   path: "/digital/content-creation",
 },
 {
-  icon: <img src={logoIcon} alt="icon" className="cus-icon" />,
+  icon: <img src={uiIcon} alt="icon" className="cus-icon" />,
   title: "UI/UX Design & Graphic Design",
-  desc: "Logos, flyers, social media graphics, brand kits, and marketing materials.",
+  desc: "User-focused UI/UX design, prototypes, branding, logos and graphics.",
   path: "/digital/graphic-design",
 },
 {
@@ -72,10 +72,10 @@ const services = [
   path: "/digital/hardware-solutions",
 },
 {
-  icon: <img src={uiIcon} alt="icon" className="cus-icon" />,
-  title: "AI & Machine Learning Solution",
-  desc: "Clean, intuitive designs that improve user experience and engagement.",
-  path: "/digital/ui-ux-design",
+  icon: <img src={aiIcon} alt="icon" className="cus-icon" />,
+  title: "AI & Machine Learning Solutions",
+  desc: "AI systems that automate tasks, analyze data, and support smarter decision-making.",
+  path: "/digital/ai",
 },
 {
   icon: <img src={mobileIcon} alt="icon" className="cus-icon" />,

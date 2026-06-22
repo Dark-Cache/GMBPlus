@@ -4,12 +4,12 @@ import { IoCloseSharp } from "react-icons/io5";
 import "./ServiceDetail.css";
 
 import contentIcon from "../../Assets/writing.gif";
-import logoIcon from "../../Assets/logo-design.gif";
+import uiIcon from "../../Assets/responsive-design.gif";
 import socialIcon from "../../Assets/social-marketing.gif";
 import webIcon from "../../Assets/responsive.gif";
 import softIcon from "../../Assets/software.gif";
 import hardIcon from "../../Assets/broken-monitor.gif";
-import uiIcon from "../../Assets/responsive-design.gif";
+import aiIcon from "../../Assets/artificial-intelligence.gif";
 import mobileIcon from "../../Assets/mobile-phone.gif";
 import dataIcon from "../../Assets/analysis.gif";
 import itIcon from "../../Assets/laptop.gif";
@@ -17,12 +17,12 @@ import supportIcon from "../../Assets/repair.gif";
 
 const allServices = [
   { slug: "content-creation", title: "Content Creation", icon: contentIcon },
-  { slug: "graphic-design", title: "Graphic Design", icon: logoIcon },
+  { slug: "graphic-design", title: "UI/UX Design Graphic Design", icon: uiIcon },
   { slug: "social-media-marketing", title: "Social Media Marketing", icon: socialIcon },
   { slug: "web-development", title: "Web Development", icon: webIcon },
   { slug: "software-solutions", title: "Software Solutions", icon: softIcon },
   { slug: "hardware-solutions", title: "Hardware Solutions", icon: hardIcon },
-  { slug: "ui-ux-design", title: "UI/UX Design", icon: uiIcon },
+  { slug: "ai", title: "AI & Machine Learning Solutions", icon: aiIcon },
   { slug: "mobile-app-development", title: "Mobile App Development", icon: mobileIcon },
   { slug: "business-solutions", title: "Business Solutions", icon: dataIcon },
   { slug: "data-analytics-solutions", title: "Data Analytics Solutions", icon: dataIcon },
@@ -36,7 +36,7 @@ const serviceData = {
     title: "Content Creation",
     tagline: "Words that convert, stories that stick.",
     description: "We craft compelling blog posts, product descriptions, email newsletters, and video scripts tailored to your brand voice. Every piece is written to engage your audience and drive measurable results.",
-    features: ["SEO-optimised blog articles", "Product & service descriptions", "Email newsletter campaigns", "Video & podcast scripts", "Social media captions"],
+    features: ["SEO-optimized blog articles", "Product & service descriptions", "Email newsletter campaigns", "Video & podcast scripts", "Social media captions"],
     price: "From ₦20,000 per piece",
     steps: [
       { num: "01", title: "Brief", desc: "You share your brand, audience, and goals." },
@@ -47,34 +47,91 @@ const serviceData = {
     testimonial: { text: "Their content team completely transformed our blog. Traffic doubled in 3 months and our leads improved significantly.", name: "Tunde Adeyemi", role: "Marketing Director, BrandPulse" },
     faqs: [
       { q: "How long does each piece take?", a: "Standard articles take 2–3 business days. Longer pieces or campaigns may take up to 5 days." },
-      { q: "Do you handle SEO?", a: "Yes, all blog content is optimised for search engines with proper keyword research and structure." },
+      { q: "Do you handle SEO?", a: "Yes, all blog content is optimized for search engines with proper keyword research and structure." },
       { q: "Can I request revisions?", a: "Absolutely. We offer up to 2 revisions per piece to ensure you're fully satisfied." },
       { q: "Do you write for any industry?", a: "Yes, we have writers across tech, finance, health, real estate, and more." },
     ],
     related: ["graphic-design", "social-media-marketing", "web-development"],
   },
-  "graphic-design": {
-    icon: logoIcon,
-    title: "Graphic Design",
-    tagline: "Visuals that make your brand unforgettable.",
-    description: "From logos to full brand kits, our designers create stunning visuals that communicate your identity across every touchpoint — print, digital, and beyond.",
-    features: ["Logo & brand identity design", "Flyers, banners & posters", "Social media graphics", "Pitch deck & presentation design", "Packaging & merchandise design"],
-    price: "From ₦25,000",
-    steps: [
-      { num: "01", title: "Discovery", desc: "We learn your brand, style preferences, and goals." },
-      { num: "02", title: "Concept", desc: "We create 2–3 initial design concepts for you to choose from." },
-      { num: "03", title: "Refine", desc: "We refine your chosen concept based on your feedback." },
-      { num: "04", title: "Deliver", desc: "Final files delivered in all required formats." },
-    ],
-    testimonial: { text: "The logo they designed for us perfectly captured our brand identity. We've received so many compliments from clients.", name: "Amaka Obi", role: "CEO, Luminary Brands" },
-    faqs: [
-      { q: "What file formats will I receive?", a: "You'll receive PNG, JPG, SVG, and PDF formats — ready for both print and digital use." },
-      { q: "How many concepts do I get?", a: "We provide 2–3 initial concepts, then refine your preferred direction." },
-      { q: "Do you offer brand guidelines?", a: "Yes, full brand kits include a guidelines document covering colours, fonts, and usage rules." },
-      { q: "How long does a logo take?", a: "Typically 3–5 business days from brief to final delivery." },
-    ],
-    related: ["content-creation", "social-media-marketing", "ui-ux-design"],
+ "graphic-design": {
+  icon: uiIcon,
+  title: "UI/UX Design & Graphic Design",
+  tagline: "Design experiences users love and visuals they remember.",
+  description:
+    "We combine strategic UI/UX design with impactful graphic design to create seamless digital experiences and compelling brand visuals. Whether you're launching a mobile app, website, or building a strong brand identity, we design solutions that are both beautiful and effective.",
+
+  features: [
+    "UI/UX design for web & mobile apps",
+    "Wireframing & interactive prototyping",
+    "User research & user flow design",
+    "Logo & brand identity design",
+    "Flyers, banners & social media graphics",
+    "Pitch decks, presentations & marketing materials",
+    "Design systems & style guides",
+    "Packaging & merchandise design"
+  ],
+
+  price: "From ₦25,000",
+
+  steps: [
+    {
+      num: "01",
+      title: "Discovery",
+      desc: "We understand your business goals, target audience, brand identity, and design requirements."
+    },
+    {
+      num: "02",
+      title: "Research & Concept",
+      desc: "We conduct user research, create wireframes or design concepts, and explore visual directions."
+    },
+    {
+      num: "03",
+      title: "Design & Refine",
+      desc: "We craft polished UI screens, brand assets, or marketing materials and refine them based on your feedback."
+    },
+    {
+      num: "04",
+      title: "Deliver",
+      desc: "We provide final design assets, prototypes, brand files, and implementation-ready resources."
+    }
+  ],
+
+  testimonial: {
+    text:
+      "Their team designed both our app interface and brand identity. The result was a professional, user-friendly experience that significantly improved our customer engagement.",
+    name: "Amaka Obi",
+    role: "Founder, Luminary Digital"
   },
+
+  faqs: [
+    {
+      q: "Do you offer both UI/UX and graphic design services?",
+      a: "Yes. We handle everything from user experience design and app interfaces to branding, marketing materials, and promotional graphics."
+    },
+    {
+      q: "What UI/UX deliverables will I receive?",
+      a: "Depending on your project, you'll receive wireframes, user flows, high-fidelity designs, interactive prototypes, and design specifications."
+    },
+    {
+      q: "What graphic design files will I receive?",
+      a: "Final files are delivered in industry-standard formats such as PNG, JPG, SVG, PDF, and editable source files where applicable."
+    },
+    {
+      q: "Can you redesign an existing website or app?",
+      a: "Absolutely. We can audit your current design, identify usability issues, and create a modern, user-friendly redesign."
+    },
+    {
+      q: "How long does a typical design project take?",
+      a: "Project timelines vary based on scope, but most UI/UX and branding projects are completed within 1–4 weeks."
+    }
+  ],
+
+  related: [
+    "content-creation",
+    "social-media-marketing",
+    "web-development"
+  ]
+},
   "social-media-marketing": {
     icon: socialIcon,
     title: "Social Media Marketing",
@@ -117,7 +174,7 @@ const serviceData = {
       { q: "Will my site be mobile-friendly?", a: "Yes, all our websites are fully responsive across all screen sizes." },
       { q: "Can I update the site myself?", a: "Yes, we can integrate a CMS so you can manage content without coding." },
     ],
-    related: ["ui-ux-design", "software-solutions", "mobile-app-development"],
+    related: ["ai", "software-solutions", "mobile-app-development"],
   },
   "software-solutions": {
     icon: softIcon,
@@ -163,29 +220,79 @@ const serviceData = {
     ],
     related: ["it-support-maintenance", "it-consulting-services", "software-solutions"],
   },
-  "ui-ux-design": {
-    icon: uiIcon,
-    title: "UI/UX Design",
-    tagline: "Designs users love to interact with.",
-    description: "We create clean, intuitive interfaces backed by user research and testing — ensuring every product we design is both beautiful and easy to use.",
-    features: ["User research & personas", "Wireframing & prototyping", "Mobile & web UI design", "Usability testing", "Design system creation"],
+  "ai": {
+    icon: aiIcon,
+    title: "AI & Machine Learning Solutions",
+    tagline: "Intelligent solutions powered by AI.",
+    description: "We develop AI-powered solutions that automate workflows, analyze data, and help businesses make smarter decisions. From chatbots and predictive analytics to custom machine learning models, we build intelligent systems that drive efficiency and growth.",
+
+    features: [
+    "Custom AI model development",
+    "Machine learning solutions",
+    "AI chatbots & virtual assistants",
+    "Predictive analytics",
+    "Process automation",
+    "AI integration with existing systems"
+    ],
+
     price: "From ₦60,000",
+
     steps: [
-      { num: "01", title: "Research", desc: "We study your users, competitors, and product goals." },
-      { num: "02", title: "Wireframe", desc: "We map out the structure and user flows." },
-      { num: "03", title: "Design", desc: "We create high-fidelity visual designs for your review." },
-      { num: "04", title: "Handoff", desc: "We deliver design files ready for development." },
+    {
+    num: "01",
+    title: "Discovery",
+    desc: "We identify your business challenges, goals, and AI opportunities."
+    },
+    {
+    num: "02",
+    title: "Strategy",
+    desc: "We design the right AI solution and define the implementation roadmap."
+    },
+    {
+    num: "03",
+    title: "Development",
+    desc: "We build, train, and test intelligent models tailored to your needs."
+    },
+    {
+    num: "04",
+    title: "Deploy",
+    desc: "We integrate, launch, and monitor the solution for optimal performance."
+    }
     ],
-    testimonial: { text: "Our app's user retention improved by 40% after their UX redesign. They truly understand how users think.", name: "Seun Alade", role: "Product Lead, FinTrack App" },
+
+    testimonial: {
+    text: "Their AI automation solution reduced our manual workload by over 60% and significantly improved operational efficiency.",
+    name: "Seun Alade",
+    role: "Operations Manager, FinTrack"
+    },
+
     faqs: [
-      { q: "What tools do you design in?", a: "We primarily use Figma, with deliverables compatible with all major dev handoff tools." },
-      { q: "Do you do user testing?", a: "Yes, usability testing is included in our full UX packages." },
-      { q: "Can you work with an existing design system?", a: "Absolutely, we can extend or improve your existing design system." },
-      { q: "Do you work with developers?", a: "Yes, we collaborate closely with dev teams to ensure accurate implementation." },
+    {
+    q: "What AI solutions do you offer?",
+    a: "We develop chatbots, predictive analytics systems, machine learning models, recommendation engines, and workflow automation solutions."
+    },
+    {
+    q: "Can AI be integrated into our existing software?",
+    a: "Yes, we can integrate AI capabilities into your current applications and business systems."
+    },
+    {
+    q: "Do you provide custom AI models?",
+    a: "Absolutely. We build and train AI models tailored to your specific business requirements."
+    },
+    {
+    q: "Do you offer ongoing support?",
+    a: "Yes, we provide maintenance, monitoring, and optimization services after deployment."
+    }
     ],
-    related: ["web-development", "mobile-app-development", "graphic-design"],
-  },
-  "mobile-app-development": {
+
+    related: [
+    "web-development",
+    "mobile-app-development",
+    "software-solutions"
+    ]
+    },
+
+    "mobile-app-development": {
     icon: mobileIcon,
     title: "Mobile App Development",
     tagline: "Apps your users will actually use.",
@@ -205,8 +312,9 @@ const serviceData = {
       { q: "Do you handle App Store submission?", a: "Yes, we manage the full submission process for both Google Play and Apple App Store." },
       { q: "What happens after launch?", a: "We offer post-launch maintenance and update packages to keep your app running smoothly." },
     ],
-    related: ["ui-ux-design", "web-development", "software-solutions"],
+    related: ["ai", "web-development", "software-solutions"],
   },
+
   "business-solutions": {
     icon: dataIcon,
     title: "Business Solutions",

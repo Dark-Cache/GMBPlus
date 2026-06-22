@@ -12,7 +12,7 @@ import at from "../../Assets/AT.png";
 import clinic from "../../Assets/SKC.png";
 import viva from "../../Assets/VIVA.png";
 
-import AboutImg from "../../Assets/About1.jpg";
+import AboutImg from "../../Assets/aboutnew.jpg";
 
 const We = () => {
   const headerRef = useRef(null);

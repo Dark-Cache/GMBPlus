@@ -5,7 +5,7 @@ import Say from "../Say/Say";
 // About Images
 import aboutOne from "../../Assets/HC1.jpg";
 import aboutTwo from "../../Assets/HC2.jpg";
-import aboutThree from "../../Assets/AboutGroup.jpg";
+import aboutThree from "../../Assets/homabot.jpg";
 
 //Core Values Icons
 import IntIcon from "../../Assets/puzzle-pieces.gif";

@@ -97,11 +97,6 @@
   transition: all 0.3s ease;
 }
 
-/* Primary */
-.cta-btn.primary {
-  background:  #10b981;
-  color: white;
-}
 
 .cta-buttons.visible .cta-btn.primary {
   animation: buttonGlow 3s ease-in-out;
@@ -140,7 +135,7 @@
   }
 
   .cta-btn {
-    width: 100%;
+    width: 51%;
     max-width: 300px;
     margin: 0 auto;
   }

@@ -3,7 +3,7 @@ import "./Why.css";
 
 
 
-import work from "../../Assets/Why4.jpg";
+import work from "../../Assets/handshake.jpg";
 
 const Why = () => {
   const imageRef = useRef(null);

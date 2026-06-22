@@ -43,12 +43,6 @@ const Property = () => {
         {/* Left Card */}
         <div className="property-main-card">
           <img src={mainHouse} alt="Luxury Home" />
-
-          {/* <div className="property-thumbnails">
-            <div className="thumb"><img src={LeftIcon} alt="Icon" /></div>
-            <div className="thumb"><img src={MiddleIcon} alt="Icon" /></div>
-            <div className="thumb"><img src={RightIcon} alt="Icon" /></div>
-          </div> */}
         </div>
 
         {/* Middle Card */}
