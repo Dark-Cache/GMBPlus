@@ -185,7 +185,7 @@ const About = () => {
         <h3>Collaboration</h3>
         <p>
           We build strong partnerships through teamwork,
-          trust, and mutual respect.
+          trust, and mutual respect with our clients to achieve goals.
         </p>
       </div>
 
