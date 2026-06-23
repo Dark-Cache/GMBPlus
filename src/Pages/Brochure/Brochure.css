@@ -63,8 +63,10 @@
 }
 
 .brochure-hero-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.25);
+  transform: translateY(-5px);
+  color: #0b2545;
+  background-color: #059669;
+  box-shadow: 0px 12px 32px rgba(0, 0, 0, 0.25);
 }
 
 /* ================================
@@ -120,17 +122,17 @@
 }
 
 /* ================================
-   PDF VIEWER SECTION
+   BROCHURE SECTION
 ================================ */
 
 .brochure-viewer {
-  padding: 60px 20px;
+  padding: 40px 20px;
   background: #ffffff;
 }
 
 .viewer-header {
   text-align: center;
-  margin-bottom: 48px;
+  margin-bottom: 60px;
 }
 
 .viewer-header h2 {
@@ -152,67 +154,174 @@
 .viewer-header p {
   font-size: 16px;
   color: #6b7280;
+  max-width: 650px;
+  margin: 0 auto;
+  line-height: 1.7;
 }
 
-.pdf-viewer-wrapper {
-  background: #f3f4f6;
+/* ================================
+   BROCHURE GRID
+================================ */
+
+.brochure-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  margin-bottom: 50px;
+}
+
+.brochure-card {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 32px 24px;
+  text-align: center;
   border: 1px solid #e5e7eb;
-  border-radius: 16px;
-  overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-  margin-bottom: 40px;
-}
-
-.pdf-iframe {
-  width: 100%;
-  height: 800px;
-  border: none;
-  display: block;
-}
-
-.viewer-footer {
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
+  transition: all 0.35s ease;
+  height: 100%;
   display: flex;
-  gap: 16px;
-  justify-content: center;
-  flex-wrap: wrap;
+  flex-direction: column;
 }
 
-.download-btn-alt,
-.contact-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 14px 28px;
-  border-radius: 50px;
+.brochure-card:hover {
+  transform: translateY(-8px);
+  border-color: #10b981;
+  box-shadow: 0 20px 40px rgba(16, 185, 129, 0.15);
+}
+
+.brochure-card-icon {
+  font-size: 52px;
+  margin-bottom: 20px;
+}
+
+.brochure-card h3 {
+  font-size: 22px;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 16px;
+  min-height: 55px;
+}
+
+.brochure-card p {
+  font-size: 15px;
+  line-height: 1.8;
+  color: #6b7280;
+  margin-bottom: 24px;
+  flex-grow: 1;
+}
+
+.brochure-card-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.view-btn,
+.download-btn {
   border: none;
-  font-size: 16px;
+  border-radius: 50px;
+  padding: 14px 18px;
+  font-size: 14px;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
-  text-decoration: none;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
 }
 
-.download-btn-alt {
+.view-btn {
+  background: #0f172a;
+  color: #ffffff;
+}
+
+.view-btn:hover {
+  background: #1e293b;
+  transform: translateY(-2px);
+}
+
+.download-btn {
   background: #10b981;
   color: #ffffff;
-  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
 }
 
-.download-btn-alt:hover {
+.download-btn:hover {
   background: #059669;
   transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(16, 185, 129, 0.4);
 }
 
-.contact-btn {
-  background: transparent;
-  color: #10b981;
-  border: 2px solid #10b981;
+/* ================================
+   VIEWER FOOTER
+================================ */
+
+.viewer-footer {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
 }
 
-.contact-btn:hover {
-  background: #10b981;
-  color: #ffffff;
+/* ================================
+   RESPONSIVE
+================================ */
+
+@media (max-width: 1200px) {
+  .brochure-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .viewer-header h2 {
+    font-size: 30px;
+    flex-direction: column;
+  }
+
+  .viewer-header p {
+    font-size: 15px;
+  }
+
+  .brochure-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .brochure-card {
+    padding: 28px 20px;
+  }
+
+  .brochure-card h3 {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 576px) {
+  .brochure-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .brochure-card {
+    padding: 24px 20px;
+  }
+
+  .brochure-card-icon {
+    font-size: 46px;
+  }
+
+  .brochure-card h3 {
+    font-size: 18px;
+    min-height: auto;
+  }
+
+  .brochure-card p {
+    font-size: 14px;
+  }
+
+  .view-btn,
+  .download-btn {
+    width: 100%;
+  }
 }
 
 /* ================================

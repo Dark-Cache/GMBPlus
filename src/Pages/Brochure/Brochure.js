@@ -1,15 +1,31 @@
-import React from "react";
+import React, { useRef } from "react";
 import "./Brochure.css";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import { FaDownload, FaFileAlt, FaCheckCircle } from "react-icons/fa";
 
 import catalogPDF from "../../Pdf/GMB PLUS GLOBAL CONCEPT LTD— COMPANY PROFILE 2026.pdf";
+import facilityPDF from "../../Pdf/GMB PLUS GLOBAL CONCEPT LTD— COMPANY PROFILE 2026.pdf";
+import businessPDF from "../../Pdf/GMB PLUS GLOBAL CONCEPT LTD— COMPANY PROFILE 2026.pdf";
+import estatePDF from "../../Pdf/GMB PLUS GLOBAL CONCEPT LTD— COMPANY PROFILE 2026.pdf";
 
 const Brochure = () => {
-  const handleDownloadPDF = () => {
+  const brochureSectionRef = useRef(null);
+
+  const scrollToBrochures = () => {
+    brochureSectionRef.current?.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  };
+
+  const openBrochure = (pdf) => {
+    window.open(pdf, "_blank");
+  };
+
+  const downloadBrochure = (pdf, fileName) => {
     const link = document.createElement("a");
-    link.href = catalogPDF;
-    link.download = "GMB-PLUS-BROCHURE-2026.pdf";
+    link.href = pdf;
+    link.download = fileName;
     link.click();
   };
 
@@ -18,13 +34,18 @@ const Brochure = () => {
       {/* HERO SECTION */}
       <section className="brochure-hero">
         <div className="brochure-hero-content">
-          <h1>Our Company Brochure</h1>
+          <h1>Our Company Brochures</h1>
           <p>
             Discover comprehensive solutions across industrial chemicals,
-            facilities management, digital services, and property management.
+            facilities management, business & property solutions, and estate
+            management services.
           </p>
-          <button className="brochure-hero-btn" onClick={handleDownloadPDF}>
-            <FaDownload /> Download PDF
+
+          <button
+            className="brochure-hero-btn"
+            onClick={scrollToBrochures}
+          >
+            <FaFileAlt /> View Brochures
           </button>
         </div>
       </section>
@@ -36,78 +57,221 @@ const Brochure = () => {
             <div className="highlight-card">
               <div className="highlight-icon">📋</div>
               <h3>Complete Profile</h3>
-              <p>Learn about our mission, vision, and core values.</p>
+              <p>
+                Learn about our mission, vision, expertise, and commitment to
+                excellence.
+              </p>
             </div>
 
             <div className="highlight-card">
               <div className="highlight-icon">🏢</div>
               <h3>Our Services</h3>
-              <p>Explore all service offerings in detail.</p>
+              <p>
+                Explore our service divisions and tailored business solutions.
+              </p>
             </div>
 
             <div className="highlight-card">
               <div className="highlight-icon">📊</div>
               <h3>Product Catalog</h3>
-              <p>View our industrial chemicals and product range.</p>
+              <p>
+                Browse our industrial chemical offerings and specialized
+                products.
+              </p>
             </div>
 
             <div className="highlight-card">
               <div className="highlight-icon">✨</div>
               <h3>Why Choose Us</h3>
-              <p>Discover our unique value proposition.</p>
+              <p>
+                Discover the value, reliability, and expertise that set us
+                apart.
+              </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* PDF VIEWER SECTION */}
-      <section className="brochure-viewer">
+      {/* BROCHURE SECTION */}
+      <section
+        className="brochure-viewer"
+        ref={brochureSectionRef}
+      >
         <div className="brochure-container">
           <div className="viewer-header">
             <h2>
-              <FaFileAlt className="icon" /> View Our Brochure
+              <FaFileAlt className="icon" />
+              View Our Brochures
             </h2>
-            <p>Scroll through our comprehensive company profile below</p>
+
+            <p>
+              Access and download brochures for each of our service divisions.
+            </p>
           </div>
 
-          <div className="pdf-viewer-wrapper">
-            <iframe
-              src={catalogPDF}
-              title="Company Brochure PDF"
-              className="pdf-iframe"
-            />
+          <div className="brochure-grid">
+            {/* Industrial Chemical */}
+            <div className="brochure-card">
+              <div className="brochure-card-icon">🧪</div>
+
+              <h3>Industrial Chemical</h3>
+
+              <p>
+                Explore our industrial chemical solutions, products,
+                procurement services, and supply capabilities.
+              </p>
+
+              <div className="brochure-card-buttons">
+                <button
+                  className="view-btn"
+                  onClick={() => openBrochure(catalogPDF)}
+                >
+                  View Brochure
+                </button>
+
+                <button
+                  className="download-btn"
+                  onClick={() =>
+                    downloadBrochure(
+                      catalogPDF,
+                      "Industrial-Chemical-Brochure.pdf"
+                    )
+                  }
+                >
+                  <FaDownload />
+                  Download
+                </button>
+              </div>
+            </div>
+
+            {/* Facility Management */}
+            <div className="brochure-card">
+              <div className="brochure-card-icon">🏢</div>
+
+              <h3>Facility Management</h3>
+
+              <p>
+                Discover our integrated facility management services,
+                maintenance solutions, cleaning operations, and support
+                services.
+              </p>
+
+              <div className="brochure-card-buttons">
+                <button
+                  className="view-btn"
+                  onClick={() => openBrochure(facilityPDF)}
+                >
+                  View Brochure
+                </button>
+
+                <button
+                  className="download-btn"
+                  onClick={() =>
+                    downloadBrochure(
+                      facilityPDF,
+                      "Facility-Management-Brochure.pdf"
+                    )
+                  }
+                >
+                  <FaDownload />
+                  Download
+                </button>
+              </div>
+            </div>
+
+            {/* Business & Property Solutions */}
+            <div className="brochure-card">
+              <div className="brochure-card-icon">💼</div>
+
+              <h3>Business & Property Solutions</h3>
+
+              <p>
+                Learn about our business support services, property consulting,
+                project advisory, and strategic growth solutions.
+              </p>
+
+              <div className="brochure-card-buttons">
+                <button
+                  className="view-btn"
+                  onClick={() => openBrochure(businessPDF)}
+                >
+                  View Brochure
+                </button>
+
+                <button
+                  className="download-btn"
+                  onClick={() =>
+                    downloadBrochure(
+                      businessPDF,
+                      "Business-Property-Solutions-Brochure.pdf"
+                    )
+                  }
+                >
+                  <FaDownload />
+                  Download
+                </button>
+              </div>
+            </div>
+
+            {/* Estate & Property Management */}
+            <div className="brochure-card">
+              <div className="brochure-card-icon">🏘️</div>
+
+              <h3>Estate & Property Management</h3>
+
+              <p>
+                Explore our estate administration, tenancy management,
+                property supervision, and asset management expertise.
+              </p>
+
+              <div className="brochure-card-buttons">
+                <button
+                  className="view-btn"
+                  onClick={() => openBrochure(estatePDF)}
+                >
+                  View Brochure
+                </button>
+
+                <button
+                  className="download-btn"
+                  onClick={() =>
+                    downloadBrochure(
+                      estatePDF,
+                      "Estate-Property-Management-Brochure.pdf"
+                    )
+                  }
+                >
+                  <FaDownload />
+                  Download
+                </button>
+              </div>
+            </div>
           </div>
 
-          <div className="viewer-footer">
-            <button className="download-btn-alt" onClick={handleDownloadPDF}>
-              <FaDownload /> Download Full PDF
-            </button>
-            <Link to="/contact" className="contact-btn">
-              Get More Information
-            </Link>
-          </div>
         </div>
       </section>
 
       {/* BENEFITS SECTION */}
       <section className="brochure-benefits">
         <div className="brochure-container">
-          <h2>Why Review Our Brochure?</h2>
+          <h2>Why Review Our Brochures?</h2>
 
           <div className="benefits-grid">
             <div className="benefit-item">
               <FaCheckCircle className="benefit-icon" />
               <h4>Comprehensive Overview</h4>
               <p>
-                Get a complete understanding of our capabilities and services.
+                Get a complete understanding of our capabilities, services, and
+                industry expertise.
               </p>
             </div>
 
             <div className="benefit-item">
               <FaCheckCircle className="benefit-icon" />
-              <h4>Product Details</h4>
+              <h4>Detailed Information</h4>
               <p>
-                Detailed specifications and information about all our offerings.
+                Access detailed descriptions, specifications, and service
+                offerings.
               </p>
             </div>
 
@@ -115,7 +279,8 @@ const Brochure = () => {
               <FaCheckCircle className="benefit-icon" />
               <h4>Company Credentials</h4>
               <p>
-                Learn about our experience, certifications, and achievements.
+                Learn about our experience, achievements, and commitment to
+                quality delivery.
               </p>
             </div>
 
@@ -123,7 +288,8 @@ const Brochure = () => {
               <FaCheckCircle className="benefit-icon" />
               <h4>Easy Reference</h4>
               <p>
-                Keep the PDF handy for future reference and sharing with teams.
+                Download and keep brochures handy for future reference and team
+                collaboration.
               </p>
             </div>
           </div>
