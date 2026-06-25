@@ -8,6 +8,12 @@ import facilityPDF from "../../Pdf/GMB PLUS GLOBAL CONCEPT LTD— COMPANY PROFIL
 import businessPDF from "../../Pdf/GMB PLUS GLOBAL CONCEPT LTD— COMPANY PROFILE 2026.pdf";
 import estatePDF from "../../Pdf/GMB PLUS GLOBAL CONCEPT LTD— COMPANY PROFILE 2026.pdf";
 
+// Icon
+import IndusBroIcon from "../../Assets/report.gif"
+import FasBroIcon from "../../Assets/carpet-cleaning.gif"
+import BusBroIcon from "../../Assets/reportbus.gif"
+import ConBroIcon from "../../Assets/contractbro.gif"
+
 const Brochure = () => {
   const brochureSectionRef = useRef(null);
 
@@ -112,7 +118,9 @@ const Brochure = () => {
           <div className="brochure-grid">
             {/* Industrial Chemical */}
             <div className="brochure-card">
-              <div className="brochure-card-icon">🧪</div>
+              <div className="brochure-card-icon">
+                <img src={IndusBroIcon} alt="Icon " />
+              </div>
 
               <h3>Industrial Chemical</h3>
 
@@ -146,7 +154,9 @@ const Brochure = () => {
 
             {/* Facility Management */}
             <div className="brochure-card">
-              <div className="brochure-card-icon">🏢</div>
+              <div className="brochure-card-icon">
+                <img src={FasBroIcon} alt="Icon " />
+              </div>
 
               <h3>Facility Management</h3>
 
@@ -181,9 +191,11 @@ const Brochure = () => {
 
             {/* Business & Property Solutions */}
             <div className="brochure-card">
-              <div className="brochure-card-icon">💼</div>
+              <div className="brochure-card-icon">
+                <img src={BusBroIcon} alt="Icon " />
+              </div>
 
-              <h3>Business & Property Solutions</h3>
+              <h3>Business & Digital Solutions</h3>
 
               <p>
                 Learn about our business support services, property consulting,
@@ -215,7 +227,9 @@ const Brochure = () => {
 
             {/* Estate & Property Management */}
             <div className="brochure-card">
-              <div className="brochure-card-icon">🏘️</div>
+              <div className="brochure-card-icon">
+                <img src={ConBroIcon} alt="Icon " />
+              </div>
 
               <h3>Estate & Property Management</h3>
 

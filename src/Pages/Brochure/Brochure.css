@@ -189,9 +189,15 @@
   box-shadow: 0 20px 40px rgba(16, 185, 129, 0.15);
 }
 
+
 .brochure-card-icon {
-  font-size: 52px;
-  margin-bottom: 20px;
+  font-size: 28px;
+  margin-bottom: 5px;
+}
+
+.brochure-card-icon img {
+  width: 80px;
+  height: 80px;
 }
 
 .brochure-card h3 {
