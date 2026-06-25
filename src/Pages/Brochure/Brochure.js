@@ -125,9 +125,13 @@ const Brochure = () => {
               <h3>Industrial Chemical</h3>
 
               <p>
+                Explore our industrial chemical solutions, quality 
+                products, and reliable procurement and supply services.
+              </p>
+              {/* <p>
                 Explore our industrial chemical solutions, products,
                 procurement services, and supply capabilities.
-              </p>
+              </p> */}
 
               <div className="brochure-card-buttons">
                 <button
@@ -161,7 +165,7 @@ const Brochure = () => {
               <h3>Facility Management</h3>
 
               <p>
-                Discover our integrated facility management services,
+                Discover our facility management services,
                 maintenance solutions, cleaning operations, and support
                 services.
               </p>
