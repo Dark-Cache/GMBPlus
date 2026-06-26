@@ -145,10 +145,10 @@
     padding-left: 0;
   }
 
-  .why-image img {
+  /* .why-image img {
     height: 600px;
-    width: 759px;
-  }
+    width: 800px;
+  } */
 }
 
 @media (max-width: 600px) {
@@ -159,6 +159,6 @@
 
   .why-image img {
     height: 320px;
-    width: 350px;
+    width: 390px;
   }
 }
