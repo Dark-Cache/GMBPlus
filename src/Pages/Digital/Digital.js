@@ -470,7 +470,7 @@ e.target.reset();
     </div>
 
     <div className="pricing-row">
-      <span>Graphic Design (logo, flyer, brand kit)</span>
+      <span>UI/UX & Graphic Design (logo, flyer, brand kit)</span>
       <span>₦25,000</span>
       <span>₦25,000 – ₦100,000</span>
     </div>
