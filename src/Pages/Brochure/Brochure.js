@@ -96,12 +96,14 @@ const Brochure = () => {
             </div>
           </div>
         </div>
+        <div ref={brochureSectionRef}></div>
       </section>
+
 
       {/* BROCHURE SECTION */}
       <section
         className="brochure-viewer"
-        ref={brochureSectionRef}
+
       >
         <div className="brochure-container">
           <div className="viewer-header">
@@ -128,10 +130,6 @@ const Brochure = () => {
                 Explore our industrial chemical solutions, quality 
                 products, and reliable procurement and supply services.
               </p>
-              {/* <p>
-                Explore our industrial chemical solutions, products,
-                procurement services, and supply capabilities.
-              </p> */}
 
               <div className="brochure-card-buttons">
                 <button

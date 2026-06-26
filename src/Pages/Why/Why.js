@@ -1,8 +1,6 @@
 import React, { useEffect, useRef } from 'react'
 import "./Why.css";
 
-
-
 import work from "../../Assets/handshake.jpg";
 
 const Why = () => {
