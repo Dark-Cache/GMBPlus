@@ -20,7 +20,7 @@ const testimonials = [
   },
   {
     text: "Their reliable software and hardware supply improved system performance and efficiency.",
-    name: "James Adegbola",
+    name: "Daniel Adewale",
     role: "Tech CEO",
     avatar: avatar2,
   },

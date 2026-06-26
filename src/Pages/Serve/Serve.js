@@ -4,7 +4,7 @@ import "./Serve.css";
 import chemical from "../../Assets/Chemical.jpg";
 import facility from "../../Assets/Facility.jpg";
 import repair from "../../Assets/Why.jpg";
-import estate from "../../Assets/Nigpro.jpg";
+import estate from "../../Assets/HomePro.jpg";
 
 const Serve = () => {
   const headerRef = useRef(null);
