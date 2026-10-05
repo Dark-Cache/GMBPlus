@@ -168,7 +168,7 @@ const Contact = () => {
             <HiOutlineMailOpen />
             <div>
               <h4>Email</h4>
-              <p>info@gmbplus.com</p>
+              <p>info@gmbplusng.com</p>
               <p>gmbplusng@outlook.com</p>
             </div>
           </div>
