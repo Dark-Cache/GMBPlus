@@ -61,7 +61,7 @@ const Footer = () => {
               <li> 398, Ikorodu Road, Ojota, Lagos. Nigeria.
               </li>
               <h5>Email:</h5>
-              <li> info@gmbplus.com <br /> gmbplusng@outlook.com</li>
+              <li> info@gmbplusng.com <br /> gmbplusng@outlook.com</li>
             </ul>
           </div>
 
