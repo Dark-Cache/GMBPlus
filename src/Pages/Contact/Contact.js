@@ -50,7 +50,13 @@ const Contact = () => {
 
       if (response.ok) {
         e.target.reset();
-        setFormData({ firstName: "", email: "", phone: "", subject: "", message: "" });
+        setFormData({
+          firstName: "",
+          email: "",
+          phone: "",
+          subject: "",
+          message: "",
+        });
         setIsThankYouOpen(true);
       } else {
         alert("Something went wrong.");
@@ -64,89 +70,111 @@ const Contact = () => {
 
   return (
     <section className="contact-page">
-
       {/* HEADER */}
       <div className="contact-header">
         <h1>Get in Touch with Us</h1>
         <p>
-          Have questions about our services or looking to plan your next project?
-          We’re here to help! Reach out for inquiries, support, or consultation.
+          Have questions about our services or looking to plan your next
+          project? We’re here to help! Reach out for inquiries, support, or
+          consultation.
         </p>
       </div>
 
       {/* MAIN */}
       <div className="contact-wrapper">
-
         {/* LEFT FORM */}
         <div className="contact-form-card">
           <h2>Have Questions? We're Just a Message Away!</h2>
           <p>
-            Fill out the form below, and one of our team members will get back to you shortly.
+            Fill out the form below, and one of our team members will get back
+            to you shortly.
           </p>
 
           <form onSubmit={handleSubmit}>
-
-              <div className="row">
-                <input
-                  type="text"
-                  name="firstName"
-                  placeholder="Full Name/Company Name"
-                  value={formData.firstName}
-                  onChange={handleChange} />
-              </div>
-
+            <div className="row">
               <input
-                type="email"
-                name="email"
-                placeholder="you@gmail.com"
-                value={formData.email}
+                type="text"
+                name="firstName"
+                placeholder="Full Name/Company Name"
+                value={formData.firstName}
                 onChange={handleChange}
               />
+            </div>
 
-              <input
-                type="tel"
-                name="phone"
-                placeholder="+234..."
-                value={formData.phone}
-                onChange={handleChange}
-              />
+            <input
+              type="email"
+              name="email"
+              placeholder="you@gmail.com"
+              value={formData.email}
+              onChange={handleChange}
+            />
 
-              <select
-                name="subject"
-                value={formData.subject}
-                onChange={handleChange}
-              >
-                <option value="">Choose message subject</option>
-                <option>Request a Visit</option>
-                <option>Order for Chemicals</option>
-                <option>Cleaning Services</option>
-                <option>Request for Staffs</option>
-                <option>Rental Services</option>
-                <option>Facility Management</option>
-                <option>Property Management</option>
-              </select>
+            <input
+              type="tel"
+              name="phone"
+              placeholder="+234..."
+              value={formData.phone}
+              onChange={handleChange}
+            />
 
-              <textarea
-                name="message"
-                placeholder="Leave us a message..."
-                value={formData.message}
-                onChange={handleChange}
-              />
+            <select
+              name="subject"
+              value={formData.subject}
+              onChange={handleChange}
+            >
+              <option value="">Choose message subject</option>
+              <option>Request a Visit</option>
+              <option>Order for Chemicals</option>
+              <option>Cleaning Services</option>
+              <option>Request for Staffs</option>
+              <option>Rental Services</option>
+              <option>Facility Management</option>
+              <option>Property Management</option>
+            </select>
 
-              <button type="submit" className="send-btn" disabled={isLoading || !isFormValid}>
-                {isLoading ? "Sending..." : "Send Message →"}
-              </button>
+            <textarea
+              name="message"
+              placeholder="Leave us a message..."
+              value={formData.message}
+              onChange={handleChange}
+            />
 
-            </form>
+            <button
+              type="submit"
+              className="send-btn"
+              disabled={isLoading || !isFormValid}
+            >
+              {isLoading ? "Sending..." : "Send Message →"}
+            </button>
+          </form>
 
           {isThankYouOpen && (
-            <div className="facility-modal-overlay" onClick={() => setIsThankYouOpen(false)}>
-              <div className="facility-modal-content facility-thank-you" onClick={(e) => e.stopPropagation()}>
-                <button className="facility-modal-close" onClick={() => setIsThankYouOpen(false)}>✕</button>
+            <div
+              className="facility-modal-overlay"
+              onClick={() => setIsThankYouOpen(false)}
+            >
+              <div
+                className="facility-modal-content facility-thank-you"
+                onClick={(e) => e.stopPropagation()}
+              >
+                <button
+                  className="facility-modal-close"
+                  onClick={() => setIsThankYouOpen(false)}
+                >
+                  ✕
+                </button>
                 <div className="facility-thank-you-icon">✓</div>
                 <h2>Thank You!</h2>
-                <p>Your message has been received. We'll get back to you within 24 hours.</p>
-                <button className="facility-thank-you-btn" onClick={() => setIsThankYouOpen(false)}>Close</button>
+                <p>
+                  Your message has been received. We'll get back to you within
+                  24 hours.
+                </p>
+                <button
+                  className="facility-thank-you-btn"
+                  onClick={() => setIsThankYouOpen(false)}
+                >
+                  Close
+                </button>
               </div>
             </div>
           )}
@@ -154,13 +182,10 @@ const Contact = () => {
 
         {/* RIGHT SIDE */}
         <div className="contact-right">
-
           {/* TOP CARD */}
           <div className="contact-hero">
             <img src={heroImg} alt="support" />
-            <div className="overlay-text">
-              Our experts will always help you
-            </div>
+            <div className="overlay-text">Our experts will always help you</div>
           </div>
 
           {/* INFO CARDS */}
@@ -168,7 +193,7 @@ const Contact = () => {
             <HiOutlineMailOpen />
             <div>
               <h4>Email</h4>
-              <p>info@gmbplus.com</p>
+              <p>info@gmbplusng.com</p>
               <p>gmbplusng@outlook.com</p>
             </div>
           </div>
@@ -186,8 +211,11 @@ const Contact = () => {
             <ImOffice />
             <div>
               <h4>Address</h4>
-              <p> Block 10, Suite 8, Odua International Market, 
-                <br /> Ikorodu Road, Ojota, Lagos, Nigeria. </p>
+              <p>
+                {" "}
+                Block 10, Suite 8, Odua International Market,
+                <br /> Ikorodu Road, Ojota, Lagos, Nigeria.{" "}
+              </p>
             </div>
           </div>
 
@@ -198,9 +226,7 @@ const Contact = () => {
               <p>398, Ikorodu Road, Ojota, Lagos. Nigeria.</p>
             </div>
           </div>
-
         </div>
-
       </div>
     </section>
   );
